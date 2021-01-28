@@ -9,17 +9,17 @@ A C++ implementation of a Templated Binary Search Tree
 
 ## How to compile
 
--Using `Makefile`:
-	- open a terminal
-	- move to the project folder
-	- type `make` in order to build the executable
+### Using `Makefile`:
+- open a terminal
+- move to the project folder
+- type `make` in order to build the executable
 
--From command line:
-	- `g++ -o exe.x -Wall -Wextra -g -std=c++14 -I include main.cpp`
+### From command line:
+- `g++ -o exe.x -Wall -Wextra -g -std=c++14 -I include main.cpp`
 
--To check memory leaks with [Valgrind](https://valgrind.org) and see the heap/leak summary:
-	- `valgrind ./exe.x -s`
+### To check memory leaks with [Valgrind](https://valgrind.org) and see the heap/leak summary:
+- `valgrind ./exe.x -s`
 
 
 ## Documentation
-You can find a [Doxygen documentation](https://www.doxygen.nl/index.html) at the following link: (https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html)
+You can find a [Doxygen documentation](https://www.doxygen.nl/index.html) at the following link: https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html
