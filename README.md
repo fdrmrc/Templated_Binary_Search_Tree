@@ -21,4 +21,5 @@ A C++ implementation of a Templated Binary Search Tree
 	- `valgrind ./exe.x -s`
 
 
-## You can find a [Doxygen documentation](https://www.doxygen.nl/index.html) at the following link: (https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html)
+## Documentation
+You can find a [Doxygen documentation](https://www.doxygen.nl/index.html) at the following link: (https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html)
