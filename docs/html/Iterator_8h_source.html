@@ -65,7 +65,66 @@ $(function() {
 <div class="title">Iterator.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"></div><!-- fragment --></div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef Iterator_h</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define Iterator_h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Node.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iterator&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T &gt;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="struct____iterator.html">    8</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct____iterator.html">__iterator</a> {;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">using</span> NodeT = Node::Node&lt;T&gt;;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct____iterator.html#a65354b3dbbcbdfebb3a306083465f8e1">   14</a></span>&#160;    NodeT* <a class="code" href="struct____iterator.html#a65354b3dbbcbdfebb3a306083465f8e1">current</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//public:</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">using</span> value_type = T;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">using</span> difference_type = std::ptrdiff_t;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">using</span> iterator_category = std::forward_iterator_tag;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">using</span> reference = value_type&amp;;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">using</span> pointer = value_type *;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="struct____iterator.html#a6c64b5ad7fd5bc740e1d7a47eb1bf6b9">   29</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="struct____iterator.html#a6c64b5ad7fd5bc740e1d7a47eb1bf6b9">__iterator</a>(NodeT* p) : <a class="code" href="struct____iterator.html#a65354b3dbbcbdfebb3a306083465f8e1">current</a>{p} {}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct____iterator.html#a20b1bce9e2a4909a1e27b3206bac636b">   35</a></span>&#160;    <a class="code" href="struct____iterator.html#a20b1bce9e2a4909a1e27b3206bac636b">__iterator</a>() noexcept=default;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="struct____iterator.html#add8a6bc8206f079b35cfa639f954bb33">   41</a></span>&#160;    ~<a class="code" href="struct____iterator.html">__iterator</a>()=default;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="struct____iterator.html#ac7fa0ea2ca69bbb5a73719d71d8b0842">   49</a></span>&#160;    reference operator*() const noexcept{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="struct____iterator.html#a65354b3dbbcbdfebb3a306083465f8e1">current</a>-&gt;data.second;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="struct____iterator.html#a6434007320a276245f8e1db4e2e09071">   59</a></span>&#160;    pointer <a class="code" href="struct____iterator.html#a6434007320a276245f8e1db4e2e09071">operator-&gt;</a>() const noexcept{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> &amp;**<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="struct____iterator.html#a63b98d28b538af0978daba3c196ea25e">   68</a></span>&#160;    <a class="code" href="struct____iterator.html">__iterator</a>&amp; <a class="code" href="struct____iterator.html#a63b98d28b538af0978daba3c196ea25e">operator++</a>() {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="struct____iterator.html#ad1753c5d0a4ffbef90efbeca3d8992d0">   83</a></span>&#160;    <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="struct____iterator.html#ad1753c5d0a4ffbef90efbeca3d8992d0">operator==</a>(<a class="code" href="struct____iterator.html">__iterator</a> &amp;a, <a class="code" href="struct____iterator.html">__iterator</a> &amp;b) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <span class="keywordflow">return</span> a.<a class="code" href="struct____iterator.html#a65354b3dbbcbdfebb3a306083465f8e1">current</a> == b.<a class="code" href="struct____iterator.html#a65354b3dbbcbdfebb3a306083465f8e1">current</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="struct____iterator.html#abeb0167e629f1f552a298c488d9b11f5">   94</a></span>&#160;    <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="struct____iterator.html#abeb0167e629f1f552a298c488d9b11f5">operator!=</a>(<a class="code" href="struct____iterator.html">__iterator</a> &amp;a, <a class="code" href="struct____iterator.html">__iterator</a> &amp;b) { <span class="keywordflow">return</span> !(a == b); }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Iterator_h */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astruct____iterator_html_a65354b3dbbcbdfebb3a306083465f8e1"><div class="ttname"><a href="struct____iterator.html#a65354b3dbbcbdfebb3a306083465f8e1">__iterator::current</a></div><div class="ttdeci">NodeT * current</div><div class="ttdoc">Raw pointer to the current Node.</div><div class="ttdef"><b>Definition:</b> Iterator.h:14</div></div>
+<div class="ttc" id="astruct____iterator_html_a20b1bce9e2a4909a1e27b3206bac636b"><div class="ttname"><a href="struct____iterator.html#a20b1bce9e2a4909a1e27b3206bac636b">__iterator::__iterator</a></div><div class="ttdeci">__iterator() noexcept=default</div><div class="ttdoc">Default-generated constructor.</div></div>
+<div class="ttc" id="astruct____iterator_html"><div class="ttname"><a href="struct____iterator.html">__iterator</a></div><div class="ttdef"><b>Definition:</b> Iterator.h:8</div></div>
+<div class="ttc" id="astruct____iterator_html_a63b98d28b538af0978daba3c196ea25e"><div class="ttname"><a href="struct____iterator.html#a63b98d28b538af0978daba3c196ea25e">__iterator::operator++</a></div><div class="ttdeci">__iterator &amp; operator++()</div><div class="ttdoc">Post- increment operator.</div><div class="ttdef"><b>Definition:</b> Iterator.h:68</div></div>
+<div class="ttc" id="astruct____iterator_html_a6434007320a276245f8e1db4e2e09071"><div class="ttname"><a href="struct____iterator.html#a6434007320a276245f8e1db4e2e09071">__iterator::operator-&gt;</a></div><div class="ttdeci">pointer operator-&gt;() const noexcept</div><div class="ttdoc">Arrow operator.</div><div class="ttdef"><b>Definition:</b> Iterator.h:59</div></div>
+<div class="ttc" id="astruct____iterator_html_a6c64b5ad7fd5bc740e1d7a47eb1bf6b9"><div class="ttname"><a href="struct____iterator.html#a6c64b5ad7fd5bc740e1d7a47eb1bf6b9">__iterator::__iterator</a></div><div class="ttdeci">__iterator(NodeT *p)</div><div class="ttdoc">Custom constructor for __iterator.</div><div class="ttdef"><b>Definition:</b> Iterator.h:29</div></div>
+<div class="ttc" id="astruct____iterator_html_abeb0167e629f1f552a298c488d9b11f5"><div class="ttname"><a href="struct____iterator.html#abeb0167e629f1f552a298c488d9b11f5">__iterator::operator!=</a></div><div class="ttdeci">friend bool operator!=(__iterator &amp;a, __iterator &amp;b)</div><div class="ttdoc">Inequality operator.</div><div class="ttdef"><b>Definition:</b> Iterator.h:94</div></div>
+<div class="ttc" id="astruct____iterator_html_ad1753c5d0a4ffbef90efbeca3d8992d0"><div class="ttname"><a href="struct____iterator.html#ad1753c5d0a4ffbef90efbeca3d8992d0">__iterator::operator==</a></div><div class="ttdeci">friend bool operator==(__iterator &amp;a, __iterator &amp;b)</div><div class="ttdoc">Equality operator.</div><div class="ttdef"><b>Definition:</b> Iterator.h:83</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

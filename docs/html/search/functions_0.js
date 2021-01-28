@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node_8',['Node',['../structNode.html#ab8d204bde1218534f2172735ec6616f3',1,'Node::Node(const T &amp;_data)'],['../structNode.html#a0ac1d44cfe588be564acf25485029bd8',1,'Node::Node()'],['../structNode.html#a22feac10b51bc50ea652885213bfd561',1,'Node::Node(const T &amp;_data, Node&lt; T &gt; *_parent) noexcept'],['../structNode.html#a3441f76a3b48539a760ff0124ed75fd6',1,'Node::Node(const T &amp;&amp;_data, Node&lt; T &gt; *_parent) noexcept']]]
+  ['_5f_5fiterator_17',['__iterator',['../struct____iterator.html#a6c64b5ad7fd5bc740e1d7a47eb1bf6b9',1,'__iterator::__iterator(NodeT *p)'],['../struct____iterator.html#a20b1bce9e2a4909a1e27b3206bac636b',1,'__iterator::__iterator() noexcept=default']]]
 ];

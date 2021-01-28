@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['left_1',['left',['../structNode.html#aca1e170580c9f603a827eb22dc629b53',1,'Node']]]
+  ['current_1',['current',['../struct____iterator.html#a65354b3dbbcbdfebb3a306083465f8e1',1,'__iterator']]]
 ];
