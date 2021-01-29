@@ -3,7 +3,7 @@
 A C++ implementation of a Templated Binary Search Tree 
 
 ## Authors:
-	-
+	- [mailto](mailto:marco.feder@sissa.it)
 	-
 	-
 
@@ -15,7 +15,7 @@ A C++ implementation of a Templated Binary Search Tree
 - type `make` in order to build the executable
 
 ### From command line:
-- `g++ -o exe.x -Wall -Wextra -g -std=c++14 -I include main.cpp`
+- `$ g++ -o exe.x -Wall -Wextra -g -std=c++14 -I include main.cpp`
 
 ### To check memory leaks with [Valgrind](https://valgrind.org) and see the heap/leak summary:
 - `valgrind ./exe.x -s`
