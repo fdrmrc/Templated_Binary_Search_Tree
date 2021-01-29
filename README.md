@@ -4,7 +4,7 @@ A C++ implementation of a Templated Binary Search Tree
 
 ## Authors:
 
-- Marco Feder <mailto:marco.feder@sissa.it>
+- [Marco Feder](mailto:marco.feder@sissa.it)
 -
 -
 
