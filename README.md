@@ -3,9 +3,10 @@
 A C++ implementation of a Templated Binary Search Tree 
 
 ## Authors:
-	- [mailto](mailto:marco.feder@sissa.it)
-	-
-	-
+
+- Marco Feder \<[marco.feder@sissa.it](email:marco.feder@sissa.it)\>
+-
+-
 
 ## How to compile
 
