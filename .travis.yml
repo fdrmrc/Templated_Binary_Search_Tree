@@ -7,8 +7,8 @@ addons:
       - llvm-toolchain-precise-3.8
       - ubuntu-toolchain-r-test
     packages:
-      - g++-6
-      - clang-3.8
+      - g++-9
+      - clang-6.0
 
 env:
   - COMPILER=g++-9
