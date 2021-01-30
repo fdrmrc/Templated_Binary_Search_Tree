@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['left_3',['left',['../structNode.html#aca1e170580c9f603a827eb22dc629b53',1,'Node']]]
+  ['data_4',['data',['../structNode.html#ac450c71a8677a38d306361f9ced518d3',1,'Node']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7e_5f_5fiterator_14',['~__iterator',['../struct____iterator.html#add8a6bc8206f079b35cfa639f954bb33',1,'__iterator']]]
+  ['parent_14',['parent',['../structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b',1,'Node']]],
+  ['print_15',['print',['../structNode.html#a74a504dbcc2881a371f19b486639d9e5',1,'Node']]]
 ];

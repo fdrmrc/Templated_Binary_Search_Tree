@@ -1,0 +1,52 @@
+\hypertarget{classbst}{}\doxysection{bst$<$ key\+\_\+type, value\+\_\+type, cop $>$ Class Template Reference}
+\label{classbst}\index{bst$<$ key\_type, value\_type, cop $>$@{bst$<$ key\_type, value\_type, cop $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbst_a7c06ad1db4e853a61afc763b22f2e37e}\label{classbst_a7c06ad1db4e853a61afc763b22f2e37e}} 
+\mbox{\hyperlink{classbst_a7c06ad1db4e853a61afc763b22f2e37e}{bst}} ()
+\begin{DoxyCompactList}\small\item\em Default-\/generated constructor for the tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbst_a056816d2baa1cd4858df95d67077d0ce}\label{classbst_a056816d2baa1cd4858df95d67077d0ce}} 
+\mbox{\hyperlink{struct____iterator}{iterator}} \mbox{\hyperlink{classbst_a056816d2baa1cd4858df95d67077d0ce}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Iterator to the first \mbox{\hyperlink{structNode}{Node}}, ordered by key \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbst_aeaaa4fd7418b9249651ee750e6323bf8}\label{classbst_aeaaa4fd7418b9249651ee750e6323bf8}} 
+\mbox{\hyperlink{struct____iterator}{iterator}} \mbox{\hyperlink{classbst_aeaaa4fd7418b9249651ee750e6323bf8}{begin}} () const
+\begin{DoxyCompactList}\small\item\em const Iterator to the first \mbox{\hyperlink{structNode}{Node}}, ordered by key \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbst_a9781f027931426aafb0b929ea78aa4c4}\label{classbst_a9781f027931426aafb0b929ea78aa4c4}} 
+\mbox{\hyperlink{struct____iterator}{iterator}} \mbox{\hyperlink{classbst_a9781f027931426aafb0b929ea78aa4c4}{end}} ()
+\begin{DoxyCompactList}\small\item\em Iterator to the end of the tree \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classbst_a6bfc95457cb65419d0ed5830cb97b8bf}\label{classbst_a6bfc95457cb65419d0ed5830cb97b8bf}} 
+\mbox{\hyperlink{struct____iterator}{iterator}} \mbox{\hyperlink{classbst_a6bfc95457cb65419d0ed5830cb97b8bf}{end}} () const
+\begin{DoxyCompactList}\small\item\em const Iterator to the end of the tree \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{struct____iterator}{iterator}}, bool $>$ \mbox{\hyperlink{classbst_a01f0709adb0dc8d2fbc88b014d62ec8e}{insert}} (const pair\+\_\+type \&x)
+\begin{DoxyCompactList}\small\item\em Insert a new \mbox{\hyperlink{structNode}{Node}} in the tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbst_ae4b7d69364fca0855f74abdcad674ebf}\label{classbst_ae4b7d69364fca0855f74abdcad674ebf}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{classbst}{bst}} \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbst_a01f0709adb0dc8d2fbc88b014d62ec8e}\label{classbst_a01f0709adb0dc8d2fbc88b014d62ec8e}} 
+\index{bst$<$ key\_type, value\_type, cop $>$@{bst$<$ key\_type, value\_type, cop $>$}!insert@{insert}}
+\index{insert@{insert}!bst$<$ key\_type, value\_type, cop $>$@{bst$<$ key\_type, value\_type, cop $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename key\+\_\+type , typename value\+\_\+type , typename cop  = std\+::less$<$key\+\_\+type$>$$>$ \\
+std\+::pair$<$\mbox{\hyperlink{struct____iterator}{iterator}}, bool$>$ \mbox{\hyperlink{classbst}{bst}}$<$ key\+\_\+type, value\+\_\+type, cop $>$\+::insert (\begin{DoxyParamCaption}\item[{const pair\+\_\+type \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert a new \mbox{\hyperlink{structNode}{Node}} in the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Reference to a pair with a key and a value Returns a std\+::pair with an @\+Iterator and a bool. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/bst.\+h\end{DoxyCompactItemize}

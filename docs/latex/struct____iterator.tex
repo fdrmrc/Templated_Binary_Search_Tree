@@ -3,8 +3,8 @@
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct____iterator_a2abd2dab9558c71a2888be07439bfafd}\label{struct____iterator_a2abd2dab9558c71a2888be07439bfafd}} 
-using {\bfseries NodeT} = \mbox{\hyperlink{structNode_ab8d204bde1218534f2172735ec6616f3}{Node\+::\+Node}}$<$ T $>$
+\mbox{\Hypertarget{struct____iterator_ae6e27e62ec6a047a0ae0df4a81448940}\label{struct____iterator_ae6e27e62ec6a047a0ae0df4a81448940}} 
+using {\bfseries NodeT} = \mbox{\hyperlink{structNode}{Node}}$<$ T $>$
 \item 
 \mbox{\Hypertarget{struct____iterator_ad8e7583c5718470e658ba4ec3ed396c7}\label{struct____iterator_ad8e7583c5718470e658ba4ec3ed396c7}} 
 using {\bfseries value\+\_\+type} = T
@@ -24,7 +24,7 @@ using {\bfseries pointer} = value\+\_\+type $\ast$
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct____iterator_a6c64b5ad7fd5bc740e1d7a47eb1bf6b9}{\+\_\+\+\_\+iterator}} (NodeT $\ast$p)
+\mbox{\hyperlink{struct____iterator_a9accd09172c525a6c90184ef2b9171ce}{\+\_\+\+\_\+iterator}} (\mbox{\hyperlink{structNode}{NodeT}} $\ast$pn)
 \begin{DoxyCompactList}\small\item\em Custom constructor for \mbox{\hyperlink{struct____iterator}{\+\_\+\+\_\+iterator}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{struct____iterator_a20b1bce9e2a4909a1e27b3206bac636b}\label{struct____iterator_a20b1bce9e2a4909a1e27b3206bac636b}} 
 \mbox{\hyperlink{struct____iterator_a20b1bce9e2a4909a1e27b3206bac636b}{\+\_\+\+\_\+iterator}} () noexcept=default
@@ -36,14 +36,14 @@ reference \mbox{\hyperlink{struct____iterator_ac7fa0ea2ca69bbb5a73719d71d8b0842}
 \begin{DoxyCompactList}\small\item\em Dereference operator. \end{DoxyCompactList}\item 
 pointer \mbox{\hyperlink{struct____iterator_a6434007320a276245f8e1db4e2e09071}{operator-\/$>$}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Arrow operator. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{struct____iterator_a63b98d28b538af0978daba3c196ea25e}\label{struct____iterator_a63b98d28b538af0978daba3c196ea25e}} 
-\mbox{\hyperlink{struct____iterator}{\+\_\+\+\_\+iterator}} \& \mbox{\hyperlink{struct____iterator_a63b98d28b538af0978daba3c196ea25e}{operator++}} ()
-\begin{DoxyCompactList}\small\item\em Post-\/ increment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{struct____iterator_a279da79e7835a2b7ff794e47ffdc2217}\label{struct____iterator_a279da79e7835a2b7ff794e47ffdc2217}} 
+\mbox{\hyperlink{struct____iterator}{\+\_\+\+\_\+iterator}} \& \mbox{\hyperlink{struct____iterator_a279da79e7835a2b7ff794e47ffdc2217}{operator++}} () noexcept
+\begin{DoxyCompactList}\small\item\em Post-\/ increment operator. It\textquotesingle{}s marked noexecpt as we\textquotesingle{}re not acquiring any resource and nothing can go wrong. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{struct____iterator_a65354b3dbbcbdfebb3a306083465f8e1}\label{struct____iterator_a65354b3dbbcbdfebb3a306083465f8e1}} 
-NodeT $\ast$ \mbox{\hyperlink{struct____iterator_a65354b3dbbcbdfebb3a306083465f8e1}{current}}
+\mbox{\hyperlink{structNode}{NodeT}} $\ast$ \mbox{\hyperlink{struct____iterator_a65354b3dbbcbdfebb3a306083465f8e1}{current}}
 \begin{DoxyCompactList}\small\item\em Raw pointer to the current \mbox{\hyperlink{structNode}{Node}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -55,12 +55,12 @@ bool \mbox{\hyperlink{struct____iterator_abeb0167e629f1f552a298c488d9b11f5}{oper
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{struct____iterator_a6c64b5ad7fd5bc740e1d7a47eb1bf6b9}\label{struct____iterator_a6c64b5ad7fd5bc740e1d7a47eb1bf6b9}} 
+\mbox{\Hypertarget{struct____iterator_a9accd09172c525a6c90184ef2b9171ce}\label{struct____iterator_a9accd09172c525a6c90184ef2b9171ce}} 
 \index{\_\_iterator$<$ T $>$@{\_\_iterator$<$ T $>$}!\_\_iterator@{\_\_iterator}}
 \index{\_\_iterator@{\_\_iterator}!\_\_iterator$<$ T $>$@{\_\_iterator$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{\_\_iterator()}{\_\_iterator()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{struct____iterator}{\+\_\+\+\_\+iterator}}$<$ T $>$\+::\mbox{\hyperlink{struct____iterator}{\+\_\+\+\_\+iterator}} (\begin{DoxyParamCaption}\item[{NodeT $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+\mbox{\hyperlink{struct____iterator}{\+\_\+\+\_\+iterator}}$<$ T $>$\+::\mbox{\hyperlink{struct____iterator}{\+\_\+\+\_\+iterator}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{NodeT}} $\ast$}]{pn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 
 
@@ -68,7 +68,7 @@ Custom constructor for \mbox{\hyperlink{struct____iterator}{\+\_\+\+\_\+iterator
 
 
 \begin{DoxyParams}{Parameters}
-{\em p} & Raw pointer to a \mbox{\hyperlink{structNode}{Node}}\\
+{\em pn} & Raw pointer to a \mbox{\hyperlink{structNode}{Node}}\\
 \hline
 \end{DoxyParams}
 Construct a new \mbox{\hyperlink{struct____iterator}{\+\_\+\+\_\+iterator}} that refers to \mbox{\hyperlink{structNode}{Node}} p 
@@ -117,7 +117,7 @@ Inequality operator.
 {\em b} & Reference to the second iterator\\
 \hline
 \end{DoxyParams}
-It\textquotesingle{}s the logical negation of the {\ttfamily ==} operator \mbox{\Hypertarget{struct____iterator_ad1753c5d0a4ffbef90efbeca3d8992d0}\label{struct____iterator_ad1753c5d0a4ffbef90efbeca3d8992d0}} 
+Logical negation of {\ttfamily ==} operator \mbox{\Hypertarget{struct____iterator_ad1753c5d0a4ffbef90efbeca3d8992d0}\label{struct____iterator_ad1753c5d0a4ffbef90efbeca3d8992d0}} 
 \index{\_\_iterator$<$ T $>$@{\_\_iterator$<$ T $>$}!operator==@{operator==}}
 \index{operator==@{operator==}!\_\_iterator$<$ T $>$@{\_\_iterator$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{operator==}{operator==}}
@@ -139,4 +139,4 @@ Equality operator.
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Iterator.\+h\end{DoxyCompactItemize}
+include/Iterator.\+h\end{DoxyCompactItemize}

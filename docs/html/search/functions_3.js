@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['print_22',['print',['../structNode.html#a74a504dbcc2881a371f19b486639d9e5',1,'Node']]]
+  ['insert_26',['insert',['../classbst.html#a01f0709adb0dc8d2fbc88b014d62ec8e',1,'bst']]]
 ];
