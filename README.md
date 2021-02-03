@@ -31,5 +31,5 @@ You can find a [Doxygen documentation](https://www.doxygen.nl/index.html) at: ht
 
 ##Benchmarking
 
-The natural competitor is [std::map](https://en.cppreference.com/w/cpp/container/map). The current implementation of `find()` for a balanced tree is faster than the one of ``std::map`. [still in progress]
+The natural competitor is [std::map](https://en.cppreference.com/w/cpp/container/map). The current implementation of `find()` for a balanced tree is faster than the one of `std::map`. [still in progress]
  
