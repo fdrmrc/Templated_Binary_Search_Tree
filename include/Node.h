@@ -30,6 +30,17 @@ struct Node{
     Node(): data{},left{nullptr}, right{nullptr},parent{nullptr}{}
     
     /**
+     * @brief Default destructor
+     */
+    
+//    ~Node(){
+////        std::cout << "def destr"<<std::endl;
+//        if(parent){
+//            delete[] parent;
+//        }
+//    };
+    
+    /**
      @brief Copy constructor
      */
     
@@ -38,7 +49,16 @@ struct Node{
         left{nullptr},
         right{nullptr},
         parent{_parent} {}
-    
+
+    Node(const std::unique_ptr<Node<T>>& ptn, Node<T>* _parent): data{ptn->data}{
+        parent = _parent;
+        if(ptn->right){
+            right = std::make_unique<Node<T>>(ptn->right, this);
+        }
+        if(ptn->left){
+            left = std::make_unique<Node<T>>(ptn->left, this);
+        }
+    }
     
     /**
      @brief Move constructor
@@ -56,14 +76,14 @@ struct Node{
      */
     
     void print(){
-        std::cout <<"Node has value: " << data.second <<"\n";
-        if (left) {
-            std::cout << "Left child has value: " <<left->data.second <<"\n";
-        }if(right){
-            std::cout << "Right child has value: " << right->data.second << "\n";
-        }else if(parent){
-            std::cout << "Parent is Node with value: " <<parent->data.second <<"\n";
-        }
+//        std::cout <<"Node has value: " << data.second <<"\n";
+//        if (left) {
+//            std::cout << "Left child has value: " <<left->data.second <<"\n";
+//        }if(right){
+//            std::cout << "Right child has value: " << right->data.second << "\n";
+//        }if(parent){
+//            std::cout << "Parent is Node with value: " <<parent->data.second <<"\n";
+//        }
         
     }
     

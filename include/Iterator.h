@@ -5,14 +5,14 @@
 #include <iterator>
 #include <utility>
 
-template <typename T >
-struct __iterator {
-    using NodeT = Node<T>; //for the sake of readability
+template <typename nodeT, typename T >
+struct _iterator {
+//    using NodeT = Node<T>; //for the sake of readability
     
     /**
      * @brief Raw pointer to the current @ref Node
      */
-    NodeT* current;
+    nodeT* current;
     
     //public:
     using value_type = T;
@@ -22,30 +22,30 @@ struct __iterator {
     using pointer = value_type *;
     
     /**
-     * @brief Custom constructor for @ref __iterator
+     * @brief Custom constructor for @ref iterator
      * @param pn Raw pointer to a @ref Node
      *
-     * Construct a new @ref __iterator that refers to @ref Node pn
+     * Construct a new @ref _iterator that refers to @ref Node pn
      */
-    explicit __iterator(NodeT* pn) : current{pn} {}
+    explicit _iterator(nodeT* pn) noexcept: current{pn} {}
     
     /**
      * @brief Default-generated constructor
      *
      */
-    __iterator() noexcept=default;
+    _iterator() noexcept=default;
     
     /**
      * @brief Default-generated destructor
      *
      */
-    ~__iterator()=default;
+    ~_iterator()=default;
     
     
     /**
      * @brief Dereference operator
      *
-     * Dereferences an @ref __iterator by returning the data stored by the @ref Node it refers to
+     * Dereferences an @ref _iterator by returning the data stored by the @ref Node it refers to
      */
     reference operator*() const noexcept{
         return current->data; //I will always feed a std::pair
@@ -55,7 +55,7 @@ struct __iterator {
     /**
      * @brief Arrow operator
      *
-     * Access operator: it return a pointer to the data stored in the @ref Node the @ref __iterator refers to
+     * Access operator: it return a pointer to the data stored in the @ref Node the @ref _iterator refers to
      */
     pointer operator->() const noexcept{
         return &**this;
@@ -66,10 +66,10 @@ struct __iterator {
      * @brief Post- increment operator.
      * It's marked noexecpt as we're not acquiring any resource and nothing can go wrong.
      */
-    __iterator& operator++() noexcept {
+    _iterator& operator++() noexcept {
         
         
-        /* Shorter and less tricky */
+        /* Less tricky version */
         if (!current) {
             return *this;
         } else if(!current->right){ //no right child
@@ -99,7 +99,7 @@ struct __iterator {
          * Two iterators are equal iff they point to the same @ref Node
          *
          */
-        friend bool operator==(__iterator &a, __iterator &b) {
+        friend bool operator==(_iterator &a, _iterator &b) {
             return a.current == b.current;
         }
         
@@ -108,10 +108,22 @@ struct __iterator {
          *@param a Reference to the first iterator
          *@param b Reference to the second iterator
          *
-         * Logical negation of `==` operator
+         * To avoid code duplication, use the logical negation of `==` operator.
          */
-        friend bool operator!=(__iterator &a, __iterator &b) { return !(a == b); }
-        
+        friend bool operator!=(_iterator &a, _iterator &b) { return !(a == b); }
+      
+    
+    
+    
+    void print_node_with_iterator(){
+        current->print();
+    }
     };
     
 #endif /* Iterator_h */
+
+
+
+
+
+
