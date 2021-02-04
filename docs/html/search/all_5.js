@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['insert_6',['insert',['../classbst.html#a01f0709adb0dc8d2fbc88b014d62ec8e',1,'bst']]]
+  ['find_11',['find',['../classbst.html#abbd90dc50dffdba1939d11f9d2118816',1,'bst::find(const key_type &amp;x)'],['../classbst.html#a727e3881e43d465d665d4457f2044b77',1,'bst::find(const key_type &amp;x) const']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5f_5fiterator_0',['__iterator',['../struct____iterator.html',1,'__iterator&lt; T &gt;'],['../struct____iterator.html#a9accd09172c525a6c90184ef2b9171ce',1,'__iterator::__iterator(NodeT *pn)'],['../struct____iterator.html#a20b1bce9e2a4909a1e27b3206bac636b',1,'__iterator::__iterator() noexcept=default']]]
+  ['_5fiterator_0',['_iterator',['../struct__iterator.html',1,'_iterator&lt; nodeT, T &gt;'],['../struct__iterator.html#a164c895fbeb0d505bc37d83366f44d55',1,'_iterator::_iterator(nodeT *pn) noexcept'],['../struct__iterator.html#ad58152890d31da0ef2248340d04d882c',1,'_iterator::_iterator() noexcept=default']]]
 ];

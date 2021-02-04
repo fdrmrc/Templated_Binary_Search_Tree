@@ -74,37 +74,92 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c06ad1db4e853a61afc763b22f2e37e"><td class="memItemLeft" align="right" valign="top"><a id="a7c06ad1db4e853a61afc763b22f2e37e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a7c06ad1db4e853a61afc763b22f2e37e">bst</a> ()</td></tr>
-<tr class="memdesc:a7c06ad1db4e853a61afc763b22f2e37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-generated constructor for the tree. <br /></td></tr>
+<tr class="memdesc:a7c06ad1db4e853a61afc763b22f2e37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the tree. <br /></td></tr>
 <tr class="separator:a7c06ad1db4e853a61afc763b22f2e37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a056816d2baa1cd4858df95d67077d0ce"><td class="memItemLeft" align="right" valign="top"><a id="a056816d2baa1cd4858df95d67077d0ce"></a>
-<a class="el" href="struct____iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a056816d2baa1cd4858df95d67077d0ce">begin</a> ()</td></tr>
-<tr class="memdesc:a056816d2baa1cd4858df95d67077d0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator to the first <a class="el" href="structNode.html">Node</a>, ordered by key <br /></td></tr>
-<tr class="separator:a056816d2baa1cd4858df95d67077d0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeaaa4fd7418b9249651ee750e6323bf8"><td class="memItemLeft" align="right" valign="top"><a id="aeaaa4fd7418b9249651ee750e6323bf8"></a>
-<a class="el" href="struct____iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#aeaaa4fd7418b9249651ee750e6323bf8">begin</a> () const</td></tr>
-<tr class="memdesc:aeaaa4fd7418b9249651ee750e6323bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">const Iterator to the first <a class="el" href="structNode.html">Node</a>, ordered by key <br /></td></tr>
-<tr class="separator:aeaaa4fd7418b9249651ee750e6323bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9781f027931426aafb0b929ea78aa4c4"><td class="memItemLeft" align="right" valign="top"><a id="a9781f027931426aafb0b929ea78aa4c4"></a>
-<a class="el" href="struct____iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a9781f027931426aafb0b929ea78aa4c4">end</a> ()</td></tr>
-<tr class="memdesc:a9781f027931426aafb0b929ea78aa4c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator to the end of the tree <br /></td></tr>
-<tr class="separator:a9781f027931426aafb0b929ea78aa4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bfc95457cb65419d0ed5830cb97b8bf"><td class="memItemLeft" align="right" valign="top"><a id="a6bfc95457cb65419d0ed5830cb97b8bf"></a>
-<a class="el" href="struct____iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a6bfc95457cb65419d0ed5830cb97b8bf">end</a> () const</td></tr>
-<tr class="memdesc:a6bfc95457cb65419d0ed5830cb97b8bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">const Iterator to the end of the tree <br /></td></tr>
-<tr class="separator:a6bfc95457cb65419d0ed5830cb97b8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01f0709adb0dc8d2fbc88b014d62ec8e"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="struct____iterator.html">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a01f0709adb0dc8d2fbc88b014d62ec8e">insert</a> (const pair_type &amp;x)</td></tr>
-<tr class="memdesc:a01f0709adb0dc8d2fbc88b014d62ec8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new <a class="el" href="structNode.html">Node</a> in the tree.  <a href="classbst.html#a01f0709adb0dc8d2fbc88b014d62ec8e">More...</a><br /></td></tr>
+<tr class="memitem:a53390336b195723bc2062079c864f303"><td class="memItemLeft" align="right" valign="top"><a id="a53390336b195723bc2062079c864f303"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a53390336b195723bc2062079c864f303">bst</a> (<a class="el" href="classbst.html">bst</a> &amp;&amp;t) noexcept</td></tr>
+<tr class="memdesc:a53390336b195723bc2062079c864f303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor. Avoiding the default-generated one for didactit purposes. <br /></td></tr>
+<tr class="separator:a53390336b195723bc2062079c864f303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4197409353f6f8f3cd0bd9eb59642b1"><td class="memItemLeft" align="right" valign="top"><a id="af4197409353f6f8f3cd0bd9eb59642b1"></a>
+<a class="el" href="classbst.html">bst</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#af4197409353f6f8f3cd0bd9eb59642b1">operator=</a> (<a class="el" href="classbst.html">bst</a> &amp;&amp;t) noexcept</td></tr>
+<tr class="memdesc:af4197409353f6f8f3cd0bd9eb59642b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment. Avoiding the default-generated one for didactit purposes. <br /></td></tr>
+<tr class="separator:af4197409353f6f8f3cd0bd9eb59642b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9bf5b2078bac207ee7452b533f4b967"><td class="memItemLeft" align="right" valign="top"><a id="ac9bf5b2078bac207ee7452b533f4b967"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#ac9bf5b2078bac207ee7452b533f4b967">bst</a> (const <a class="el" href="classbst.html">bst</a> &amp;tree)</td></tr>
+<tr class="memdesc:ac9bf5b2078bac207ee7452b533f4b967"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. <br /></td></tr>
+<tr class="separator:ac9bf5b2078bac207ee7452b533f4b967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a06378e721667dce15d94bcbd278de3"><td class="memItemLeft" align="right" valign="top"><a id="a6a06378e721667dce15d94bcbd278de3"></a>
+<a class="el" href="classbst.html">bst</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a6a06378e721667dce15d94bcbd278de3">operator=</a> (const <a class="el" href="classbst.html">bst</a> &amp;tree)</td></tr>
+<tr class="memdesc:a6a06378e721667dce15d94bcbd278de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment. <br /></td></tr>
+<tr class="separator:a6a06378e721667dce15d94bcbd278de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12aa9ef22c9b483947a405158f99bb79"><td class="memItemLeft" align="right" valign="top"><a id="a12aa9ef22c9b483947a405158f99bb79"></a>
+<a class="el" href="struct__iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a12aa9ef22c9b483947a405158f99bb79">begin</a> () noexcept</td></tr>
+<tr class="memdesc:a12aa9ef22c9b483947a405158f99bb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an Iterator to the first <a class="el" href="structNode.html">Node</a> of the tree, which is the leftmost. <br /></td></tr>
+<tr class="separator:a12aa9ef22c9b483947a405158f99bb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3305748fa2f03483573a064e373a002"><td class="memItemLeft" align="right" valign="top"><a id="ae3305748fa2f03483573a064e373a002"></a>
+<a class="el" href="struct__iterator.html">constant_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#ae3305748fa2f03483573a064e373a002">begin</a> () const noexcept</td></tr>
+<tr class="memdesc:ae3305748fa2f03483573a064e373a002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant_iterator to the first <a class="el" href="structNode.html">Node</a> of the tree. It's automatically applied when the tree is const-qualified and I call <a class="el" href="classbst.html#a12aa9ef22c9b483947a405158f99bb79">begin()</a> <br /></td></tr>
+<tr class="separator:ae3305748fa2f03483573a064e373a002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9588ae41ff84ce05aa96087d4f16b77"><td class="memItemLeft" align="right" valign="top"><a id="ab9588ae41ff84ce05aa96087d4f16b77"></a>
+<a class="el" href="struct__iterator.html">constant_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#ab9588ae41ff84ce05aa96087d4f16b77">cbegin</a> () const noexcept</td></tr>
+<tr class="memdesc:ab9588ae41ff84ce05aa96087d4f16b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant_iterator to the first <a class="el" href="structNode.html">Node</a> of the tree. It must be used unconditionally when the tree is const-qualified. <br /></td></tr>
+<tr class="separator:ab9588ae41ff84ce05aa96087d4f16b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bb857e0fae4a4a2d479538a7d7c5212"><td class="memItemLeft" align="right" valign="top"><a id="a7bb857e0fae4a4a2d479538a7d7c5212"></a>
+<a class="el" href="struct__iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a7bb857e0fae4a4a2d479538a7d7c5212">end</a> () noexcept</td></tr>
+<tr class="memdesc:a7bb857e0fae4a4a2d479538a7d7c5212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant Iterator to one-past-the-last <a class="el" href="structNode.html">Node</a> of the tree. <br /></td></tr>
+<tr class="separator:a7bb857e0fae4a4a2d479538a7d7c5212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb77174f38dc6a423b700ccf63aa8b0"><td class="memItemLeft" align="right" valign="top"><a id="a3fb77174f38dc6a423b700ccf63aa8b0"></a>
+<a class="el" href="struct__iterator.html">constant_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a3fb77174f38dc6a423b700ccf63aa8b0">end</a> () const noexcept</td></tr>
+<tr class="memdesc:a3fb77174f38dc6a423b700ccf63aa8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant_iterator to one-past-the-last <a class="el" href="structNode.html">Node</a> of the tree. It's automatically applied when the tree is const-qualified and I call <a class="el" href="classbst.html#a7bb857e0fae4a4a2d479538a7d7c5212">end</a>. <br /></td></tr>
+<tr class="separator:a3fb77174f38dc6a423b700ccf63aa8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b796e1b4f044451bd872fc29fe0148c"><td class="memItemLeft" align="right" valign="top"><a id="a0b796e1b4f044451bd872fc29fe0148c"></a>
+<a class="el" href="struct__iterator.html">constant_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a0b796e1b4f044451bd872fc29fe0148c">cend</a> () const noexcept</td></tr>
+<tr class="memdesc:a0b796e1b4f044451bd872fc29fe0148c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a constant Iterator to one-past-the-last <a class="el" href="structNode.html">Node</a> of the tree. It must be used unconditionally when the tree is const-qualified. <br /></td></tr>
+<tr class="separator:a0b796e1b4f044451bd872fc29fe0148c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f0709adb0dc8d2fbc88b014d62ec8e"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="struct__iterator.html">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a01f0709adb0dc8d2fbc88b014d62ec8e">insert</a> (const pair_type &amp;x)</td></tr>
+<tr class="memdesc:a01f0709adb0dc8d2fbc88b014d62ec8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new <a class="el" href="structNode.html">Node</a> in the tree with pair x.  <a href="classbst.html#a01f0709adb0dc8d2fbc88b014d62ec8e">More...</a><br /></td></tr>
 <tr class="separator:a01f0709adb0dc8d2fbc88b014d62ec8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f119675924125b76cc63d1b508d78cd"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="struct__iterator.html">iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a2f119675924125b76cc63d1b508d78cd">insert</a> (pair_type &amp;&amp;x)</td></tr>
+<tr class="memdesc:a2f119675924125b76cc63d1b508d78cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new <a class="el" href="structNode.html">Node</a> in the tree with pair x.  <a href="classbst.html#a2f119675924125b76cc63d1b508d78cd">More...</a><br /></td></tr>
+<tr class="separator:a2f119675924125b76cc63d1b508d78cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a25476407b5206272d829681ad99aff"><td class="memTemplParams" colspan="2">template&lt;class... Types&gt; </td></tr>
+<tr class="memitem:a7a25476407b5206272d829681ad99aff"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="struct__iterator.html">iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classbst.html#a7a25476407b5206272d829681ad99aff">emplace</a> (Types &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a7a25476407b5206272d829681ad99aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new element into the container constructed in-place with the given args if there is no element with the key in the container.  <a href="classbst.html#a7a25476407b5206272d829681ad99aff">More...</a><br /></td></tr>
+<tr class="separator:a7a25476407b5206272d829681ad99aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd90dc50dffdba1939d11f9d2118816"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#abbd90dc50dffdba1939d11f9d2118816">find</a> (const key_type &amp;x)</td></tr>
+<tr class="memdesc:abbd90dc50dffdba1939d11f9d2118816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a given key. If it's present, returns a <a class="el" href="struct__iterator.html">_iterator</a> to the node with that key, otherwise <a class="el" href="classbst.html#a7bb857e0fae4a4a2d479538a7d7c5212">end()</a>. It uses the helper function find_helper.  <a href="classbst.html#abbd90dc50dffdba1939d11f9d2118816">More...</a><br /></td></tr>
+<tr class="separator:abbd90dc50dffdba1939d11f9d2118816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a727e3881e43d465d665d4457f2044b77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__iterator.html">constant_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a727e3881e43d465d665d4457f2044b77">find</a> (const key_type &amp;x) const</td></tr>
+<tr class="memdesc:a727e3881e43d465d665d4457f2044b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a given key in a constant tree. If it's present, returns a iterator to the node with that key, otherwise <a class="el" href="classbst.html#a7bb857e0fae4a4a2d479538a7d7c5212">end()</a>. It uses the helper function find_helper to avoid code duplication.  <a href="classbst.html#a727e3881e43d465d665d4457f2044b77">More...</a><br /></td></tr>
+<tr class="separator:a727e3881e43d465d665d4457f2044b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8260f402dada740204d7f6877f8826d7"><td class="memItemLeft" align="right" valign="top">value_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a8260f402dada740204d7f6877f8826d7">operator[]</a> (const key_type &amp;x)</td></tr>
+<tr class="memdesc:a8260f402dada740204d7f6877f8826d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist.  <a href="classbst.html#a8260f402dada740204d7f6877f8826d7">More...</a><br /></td></tr>
+<tr class="separator:a8260f402dada740204d7f6877f8826d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52b428a2acd174d8eae33940a619097a"><td class="memItemLeft" align="right" valign="top">value_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a52b428a2acd174d8eae33940a619097a">operator[]</a> (key_type &amp;&amp;x)</td></tr>
+<tr class="memdesc:a52b428a2acd174d8eae33940a619097a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. It uses move semantic.  <a href="classbst.html#a52b428a2acd174d8eae33940a619097a">More...</a><br /></td></tr>
+<tr class="separator:a52b428a2acd174d8eae33940a619097a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abff4c252418525e1f0e6f03884b45d27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#abff4c252418525e1f0e6f03884b45d27">balance</a> ()</td></tr>
+<tr class="memdesc:abff4c252418525e1f0e6f03884b45d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Balance the tree by using the recursive (helper) function balance_helper()  <a href="classbst.html#abff4c252418525e1f0e6f03884b45d27">More...</a><br /></td></tr>
+<tr class="separator:abff4c252418525e1f0e6f03884b45d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af990902f780cc82674b5ac003f70960b"><td class="memItemLeft" align="right" valign="top"><a id="af990902f780cc82674b5ac003f70960b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#af990902f780cc82674b5ac003f70960b">unordered_print</a> ()</td></tr>
+<tr class="memdesc:af990902f780cc82674b5ac003f70960b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that prints for each node: parent, left/right child and value. Used for visualize whether or not the tree is balanced. <br /></td></tr>
+<tr class="separator:af990902f780cc82674b5ac003f70960b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee68483a3b46a5bcf54fc4032274b4ef"><td class="memItemLeft" align="right" valign="top"><a id="aee68483a3b46a5bcf54fc4032274b4ef"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#aee68483a3b46a5bcf54fc4032274b4ef">clear</a> () noexcept</td></tr>
+<tr class="memdesc:aee68483a3b46a5bcf54fc4032274b4ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the tree by applying the method reset() to the head node. <br /></td></tr>
+<tr class="separator:aee68483a3b46a5bcf54fc4032274b4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:ae4b7d69364fca0855f74abdcad674ebf"><td class="memItemLeft" align="right" valign="top"><a id="ae4b7d69364fca0855f74abdcad674ebf"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="classbst.html">bst</a> &amp;x)</td></tr>
+std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#ae4b7d69364fca0855f74abdcad674ebf">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classbst.html">bst</a> &amp;x)</td></tr>
+<tr class="memdesc:ae4b7d69364fca0855f74abdcad674ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the tree, traversed in order using the comparison operator. <br /></td></tr>
 <tr class="separator:ae4b7d69364fca0855f74abdcad674ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a01f0709adb0dc8d2fbc88b014d62ec8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01f0709adb0dc8d2fbc88b014d62ec8e">&#9670;&nbsp;</a></span>insert()</h2>
+<a id="abff4c252418525e1f0e6f03884b45d27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abff4c252418525e1f0e6f03884b45d27">&#9670;&nbsp;</a></span>balance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -115,7 +170,147 @@ template&lt;typename key_type , typename value_type , typename cop  = std::less&
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::pair&lt;<a class="el" href="struct____iterator.html">iterator</a>, bool&gt; <a class="el" href="classbst.html">bst</a>&lt; key_type, value_type, cop &gt;::insert </td>
+          <td class="memname">void <a class="el" href="classbst.html">bst</a>&lt; key_type, value_type, cop &gt;::balance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Balance the tree by using the recursive (helper) function balance_helper() </p>
+<dl class="section see"><dt>See also</dt><dd>balance_helper() </dd></dl>
+
+</div>
+</div>
+<a id="a7a25476407b5206272d829681ad99aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a25476407b5206272d829681ad99aff">&#9670;&nbsp;</a></span>emplace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename cop  = std::less&lt;key_type&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class... Types&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="struct__iterator.html">iterator</a>,bool&gt; <a class="el" href="classbst.html">bst</a>&lt; key_type, value_type, cop &gt;::emplace </td>
+          <td>(</td>
+          <td class="paramtype">Types &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts a new element into the container constructed in-place with the given args if there is no element with the key in the container. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>arguments to be <em>unpacked</em> It's like if we apply ‘std::forward&lt;Types&gt;(args)‘ to each element of the pair. The r-value version of <a class="el" href="classbst.html#a01f0709adb0dc8d2fbc88b014d62ec8e">insert()</a> is called </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abbd90dc50dffdba1939d11f9d2118816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbd90dc50dffdba1939d11f9d2118816">&#9670;&nbsp;</a></span>find() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename cop  = std::less&lt;key_type&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct__iterator.html">iterator</a> <a class="el" href="classbst.html">bst</a>&lt; key_type, value_type, cop &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">const key_type &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find a given key. If it's present, returns a <a class="el" href="struct__iterator.html">_iterator</a> to the node with that key, otherwise <a class="el" href="classbst.html#a7bb857e0fae4a4a2d479538a7d7c5212">end()</a>. It uses the helper function find_helper. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The key to be searched in the tree. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a727e3881e43d465d665d4457f2044b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a727e3881e43d465d665d4457f2044b77">&#9670;&nbsp;</a></span>find() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename cop  = std::less&lt;key_type&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct__iterator.html">constant_iterator</a> <a class="el" href="classbst.html">bst</a>&lt; key_type, value_type, cop &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">const key_type &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find a given key in a constant tree. If it's present, returns a iterator to the node with that key, otherwise <a class="el" href="classbst.html#a7bb857e0fae4a4a2d479538a7d7c5212">end()</a>. It uses the helper function find_helper to avoid code duplication. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The key to be searched in the tree. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a01f0709adb0dc8d2fbc88b014d62ec8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01f0709adb0dc8d2fbc88b014d62ec8e">&#9670;&nbsp;</a></span>insert() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename cop  = std::less&lt;key_type&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="struct__iterator.html">iterator</a>, bool&gt; <a class="el" href="classbst.html">bst</a>&lt; key_type, value_type, cop &gt;::insert </td>
           <td>(</td>
           <td class="paramtype">const pair_type &amp;&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -129,13 +324,123 @@ template&lt;typename key_type , typename value_type , typename cop  = std::less&
 </table>
 </div><div class="memdoc">
 
-<p>Insert a new <a class="el" href="structNode.html">Node</a> in the tree. </p>
+<p>Insert a new <a class="el" href="structNode.html">Node</a> in the tree with pair x. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>Reference to a pair with a key and a value Returns a std::pair with an @Iterator and a bool. </td></tr>
+    <tr><td class="paramname">x</td><td>Reference to a pair with a key and a value Returns a std::pair with an <a class="el" href="struct__iterator.html">_iterator</a> and a bool which is true if the node has been inserted, false otherwise. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a2f119675924125b76cc63d1b508d78cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f119675924125b76cc63d1b508d78cd">&#9670;&nbsp;</a></span>insert() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename cop  = std::less&lt;key_type&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="struct__iterator.html">iterator</a>, bool&gt; <a class="el" href="classbst.html">bst</a>&lt; key_type, value_type, cop &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">pair_type &amp;&amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Insert a new <a class="el" href="structNode.html">Node</a> in the tree with pair x. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>r-value reference to a pair with a node and a value Returns a std::pair with an <a class="el" href="struct__iterator.html">_iterator</a> and a bool which is true if the node has been inserted, false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8260f402dada740204d7f6877f8826d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8260f402dada740204d7f6877f8826d7">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename cop  = std::less&lt;key_type&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">value_type&amp; <a class="el" href="classbst.html">bst</a>&lt; key_type, value_type, cop &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const key_type &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>constant key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classbst.html#a01f0709adb0dc8d2fbc88b014d62ec8e" title="Insert a new Node in the tree with pair x.">insert()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a52b428a2acd174d8eae33940a619097a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52b428a2acd174d8eae33940a619097a">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename cop  = std::less&lt;key_type&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">value_type&amp; <a class="el" href="classbst.html">bst</a>&lt; key_type, value_type, cop &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">key_type &amp;&amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. It uses move semantic. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>r-value key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classbst.html#a01f0709adb0dc8d2fbc88b014d62ec8e" title="Insert a new Node in the tree with pair x.">insert()</a> </dd></dl>
 
 </div>
 </div>

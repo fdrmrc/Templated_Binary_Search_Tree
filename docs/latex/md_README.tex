@@ -1,4 +1,4 @@
-A C++ implementation of a Templated Binary Search Tree
+A C++ implementation of a Templated Binary Search Tree using smart pointers
 
 \doxysection*{Authors\+:}
 
@@ -9,13 +9,16 @@ A C++ implementation of a Templated Binary Search Tree
 \item \doxysection*{How to compile}
 \end{DoxyItemize}
 
+First, clone the repo to your local machine.
+
 \doxysubsection*{Using {\ttfamily Makefile}\+:}
 
 
 \begin{DoxyItemize}
 \item open a terminal
 \item move to the project folder
-\item type {\ttfamily make} in order to build the executable
+\item type {\ttfamily make} to build the executable {\ttfamily exe}
+\item {\ttfamily ./exe.x}
 \end{DoxyItemize}
 
 \doxysubsection*{From command line\+:}
@@ -23,15 +26,22 @@ A C++ implementation of a Templated Binary Search Tree
 
 \begin{DoxyItemize}
 \item {\ttfamily \$ g++ -\/o exe.\+x -\/Wall -\/Wextra -\/g -\/std=c++14 -\/I include main.\+cpp}
+\item then do {\ttfamily ./exe.x}
 \end{DoxyItemize}
 
 \doxysubsection*{To check memory leaks with \href{https://valgrind.org}{\texttt{ Valgrind}} and see the heap/leak summary\+:}
 
 
 \begin{DoxyItemize}
-\item {\ttfamily valgrind ./exe.x -\/s}
+\item {\ttfamily valgrind ./exe.x -\/-\/leaks-\/check=full}
 \end{DoxyItemize}
+
+The current version doesn\textquotesingle{}t leak memory, as can be verified.
 
 \doxysection*{Documentation}
 
-You can find a \href{https://www.doxygen.nl/index.html}{\texttt{ Doxygen documentation}} at the following link\+: \href{https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html}{\texttt{ https\+://fdrmrc.\+github.\+io/\+Templated\+\_\+\+Binary\+\_\+\+Search\+\_\+\+Tree/html/index.\+html}} 
+You can find a \href{https://www.doxygen.nl/index.html}{\texttt{ Doxygen documentation}} at\+: \href{https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html}{\texttt{ https\+://fdrmrc.\+github.\+io/\+Templated\+\_\+\+Binary\+\_\+\+Search\+\_\+\+Tree/html/index.\+html}}
+
+\doxysubsection*{Benchmarking}
+
+The natural competitor is \href{https://en.cppreference.com/w/cpp/container/map}{\texttt{ std\+::map}}. The current implementation of {\ttfamily find()} for a balanced tree is faster than the one of {\ttfamily std\+::map}. \mbox{[}still in progress\mbox{]} 

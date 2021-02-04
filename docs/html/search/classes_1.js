@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bst_20',['bst',['../classbst.html',1,'']]]
+  ['bst_30',['bst',['../classbst.html',1,'']]]
 ];

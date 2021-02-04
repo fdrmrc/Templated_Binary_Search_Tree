@@ -80,10 +80,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNode.html#a0ac1d44cfe588be564acf25485029bd8">Node</a> ()</td></tr>
 <tr class="memdesc:a0ac1d44cfe588be564acf25485029bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
 <tr class="separator:a0ac1d44cfe588be564acf25485029bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22feac10b51bc50ea652885213bfd561"><td class="memItemLeft" align="right" valign="top"><a id="a22feac10b51bc50ea652885213bfd561"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNode.html#a22feac10b51bc50ea652885213bfd561">Node</a> (const T &amp;_data, <a class="el" href="structNode.html">Node</a>&lt; T &gt; *_parent) noexcept</td></tr>
-<tr class="memdesc:a22feac10b51bc50ea652885213bfd561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor. <br /></td></tr>
+<tr class="memitem:a22feac10b51bc50ea652885213bfd561"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNode.html#a22feac10b51bc50ea652885213bfd561">Node</a> (const T &amp;_data, <a class="el" href="structNode.html">Node</a>&lt; T &gt; *_parent) noexcept</td></tr>
+<tr class="memdesc:a22feac10b51bc50ea652885213bfd561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="structNode.html#a22feac10b51bc50ea652885213bfd561">More...</a><br /></td></tr>
 <tr class="separator:a22feac10b51bc50ea652885213bfd561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5705b61045ccff25c6a877d1670cf5f"><td class="memItemLeft" align="right" valign="top"><a id="ad5705b61045ccff25c6a877d1670cf5f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Node</b> (const std::unique_ptr&lt; <a class="el" href="structNode.html">Node</a>&lt; T &gt;&gt; &amp;ptn, <a class="el" href="structNode.html">Node</a>&lt; T &gt; *_parent)</td></tr>
+<tr class="separator:ad5705b61045ccff25c6a877d1670cf5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3441f76a3b48539a760ff0124ed75fd6"><td class="memItemLeft" align="right" valign="top"><a id="a3441f76a3b48539a760ff0124ed75fd6"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNode.html#a3441f76a3b48539a760ff0124ed75fd6">Node</a> (const T &amp;&amp;_data, <a class="el" href="structNode.html">Node</a>&lt; T &gt; *_parent) noexcept</td></tr>
 <tr class="memdesc:a3441f76a3b48539a760ff0124ed75fd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor. <br /></td></tr>
@@ -112,6 +114,48 @@ std::unique_ptr&lt; <a class="el" href="structNode.html">Node</a>&lt; T &gt; &gt
 <tr class="memdesc:a6eb3b661ef0b58d46dfe228c6ea2e20b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw pointer to the parent <a class="el" href="structNode.html">Node</a>. <br /></td></tr>
 <tr class="separator:a6eb3b661ef0b58d46dfe228c6ea2e20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a22feac10b51bc50ea652885213bfd561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22feac10b51bc50ea652885213bfd561">&#9670;&nbsp;</a></span>Node()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNode.html">Node</a>&lt; T &gt;::<a class="el" href="structNode.html">Node</a> </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structNode.html">Node</a>&lt; T &gt; *&#160;</td>
+          <td class="paramname"><em>_parent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default destructor. </p>
+<p>Copy constructor </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>include/<a class="el" href="Node_8h_source.html">Node.h</a></li>
 </ul>

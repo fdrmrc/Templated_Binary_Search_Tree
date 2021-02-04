@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['operator_2a_28',['operator*',['../struct____iterator.html#ac7fa0ea2ca69bbb5a73719d71d8b0842',1,'__iterator']]],
-  ['operator_2b_2b_29',['operator++',['../struct____iterator.html#a279da79e7835a2b7ff794e47ffdc2217',1,'__iterator']]],
-  ['operator_2d_3e_30',['operator-&gt;',['../struct____iterator.html#a6434007320a276245f8e1db4e2e09071',1,'__iterator']]]
+  ['insert_42',['insert',['../classbst.html#a01f0709adb0dc8d2fbc88b014d62ec8e',1,'bst::insert(const pair_type &amp;x)'],['../classbst.html#a2f119675924125b76cc63d1b508d78cd',1,'bst::insert(pair_type &amp;&amp;x)']]]
 ];

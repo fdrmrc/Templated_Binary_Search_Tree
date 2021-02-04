@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['end_5',['end',['../classbst.html#a9781f027931426aafb0b929ea78aa4c4',1,'bst::end()'],['../classbst.html#a6bfc95457cb65419d0ed5830cb97b8bf',1,'bst::end() const']]]
+  ['emplace_9',['emplace',['../classbst.html#a7a25476407b5206272d829681ad99aff',1,'bst']]],
+  ['end_10',['end',['../classbst.html#a7bb857e0fae4a4a2d479538a7d7c5212',1,'bst::end() noexcept'],['../classbst.html#a3fb77174f38dc6a423b700ccf63aa8b0',1,'bst::end() const noexcept']]]
 ];

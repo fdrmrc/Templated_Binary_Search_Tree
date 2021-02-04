@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['end_25',['end',['../classbst.html#a9781f027931426aafb0b929ea78aa4c4',1,'bst::end()'],['../classbst.html#a6bfc95457cb65419d0ed5830cb97b8bf',1,'bst::end() const']]]
+  ['cbegin_36',['cbegin',['../classbst.html#ab9588ae41ff84ce05aa96087d4f16b77',1,'bst']]],
+  ['cend_37',['cend',['../classbst.html#a0b796e1b4f044451bd872fc29fe0148c',1,'bst']]],
+  ['clear_38',['clear',['../classbst.html#aee68483a3b46a5bcf54fc4032274b4ef',1,'bst']]]
 ];

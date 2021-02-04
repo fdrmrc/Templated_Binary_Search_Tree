@@ -65,7 +65,7 @@ $(function() {
 <div class="title">Template Binary Search Tree <a href="https://travis-ci.com/github/fdrmrc/Templated_Binary_Search_Tree"><img src="https://travis-ci.com/fdrmrc/Templated_Binary_Search_Tree.svg?branch=main" alt="Build Status" style="pointer-events: none;" class="inline"/></a> </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>A C++ implementation of a Templated Binary Search Tree</p>
+<div class="textblock"><p>A C++ implementation of a Templated Binary Search Tree using smart pointers</p>
 <h1>Authors:</h1>
 <ul>
 <li><a href="#" onclick="location.href='mai'+'lto:'+'mar'+'co'+'.fe'+'de'+'r@s'+'is'+'sa.'+'it'; return false;">Marco Feder</a></li>
@@ -73,22 +73,28 @@ $(function() {
 <li><h1>How to compile</h1>
 </li>
 </ul>
+<p>First, clone the repo to your local machine.</p>
 <h2>Using <code>Makefile</code>:</h2>
 <ul>
 <li>open a terminal</li>
 <li>move to the project folder</li>
-<li>type <code>make</code> in order to build the executable</li>
+<li>type <code>make</code> to build the executable <code>exe</code></li>
+<li><code>./exe.x</code></li>
 </ul>
 <h2>From command line:</h2>
 <ul>
 <li><code>$ g++ -o exe.x -Wall -Wextra -g -std=c++14 -I include main.cpp</code></li>
+<li>then do <code>./exe.x</code></li>
 </ul>
 <h2>To check memory leaks with <a href="https://valgrind.org">Valgrind</a> and see the heap/leak summary:</h2>
 <ul>
-<li><code>valgrind ./exe.x -s</code></li>
+<li><code>valgrind ./exe.x --leaks-check=full</code></li>
 </ul>
+<p>The current version doesn't leak memory, as can be verified.</p>
 <h1>Documentation</h1>
-<p>You can find a <a href="https://www.doxygen.nl/index.html">Doxygen documentation</a> at the following link: <a href="https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html">https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html</a> </p>
+<p>You can find a <a href="https://www.doxygen.nl/index.html">Doxygen documentation</a> at: <a href="https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html">https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html</a></p>
+<h2>Benchmarking</h2>
+<p>The natural competitor is <a href="https://en.cppreference.com/w/cpp/container/map">std::map</a>. The current implementation of <code>find()</code> for a balanced tree is faster than the one of <code>std::map</code>. [still in progress] </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

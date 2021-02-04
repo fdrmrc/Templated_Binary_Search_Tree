@@ -9,9 +9,11 @@
 \mbox{\Hypertarget{structNode_a0ac1d44cfe588be564acf25485029bd8}\label{structNode_a0ac1d44cfe588be564acf25485029bd8}} 
 \mbox{\hyperlink{structNode_a0ac1d44cfe588be564acf25485029bd8}{Node}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structNode_a22feac10b51bc50ea652885213bfd561}\label{structNode_a22feac10b51bc50ea652885213bfd561}} 
 \mbox{\hyperlink{structNode_a22feac10b51bc50ea652885213bfd561}{Node}} (const T \&\+\_\+data, \mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$\+\_\+parent) noexcept
-\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structNode_ad5705b61045ccff25c6a877d1670cf5f}\label{structNode_ad5705b61045ccff25c6a877d1670cf5f}} 
+{\bfseries Node} (const std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structNode}{Node}}$<$ T $>$$>$ \&ptn, \mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$\+\_\+parent)
+\item 
 \mbox{\Hypertarget{structNode_a3441f76a3b48539a760ff0124ed75fd6}\label{structNode_a3441f76a3b48539a760ff0124ed75fd6}} 
 \mbox{\hyperlink{structNode_a3441f76a3b48539a760ff0124ed75fd6}{Node}} (const T \&\&\+\_\+data, \mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$\+\_\+parent) noexcept
 \begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
@@ -34,6 +36,20 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $>$ \mbox
 \mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$ \mbox{\hyperlink{structNode_a6eb3b661ef0b58d46dfe228c6ea2e20b}{parent}}
 \begin{DoxyCompactList}\small\item\em Raw pointer to the parent \mbox{\hyperlink{structNode}{Node}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structNode_a22feac10b51bc50ea652885213bfd561}\label{structNode_a22feac10b51bc50ea652885213bfd561}} 
+\index{Node$<$ T $>$@{Node$<$ T $>$}!Node@{Node}}
+\index{Node@{Node}!Node$<$ T $>$@{Node$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{const T \&}]{\+\_\+data,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$}]{\+\_\+parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Default destructor. 
+
+Copy constructor 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
