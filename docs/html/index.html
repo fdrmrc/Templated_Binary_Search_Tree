@@ -60,11 +60,24 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
 <div class="title">Templated Binary Search Tree Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><h1><a class="anchor" id="section1"></a>
+Description</h1>
+<p>A templated binary search tree implemented in C++ (compliant with the C++14 standard). The project is split into three files, each one of them contains the implementation of concept, and hence in each one of them we have a class declaration and definition.</p>
+<h2><a class="anchor" id="subsection1"></a>
+Node.h</h2>
+<p>The implementation of the concept of a <a class="el" href="structNode.html">Node</a>. A <a class="el" href="structNode.html">Node</a> is templated on the type of the value, which in this project will be a <code>std::pair</code> with a key and a value, and must know its children and its parent. Therefore we have 4 data member. The pointers to the left and right child are <code>unique_ptr</code>, while the pointer to the parent is a raw pointer. If it were a <code>unique_ptr</code>, then we would end up with nodes that are pointed (uniquely) by more pointers, which is not correct.</p>
+<h2><a class="anchor" id="subsection2"></a>
+Iterator.h</h2>
+<p>The class iterator is templated on the type of the node <code><a class="el" href="structNode.html">Node</a>&lt;T&gt;</code> and on the type of <code>T</code> of the value. The most important part is the '++' operator, which allows to go the next (ordering by key) <a class="el" href="structNode.html">Node</a> by returning a self-reference.</p>
+<h2><a class="anchor" id="subsection3"></a>
+bst.h</h2>
+<p>This class contains the implementation of the Binary Search Tree. It's templated on the type of the key, on the type of the value, and on the type of the comparison operator, which is set to <code>std::less</code> by default. The data members are a <code>std::unique_ptr</code> to the head <a class="el" href="structNode.html">Node</a>, and the comparison operator. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

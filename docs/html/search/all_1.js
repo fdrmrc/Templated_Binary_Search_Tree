@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['balance_1',['balance',['../classbst.html#abff4c252418525e1f0e6f03884b45d27',1,'bst']]],
-  ['begin_2',['begin',['../classbst.html#a12aa9ef22c9b483947a405158f99bb79',1,'bst::begin() noexcept'],['../classbst.html#ae3305748fa2f03483573a064e373a002',1,'bst::begin() const noexcept']]],
-  ['bst_3',['bst',['../classbst.html',1,'bst&lt; key_type, value_type, cop &gt;'],['../classbst.html#a7c06ad1db4e853a61afc763b22f2e37e',1,'bst::bst()'],['../classbst.html#a53390336b195723bc2062079c864f303',1,'bst::bst(bst &amp;&amp;t) noexcept'],['../classbst.html#ac9bf5b2078bac207ee7452b533f4b967',1,'bst::bst(const bst &amp;tree)']]]
+  ['balance_1',['balance',['../classbst.html#a616594a73f55c43f4eb8b9c661b84695',1,'bst']]],
+  ['begin_2',['begin',['../classbst.html#a68c4bccff1bbb655aceab7eb4a1bdce6',1,'bst::begin() noexcept'],['../classbst.html#aab2cde26553405aa35c4bdb3c5054a86',1,'bst::begin() const noexcept']]],
+  ['bst_3',['bst',['../classbst.html',1,'bst&lt; key_type, value_type, OP &gt;'],['../classbst.html#a942a38f225f79c0e26192ec84b4d797d',1,'bst::bst()'],['../classbst.html#a934e220de1fdcedf3b12ed949b81ac53',1,'bst::bst(bst &amp;&amp;t) noexcept'],['../classbst.html#a6d1f3c60845d986448b48e47b8204c81',1,'bst::bst(const bst &amp;tree)']]]
 ];

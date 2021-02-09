@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unordered_5fprint_27',['unordered_print',['../classbst.html#af990902f780cc82674b5ac003f70960b',1,'bst']]]
+  ['unordered_5fprint_28',['unordered_print',['../classbst.html#a8dbaf0cafa3b10cb069980423153e3a2',1,'bst']]]
 ];

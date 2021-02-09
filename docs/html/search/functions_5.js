@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['insert_42',['insert',['../classbst.html#a01f0709adb0dc8d2fbc88b014d62ec8e',1,'bst::insert(const pair_type &amp;x)'],['../classbst.html#a2f119675924125b76cc63d1b508d78cd',1,'bst::insert(pair_type &amp;&amp;x)']]]
+  ['insert_44',['insert',['../classbst.html#a7fe97dd49189262e0df3419b013de6c0',1,'bst::insert(const pair_type &amp;x)'],['../classbst.html#af25f5abedae51c9dbe9ff03442df6fe0',1,'bst::insert(pair_type &amp;&amp;x)']]]
 ];
