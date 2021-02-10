@@ -1,25 +1,25 @@
-#ifndef Iterator_h
-#define Iterator_h
+#ifndef constIterator_h
+#define constIterator_h
 
 #include "Node.h"
 #include <iterator>
 #include <utility>
 
-template <typename T, bool is_const=true >
-struct _iterator {
-    using nodeT = Node<T>; //for the sake of readability. T will be pair_type
+template <typename T >
+struct const_iterator {
+    using NodeT = Node<T>; //for the sake of readability
     
     /**
      * @brief Raw pointer to the current @ref Node
      */
-    nodeT* current;
+    NodeT* current;
     
-    
-    using value_type = typename std::conditional<is_const, const T, T>::type;
-    using reference = typename std::conditional<is_const, const T&, T&>::type;
-    using pointer = typename std::conditional<is_const, const T*, T*>::type;
-    using iterator_category = std::forward_iterator_tag;
+    //public:
+    using value_type = const T;
     using difference_type = std::ptrdiff_t;
+    using iterator_category = std::forward_iterator_tag;
+    using reference = value_type&;
+    using pointer = value_type *;
     
     /**
      * @brief Custom constructor for @ref iterator
@@ -27,7 +27,7 @@ struct _iterator {
      *
      * Construct a new @ref _iterator that refers to @ref Node pn
      */
-    explicit _iterator(nodeT* pn) noexcept: current{pn} {}
+    explicit _iterator(Node<T>* pn) noexcept: current{pn} {}
     
     /**
      * @brief Default-generated constructor
@@ -87,45 +87,40 @@ struct _iterator {
         }
         
         return  *this;
-    }
-    
-    
-    
-    /**
-     * @brief Equality operator
-     *
-     * @param candidate Reference to the iterator we want to compare.
-     * Two iterators are equal iff they point to the same @ref Node
-     *
-     */
-    //        template <bool B>
-    //        friend bool operator==(_iterator&a, _iterator &b) { //old version
-    //            return a.current == b.current;
-    //        }
-    
-    template<bool constBool>
-    bool operator==(const _iterator<T,constBool>& candidate) const noexcept
-    {
-        return current == candidate.current;
-    }
-    /**
-     *@brief Inequality operator
-     *@param candidate Reference to the iterator we want to compare.
-     *
-     * To avoid code duplication, use the logical negation of `==` operator.
-     */
-    template<bool constBool>
-    bool operator!=(const _iterator<T,constBool>& candidate) const noexcept { return !(current == candidate.current); }
-    
+        }
+        
+        
+        
+        /**
+         * @brief Equality operator
+         *
+         * @param a Reference to first iterator.
+         * @param b Reference to the second iterator
+         * Two iterators are equal iff they point to the same @ref Node
+         *
+         */
+        friend bool operator==(_iterator &a, _iterator &b) {
+            return a.current == b.current;
+        }
+        
+        /**
+         *@brief Inequality operator
+         *@param a Reference to the first iterator
+         *@param b Reference to the second iterator
+         *
+         * To avoid code duplication, use the logical negation of `==` operator.
+         */
+        friend bool operator!=(_iterator &a, _iterator &b) { return !(a == b); }
+      
     
     
     
     void print_node_with_iterator(){
         current->print();
     }
-};
-
-#endif /* Iterator_h */
+    };
+    
+#endif /* constIterator_h */
 
 
 

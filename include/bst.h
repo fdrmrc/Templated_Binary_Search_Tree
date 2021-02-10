@@ -16,10 +16,10 @@
  * The implementation of the concept of a Node. A Node is templated on the type of the value, which in this project will be a `std::pair` with a key and a value, and must know its children and its parent. Therefore we have 4 data member. The pointers to the left and right child are `unique_ptr`, while the pointer to the parent is a raw pointer. If it were a `unique_ptr`, then we would end up with nodes that are pointed (uniquely) by more pointers, which is not correct.
  *
  * @subsection subsection2 Iterator.h
- * The class iterator is templated on the type of the node `Node<T>` and on the type of `T` of the value. The most important part is the '++' operator, which allows to go the next (ordering by key) @ref Node by returning a self-reference.
+ * The class iterator is templated on the type 'T' of the Node, and on a boolean 'is_const', used to determine the const-ness of the iterator. The most important opertator is the '++', which allows to go the next (ordering by key) @ref Node by returning a self-reference.
  *
  * @subsection subsection3 bst.h
- * This class contains the implementation of the Binary Search Tree. It's templated on the type of the key, on the type of the value, and on the type of the comparison operator, which is set to `std::less` by default. The data members are a `std::unique_ptr` to the head Node, and the comparison operator. 
+ * This class contains the implementation of the Binary Search Tree. It's templated on the type of the key, on the type of the value, and on the type of the comparison operator, which is set to `std::less` by default. The data members are a `std::unique_ptr` to the head Node, and the comparison operator.
  *
  *
  */
@@ -39,18 +39,18 @@ class bst{
     /**
      * @brief iterator templated on @ref node_type and on @ref pair_type
      */
-    using iterator = _iterator<node_type,pair_type>;
+    using iterator = _iterator<pair_type,false>;
     /**
      * @brief iterator that points to a constant content (i.e. the @ref pair_type). It can be increased/decreased, but not used to modify the tree. Notice that it's the pair that is constant!
      */
-    using constant_iterator = _iterator<node_type,const pair_type>;
+    using constant_iterator = _iterator<pair_type,true>;
     
     
     
     
 private:
     OP comp;
-    std::unique_ptr<Node<pair_type>> head; //unique pointer to the root/head Node
+    std::unique_ptr<node_type> head; //unique pointer to the root/head Node
     //I set the head to be a unique pointer so I can use release,get,reset member fcts
     
     
@@ -550,6 +550,7 @@ public:
         friend std::ostream& operator<<(std::ostream& os, const bst& x){
             
             auto endofTree = x.cend(); //tree is passed as constant
+
             for (auto it=x.cbegin(); it!=endofTree; ++it) {
                 os << it->first <<" ";
             }
