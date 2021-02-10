@@ -40,13 +40,21 @@ int main() {
     parent_node.right->print(); //printing test
     parent_node.right->left->print();
  
-    auto it{_iterator<Node<intpair>,intpair>(&parent_node)};
+    auto it{_iterator<intpair,false>(&parent_node)};
+    it->first = 96; //good that it's allowed
     auto itpp{++it};
     std::cout << "Expect next node's value: " << nine_pair.second <<". \t"<<"Obtained: " << itpp->second <<"\n";
     
-    auto it2{_iterator<Node<intpair>,intpair>(parent_node.right->left.get())}; //Node with key and value equal to 10
+    auto it2{_iterator<intpair,false>(parent_node.right->left.get())}; //Node with key and value equal to 10
     auto it2pp{++it2};
+//    it2->first=2; //if the bool in the iterator is set to true, then we have an error because we're modifying
     std::cout <<"Expected next Node's value: " << elf_pair.second << ". \t" <<"Obtained: "<< it2pp->second<<"\n";
+    
+    auto test_equality_iterator{_iterator<intpair,false> (&parent_node)};
+    auto test_equality_iterator2{_iterator<intpair,true> (&parent_node)};
+    bool is_equal{test_equality_iterator == test_equality_iterator2};
+    bool is_notequal{test_equality_iterator != test_equality_iterator2};
+    std::cout <<"Test for iterator(s) equality: " << is_equal <<"\n" << "Test for operator inequality: " << is_notequal <<"\n";
     
     
     
@@ -118,12 +126,15 @@ int main() {
     std::cout << "** TEST MOVE SEMANTICS** " <<"\n";
     std::cout << "MOVE CONSTRUCTOR" <<"\n";
     bst<int, int> test_bst_move_semantics{std::move(my_tree)}; //move cstr
-    std::cout <<"Original, after been stolen: \n"<< my_tree <<" has been moved to: \n" <<test_bst_move_semantics <<"\n";
+    std::cout <<"Original, after been stolen: \n"<< my_tree <<"has been moved to: \n" <<test_bst_move_semantics <<"\n";
     
     std::cout << "MOVE ASSIGNMENT" <<"\n";
     std::cout << "Before stealing: \n"<< rand_tree <<"\n";
     test_bst_move_semantics = std::move(rand_tree); //move assignment
     std::cout << "Original, after been stolen: \n"<< rand_tree<< "has been moved to \n" <<test_bst_move_semantics <<"\n";
+    
+
+ 
 
     my_tree.clear();
     rand_tree.clear();
@@ -141,6 +152,32 @@ int main() {
     tobebalanced.balance();
     tobebalanced.unordered_print();
 
+    
+    std::cout << "ERASURE TESTS: "<<"\n";
+    bst<int,int> erasure_test{tobebalanced}; //copy constructor call
+    erasure_test.erase(4); //Here the key corresponds to the key of the head
+    
+    std::cout << erasure_test<<"\n";
+    
+    
+    
+    
+    bst<int,int> erasure_test2{};
+    auto er1{erasure_test2.insert(intpair(5,5))};
+    auto er2{erasure_test2.insert(intpair(2,2))};
+    auto er3{erasure_test2.insert(intpair(12,12))};
+    auto er4{erasure_test2.insert(intpair(3,3))};
+    auto er5{erasure_test2.insert(intpair(9,9))};
+    auto er6{erasure_test2.insert(intpair(21,21))};
+    auto er7{erasure_test2.insert(intpair(19,19))};
+    auto er8{erasure_test2.insert(intpair(25,25))};
+    
+    
+    std::cout << "New test before erasing: "<<  erasure_test2 << "\n";
+    erasure_test2.erase(12);
+    
+    std::cout << "After erasing: "<<  erasure_test2 << "\n";
+    
     rand_tree.clear();
     std::cout << rand_tree <<"\n";
 
