@@ -63,7 +63,7 @@ struct _iterator {
     
     
     /**
-     * @brief Post- increment operator.
+     * @brief Pre-increment operator.
      * It's marked noexecpt as we're not acquiring any resource and nothing can go wrong.
      */
     _iterator& operator++() noexcept {
@@ -90,7 +90,14 @@ struct _iterator {
     }
     
     
-    
+    /**
+     * Post-increment
+     */
+    _iterator operator++(int) {
+      auto tmp{*this};
+      ++(*this);
+      return tmp;
+    }
     /**
      * @brief Equality operator
      *

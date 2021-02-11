@@ -42,7 +42,9 @@ int main() {
  
     auto it{_iterator<intpair,false>(&parent_node)};
     it->first = 96; //good that it's allowed
-    auto itpp{++it};
+    (*it).second = 2;
+//    auto itpp{it++}; //post - increment
+    auto itpp{++it}; //pre - increment
     std::cout << "Expect next node's value: " << nine_pair.second <<". \t"<<"Obtained: " << itpp->second <<"\n";
     
     auto it2{_iterator<intpair,false>(parent_node.right->left.get())}; //Node with key and value equal to 10
@@ -171,7 +173,6 @@ int main() {
     auto er6{erasure_test2.insert(intpair(21,21))};
     auto er7{erasure_test2.insert(intpair(19,19))};
     auto er8{erasure_test2.insert(intpair(25,25))};
-    
     
     std::cout << "New test before erasing: "<<  erasure_test2 << "\n";
     erasure_test2.erase(12);
