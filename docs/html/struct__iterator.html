@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Templated Binary Search Tree: _iterator&lt; nodeT, T &gt; Struct Template Reference</title>
+<title>Templated Binary Search Tree: _iterator&lt; T, is_const &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,90 +65,95 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="struct__iterator-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">_iterator&lt; nodeT, T &gt; Struct Template Reference</div>  </div>
+<div class="title">_iterator&lt; T, is_const &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:afacbfb05954dd16391b0faeb6c40b7ed"><td class="memItemLeft" align="right" valign="top"><a id="afacbfb05954dd16391b0faeb6c40b7ed"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>value_type</b> = T</td></tr>
-<tr class="separator:afacbfb05954dd16391b0faeb6c40b7ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0390c52bb1130394e41805905374308a"><td class="memItemLeft" align="right" valign="top"><a id="a0390c52bb1130394e41805905374308a"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>difference_type</b> = std::ptrdiff_t</td></tr>
-<tr class="separator:a0390c52bb1130394e41805905374308a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee81a44a16f91efc1bdf8f33830f50d6"><td class="memItemLeft" align="right" valign="top"><a id="aee81a44a16f91efc1bdf8f33830f50d6"></a>
+<tr class="memitem:a68c865efde3f5c6ae36e7aa5cf9b41b2"><td class="memItemLeft" align="right" valign="top"><a id="a68c865efde3f5c6ae36e7aa5cf9b41b2"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>nodeT</b> = <a class="el" href="structNode.html">Node</a>&lt; T &gt;</td></tr>
+<tr class="separator:a68c865efde3f5c6ae36e7aa5cf9b41b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16bdcc56856b96368fefaf79e2d58bd0"><td class="memItemLeft" align="right" valign="top"><a id="a16bdcc56856b96368fefaf79e2d58bd0"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>value_type</b> = typename std::conditional&lt; is_const, const T, T &gt;::type</td></tr>
+<tr class="separator:a16bdcc56856b96368fefaf79e2d58bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12fa11154756b05de5f70cfb48e93d60"><td class="memItemLeft" align="right" valign="top"><a id="a12fa11154756b05de5f70cfb48e93d60"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>reference</b> = typename std::conditional&lt; is_const, const T &amp;, T &amp; &gt;::type</td></tr>
+<tr class="separator:a12fa11154756b05de5f70cfb48e93d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c731eea688ca215a05853b756d2e73c"><td class="memItemLeft" align="right" valign="top"><a id="a4c731eea688ca215a05853b756d2e73c"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>pointer</b> = typename std::conditional&lt; is_const, const T *, T * &gt;::type</td></tr>
+<tr class="separator:a4c731eea688ca215a05853b756d2e73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6698de959bbbdbc540ec94ed7c5fa77"><td class="memItemLeft" align="right" valign="top"><a id="ad6698de959bbbdbc540ec94ed7c5fa77"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>iterator_category</b> = std::forward_iterator_tag</td></tr>
-<tr class="separator:aee81a44a16f91efc1bdf8f33830f50d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a258329ec3280f5a77d2bc43a0046610e"><td class="memItemLeft" align="right" valign="top"><a id="a258329ec3280f5a77d2bc43a0046610e"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>reference</b> = value_type &amp;</td></tr>
-<tr class="separator:a258329ec3280f5a77d2bc43a0046610e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6699ac10815a5eae5ccc2420285f6095"><td class="memItemLeft" align="right" valign="top"><a id="a6699ac10815a5eae5ccc2420285f6095"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>pointer</b> = value_type *</td></tr>
-<tr class="separator:a6699ac10815a5eae5ccc2420285f6095"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ad6698de959bbbdbc540ec94ed7c5fa77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a738900f242e4adc30c70faea0d703da5"><td class="memItemLeft" align="right" valign="top"><a id="a738900f242e4adc30c70faea0d703da5"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>difference_type</b> = std::ptrdiff_t</td></tr>
+<tr class="separator:a738900f242e4adc30c70faea0d703da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a164c895fbeb0d505bc37d83366f44d55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#a164c895fbeb0d505bc37d83366f44d55">_iterator</a> (nodeT *pn) noexcept</td></tr>
-<tr class="memdesc:a164c895fbeb0d505bc37d83366f44d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom constructor for iterator.  <a href="struct__iterator.html#a164c895fbeb0d505bc37d83366f44d55">More...</a><br /></td></tr>
-<tr class="separator:a164c895fbeb0d505bc37d83366f44d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad58152890d31da0ef2248340d04d882c"><td class="memItemLeft" align="right" valign="top"><a id="ad58152890d31da0ef2248340d04d882c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#ad58152890d31da0ef2248340d04d882c">_iterator</a> () noexcept=default</td></tr>
-<tr class="memdesc:ad58152890d31da0ef2248340d04d882c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-generated constructor. <br /></td></tr>
-<tr class="separator:ad58152890d31da0ef2248340d04d882c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abea40fdd307cf556903c2f1b296eacef"><td class="memItemLeft" align="right" valign="top"><a id="abea40fdd307cf556903c2f1b296eacef"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#abea40fdd307cf556903c2f1b296eacef">~_iterator</a> ()=default</td></tr>
-<tr class="memdesc:abea40fdd307cf556903c2f1b296eacef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-generated destructor. <br /></td></tr>
-<tr class="separator:abea40fdd307cf556903c2f1b296eacef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeba9036adff785f1f038572c0312ea09"><td class="memItemLeft" align="right" valign="top">reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#aeba9036adff785f1f038572c0312ea09">operator*</a> () const noexcept</td></tr>
-<tr class="memdesc:aeba9036adff785f1f038572c0312ea09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dereference operator.  <a href="struct__iterator.html#aeba9036adff785f1f038572c0312ea09">More...</a><br /></td></tr>
-<tr class="separator:aeba9036adff785f1f038572c0312ea09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa089e4c67637625508d59a9a88dadcc6"><td class="memItemLeft" align="right" valign="top">pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#aa089e4c67637625508d59a9a88dadcc6">operator-&gt;</a> () const noexcept</td></tr>
-<tr class="memdesc:aa089e4c67637625508d59a9a88dadcc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arrow operator.  <a href="struct__iterator.html#aa089e4c67637625508d59a9a88dadcc6">More...</a><br /></td></tr>
-<tr class="separator:aa089e4c67637625508d59a9a88dadcc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a329d46c4783d6efb3f45359da6afbf8e"><td class="memItemLeft" align="right" valign="top"><a id="a329d46c4783d6efb3f45359da6afbf8e"></a>
-<a class="el" href="struct__iterator.html">_iterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#a329d46c4783d6efb3f45359da6afbf8e">operator++</a> () noexcept</td></tr>
-<tr class="memdesc:a329d46c4783d6efb3f45359da6afbf8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Post- increment operator. It's marked noexecpt as we're not acquiring any resource and nothing can go wrong. <br /></td></tr>
-<tr class="separator:a329d46c4783d6efb3f45359da6afbf8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7877cf36bddf70c6a63fe6bddc1725aa"><td class="memItemLeft" align="right" valign="top"><a id="a7877cf36bddf70c6a63fe6bddc1725aa"></a>
+<tr class="memitem:ae6be885cdd5e4d405371c6800e857443"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#ae6be885cdd5e4d405371c6800e857443">_iterator</a> (<a class="el" href="structNode.html">nodeT</a> *pn) noexcept</td></tr>
+<tr class="memdesc:ae6be885cdd5e4d405371c6800e857443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom constructor for iterator.  <a href="struct__iterator.html#ae6be885cdd5e4d405371c6800e857443">More...</a><br /></td></tr>
+<tr class="separator:ae6be885cdd5e4d405371c6800e857443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a471287515df798ddf9419c9a6b65527b"><td class="memItemLeft" align="right" valign="top"><a id="a471287515df798ddf9419c9a6b65527b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#a471287515df798ddf9419c9a6b65527b">_iterator</a> () noexcept=default</td></tr>
+<tr class="memdesc:a471287515df798ddf9419c9a6b65527b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-generated constructor. <br /></td></tr>
+<tr class="separator:a471287515df798ddf9419c9a6b65527b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e561429e9a41b493ddd527e519ea93"><td class="memItemLeft" align="right" valign="top"><a id="ac1e561429e9a41b493ddd527e519ea93"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#ac1e561429e9a41b493ddd527e519ea93">~_iterator</a> ()=default</td></tr>
+<tr class="memdesc:ac1e561429e9a41b493ddd527e519ea93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default-generated destructor. <br /></td></tr>
+<tr class="separator:ac1e561429e9a41b493ddd527e519ea93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23dd7c8c060eda2457b72a9fb5be83ae"><td class="memItemLeft" align="right" valign="top">reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#a23dd7c8c060eda2457b72a9fb5be83ae">operator*</a> () const noexcept</td></tr>
+<tr class="memdesc:a23dd7c8c060eda2457b72a9fb5be83ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dereference operator.  <a href="struct__iterator.html#a23dd7c8c060eda2457b72a9fb5be83ae">More...</a><br /></td></tr>
+<tr class="separator:a23dd7c8c060eda2457b72a9fb5be83ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b09c9efef8f79717baf488727452b91"><td class="memItemLeft" align="right" valign="top">pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#a9b09c9efef8f79717baf488727452b91">operator-&gt;</a> () const noexcept</td></tr>
+<tr class="memdesc:a9b09c9efef8f79717baf488727452b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arrow operator.  <a href="struct__iterator.html#a9b09c9efef8f79717baf488727452b91">More...</a><br /></td></tr>
+<tr class="separator:a9b09c9efef8f79717baf488727452b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1de63473c015049628d9849bfe36434"><td class="memItemLeft" align="right" valign="top"><a id="af1de63473c015049628d9849bfe36434"></a>
+<a class="el" href="struct__iterator.html">_iterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#af1de63473c015049628d9849bfe36434">operator++</a> () noexcept</td></tr>
+<tr class="memdesc:af1de63473c015049628d9849bfe36434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pre-increment operator. It's marked noexecpt as we're not acquiring any resource and nothing can go wrong. <br /></td></tr>
+<tr class="separator:af1de63473c015049628d9849bfe36434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a429648fc346f466a370eab87418b162e"><td class="memItemLeft" align="right" valign="top"><a id="a429648fc346f466a370eab87418b162e"></a>
+<a class="el" href="struct__iterator.html">_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#a429648fc346f466a370eab87418b162e">operator++</a> (int)</td></tr>
+<tr class="memdesc:a429648fc346f466a370eab87418b162e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Post-increment operator. <br /></td></tr>
+<tr class="separator:a429648fc346f466a370eab87418b162e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a770181ddbffe12d094dbf4346281b729"><td class="memTemplParams" colspan="2">template&lt;bool constBool&gt; </td></tr>
+<tr class="memitem:a770181ddbffe12d094dbf4346281b729"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct__iterator.html#a770181ddbffe12d094dbf4346281b729">operator==</a> (const <a class="el" href="struct__iterator.html">_iterator</a>&lt; T, constBool &gt; &amp;candidate) const noexcept</td></tr>
+<tr class="memdesc:a770181ddbffe12d094dbf4346281b729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator.  <a href="struct__iterator.html#a770181ddbffe12d094dbf4346281b729">More...</a><br /></td></tr>
+<tr class="separator:a770181ddbffe12d094dbf4346281b729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8edc14d3a125d7fba81d0916e0471762"><td class="memTemplParams" colspan="2">template&lt;bool constBool&gt; </td></tr>
+<tr class="memitem:a8edc14d3a125d7fba81d0916e0471762"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="struct__iterator.html#a8edc14d3a125d7fba81d0916e0471762">operator!=</a> (const <a class="el" href="struct__iterator.html">_iterator</a>&lt; T, constBool &gt; &amp;candidate) const noexcept</td></tr>
+<tr class="memdesc:a8edc14d3a125d7fba81d0916e0471762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inequality operator.  <a href="struct__iterator.html#a8edc14d3a125d7fba81d0916e0471762">More...</a><br /></td></tr>
+<tr class="separator:a8edc14d3a125d7fba81d0916e0471762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae27cf9bc96f428bcd430db6a36d1278b"><td class="memItemLeft" align="right" valign="top"><a id="ae27cf9bc96f428bcd430db6a36d1278b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>print_node_with_iterator</b> ()</td></tr>
-<tr class="separator:a7877cf36bddf70c6a63fe6bddc1725aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ae27cf9bc96f428bcd430db6a36d1278b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af644f046626427580f810326eb4f64ba"><td class="memItemLeft" align="right" valign="top"><a id="af644f046626427580f810326eb4f64ba"></a>
-nodeT *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#af644f046626427580f810326eb4f64ba">current</a></td></tr>
-<tr class="memdesc:af644f046626427580f810326eb4f64ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw pointer to the current <a class="el" href="structNode.html">Node</a>. <br /></td></tr>
-<tr class="separator:af644f046626427580f810326eb4f64ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a599d026a94192ab05408efac62127124"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#a599d026a94192ab05408efac62127124">operator==</a> (<a class="el" href="struct__iterator.html">_iterator</a> &amp;a, <a class="el" href="struct__iterator.html">_iterator</a> &amp;b)</td></tr>
-<tr class="memdesc:a599d026a94192ab05408efac62127124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator.  <a href="struct__iterator.html#a599d026a94192ab05408efac62127124">More...</a><br /></td></tr>
-<tr class="separator:a599d026a94192ab05408efac62127124"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab30db2d33f82df6cf73532ed0b76207"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#aab30db2d33f82df6cf73532ed0b76207">operator!=</a> (<a class="el" href="struct__iterator.html">_iterator</a> &amp;a, <a class="el" href="struct__iterator.html">_iterator</a> &amp;b)</td></tr>
-<tr class="memdesc:aab30db2d33f82df6cf73532ed0b76207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inequality operator.  <a href="struct__iterator.html#aab30db2d33f82df6cf73532ed0b76207">More...</a><br /></td></tr>
-<tr class="separator:aab30db2d33f82df6cf73532ed0b76207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7423b3d978fdb8b3d4501df6bcf3a9d8"><td class="memItemLeft" align="right" valign="top"><a id="a7423b3d978fdb8b3d4501df6bcf3a9d8"></a>
+<a class="el" href="structNode.html">nodeT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__iterator.html#a7423b3d978fdb8b3d4501df6bcf3a9d8">current</a></td></tr>
+<tr class="memdesc:a7423b3d978fdb8b3d4501df6bcf3a9d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw pointer to the current <a class="el" href="structNode.html">Node</a>. <br /></td></tr>
+<tr class="separator:a7423b3d978fdb8b3d4501df6bcf3a9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a164c895fbeb0d505bc37d83366f44d55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a164c895fbeb0d505bc37d83366f44d55">&#9670;&nbsp;</a></span>_iterator()</h2>
+<a id="ae6be885cdd5e4d405371c6800e857443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6be885cdd5e4d405371c6800e857443">&#9670;&nbsp;</a></span>_iterator()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename nodeT , typename T &gt; </div>
+template&lt;typename T , bool is_const = true&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct__iterator.html">_iterator</a>&lt; nodeT, T &gt;::<a class="el" href="struct__iterator.html">_iterator</a> </td>
+          <td class="memname"><a class="el" href="struct__iterator.html">_iterator</a>&lt; T, is_const &gt;::<a class="el" href="struct__iterator.html">_iterator</a> </td>
           <td>(</td>
-          <td class="paramtype">nodeT *&#160;</td>
+          <td class="paramtype"><a class="el" href="structNode.html">nodeT</a> *&#160;</td>
           <td class="paramname"><em>pn</em></td><td>)</td>
           <td></td>
         </tr>
@@ -172,19 +177,58 @@ template&lt;typename nodeT , typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aeba9036adff785f1f038572c0312ea09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeba9036adff785f1f038572c0312ea09">&#9670;&nbsp;</a></span>operator*()</h2>
+<a id="a8edc14d3a125d7fba81d0916e0471762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8edc14d3a125d7fba81d0916e0471762">&#9670;&nbsp;</a></span>operator!=()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename nodeT , typename T &gt; </div>
+template&lt;typename T , bool is_const = true&gt; </div>
+<div class="memtemplate">
+template&lt;bool constBool&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">reference <a class="el" href="struct__iterator.html">_iterator</a>&lt; nodeT, T &gt;::operator* </td>
+          <td class="memname">bool <a class="el" href="struct__iterator.html">_iterator</a>&lt; T, is_const &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct__iterator.html">_iterator</a>&lt; T, constBool &gt; &amp;&#160;</td>
+          <td class="paramname"><em>candidate</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inequality operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">candidate</td><td>Reference to the iterator we want to compare.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>To avoid code duplication, use the logical negation of <code>==</code> operator. </p>
+
+</div>
+</div>
+<a id="a23dd7c8c060eda2457b72a9fb5be83ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23dd7c8c060eda2457b72a9fb5be83ae">&#9670;&nbsp;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , bool is_const = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">reference <a class="el" href="struct__iterator.html">_iterator</a>&lt; T, is_const &gt;::operator* </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -202,19 +246,19 @@ template&lt;typename nodeT , typename T &gt; </div>
 
 </div>
 </div>
-<a id="aa089e4c67637625508d59a9a88dadcc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa089e4c67637625508d59a9a88dadcc6">&#9670;&nbsp;</a></span>operator-&gt;()</h2>
+<a id="a9b09c9efef8f79717baf488727452b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b09c9efef8f79717baf488727452b91">&#9670;&nbsp;</a></span>operator-&gt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename nodeT , typename T &gt; </div>
+template&lt;typename T , bool is_const = true&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">pointer <a class="el" href="struct__iterator.html">_iterator</a>&lt; nodeT, T &gt;::operator-&gt; </td>
+          <td class="memname">pointer <a class="el" href="struct__iterator.html">_iterator</a>&lt; T, is_const &gt;::operator-&gt; </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -232,87 +276,30 @@ template&lt;typename nodeT , typename T &gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="aab30db2d33f82df6cf73532ed0b76207"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab30db2d33f82df6cf73532ed0b76207">&#9670;&nbsp;</a></span>operator!=</h2>
+<a id="a770181ddbffe12d094dbf4346281b729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a770181ddbffe12d094dbf4346281b729">&#9670;&nbsp;</a></span>operator==()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename nodeT , typename T &gt; </div>
+template&lt;typename T , bool is_const = true&gt; </div>
+<div class="memtemplate">
+template&lt;bool constBool&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool operator!= </td>
+          <td class="memname">bool <a class="el" href="struct__iterator.html">_iterator</a>&lt; T, is_const &gt;::operator== </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__iterator.html">_iterator</a>&lt; nodeT, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct__iterator.html">_iterator</a>&lt; nodeT, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">const <a class="el" href="struct__iterator.html">_iterator</a>&lt; T, constBool &gt; &amp;&#160;</td>
+          <td class="paramname"><em>candidate</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Inequality operator. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td>Reference to the first iterator </td></tr>
-    <tr><td class="paramname">b</td><td>Reference to the second iterator</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>To avoid code duplication, use the logical negation of <code>==</code> operator. </p>
-
-</div>
-</div>
-<a id="a599d026a94192ab05408efac62127124"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a599d026a94192ab05408efac62127124">&#9670;&nbsp;</a></span>operator==</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename nodeT , typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator== </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct__iterator.html">_iterator</a>&lt; nodeT, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct__iterator.html">_iterator</a>&lt; nodeT, T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -320,8 +307,7 @@ template&lt;typename nodeT , typename T &gt; </div>
 <p>Equality operator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>Reference to first iterator. </td></tr>
-    <tr><td class="paramname">b</td><td>Reference to the second iterator Two iterators are equal iff they point to the same <a class="el" href="structNode.html">Node</a> </td></tr>
+    <tr><td class="paramname">candidate</td><td>Reference to the iterator we want to compare. Two iterators are equal iff they point to the same <a class="el" href="structNode.html">Node</a> </td></tr>
   </table>
   </dd>
 </dl>

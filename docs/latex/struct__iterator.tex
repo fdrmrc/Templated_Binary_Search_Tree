@@ -1,66 +1,69 @@
-\hypertarget{struct__iterator}{}\doxysection{\+\_\+iterator$<$ nodeT, T $>$ Struct Template Reference}
-\label{struct__iterator}\index{\_iterator$<$ nodeT, T $>$@{\_iterator$<$ nodeT, T $>$}}
+\hypertarget{struct__iterator}{}\doxysection{\+\_\+iterator$<$ T, is\+\_\+const $>$ Struct Template Reference}
+\label{struct__iterator}\index{\_iterator$<$ T, is\_const $>$@{\_iterator$<$ T, is\_const $>$}}
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct__iterator_afacbfb05954dd16391b0faeb6c40b7ed}\label{struct__iterator_afacbfb05954dd16391b0faeb6c40b7ed}} 
-using {\bfseries value\+\_\+type} = T
+\mbox{\Hypertarget{struct__iterator_a68c865efde3f5c6ae36e7aa5cf9b41b2}\label{struct__iterator_a68c865efde3f5c6ae36e7aa5cf9b41b2}} 
+using {\bfseries nodeT} = \mbox{\hyperlink{structNode}{Node}}$<$ T $>$
 \item 
-\mbox{\Hypertarget{struct__iterator_a0390c52bb1130394e41805905374308a}\label{struct__iterator_a0390c52bb1130394e41805905374308a}} 
-using {\bfseries difference\+\_\+type} = std\+::ptrdiff\+\_\+t
+\mbox{\Hypertarget{struct__iterator_a16bdcc56856b96368fefaf79e2d58bd0}\label{struct__iterator_a16bdcc56856b96368fefaf79e2d58bd0}} 
+using {\bfseries value\+\_\+type} = typename std\+::conditional$<$ is\+\_\+const, const T, T $>$\+::type
 \item 
-\mbox{\Hypertarget{struct__iterator_aee81a44a16f91efc1bdf8f33830f50d6}\label{struct__iterator_aee81a44a16f91efc1bdf8f33830f50d6}} 
+\mbox{\Hypertarget{struct__iterator_a12fa11154756b05de5f70cfb48e93d60}\label{struct__iterator_a12fa11154756b05de5f70cfb48e93d60}} 
+using {\bfseries reference} = typename std\+::conditional$<$ is\+\_\+const, const T \&, T \& $>$\+::type
+\item 
+\mbox{\Hypertarget{struct__iterator_a4c731eea688ca215a05853b756d2e73c}\label{struct__iterator_a4c731eea688ca215a05853b756d2e73c}} 
+using {\bfseries pointer} = typename std\+::conditional$<$ is\+\_\+const, const T $\ast$, T $\ast$ $>$\+::type
+\item 
+\mbox{\Hypertarget{struct__iterator_ad6698de959bbbdbc540ec94ed7c5fa77}\label{struct__iterator_ad6698de959bbbdbc540ec94ed7c5fa77}} 
 using {\bfseries iterator\+\_\+category} = std\+::forward\+\_\+iterator\+\_\+tag
 \item 
-\mbox{\Hypertarget{struct__iterator_a258329ec3280f5a77d2bc43a0046610e}\label{struct__iterator_a258329ec3280f5a77d2bc43a0046610e}} 
-using {\bfseries reference} = value\+\_\+type \&
-\item 
-\mbox{\Hypertarget{struct__iterator_a6699ac10815a5eae5ccc2420285f6095}\label{struct__iterator_a6699ac10815a5eae5ccc2420285f6095}} 
-using {\bfseries pointer} = value\+\_\+type $\ast$
+\mbox{\Hypertarget{struct__iterator_a738900f242e4adc30c70faea0d703da5}\label{struct__iterator_a738900f242e4adc30c70faea0d703da5}} 
+using {\bfseries difference\+\_\+type} = std\+::ptrdiff\+\_\+t
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct__iterator_a164c895fbeb0d505bc37d83366f44d55}{\+\_\+iterator}} (nodeT $\ast$pn) noexcept
+\mbox{\hyperlink{struct__iterator_ae6be885cdd5e4d405371c6800e857443}{\+\_\+iterator}} (\mbox{\hyperlink{structNode}{nodeT}} $\ast$pn) noexcept
 \begin{DoxyCompactList}\small\item\em Custom constructor for iterator. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{struct__iterator_ad58152890d31da0ef2248340d04d882c}\label{struct__iterator_ad58152890d31da0ef2248340d04d882c}} 
-\mbox{\hyperlink{struct__iterator_ad58152890d31da0ef2248340d04d882c}{\+\_\+iterator}} () noexcept=default
+\mbox{\Hypertarget{struct__iterator_a471287515df798ddf9419c9a6b65527b}\label{struct__iterator_a471287515df798ddf9419c9a6b65527b}} 
+\mbox{\hyperlink{struct__iterator_a471287515df798ddf9419c9a6b65527b}{\+\_\+iterator}} () noexcept=default
 \begin{DoxyCompactList}\small\item\em Default-\/generated constructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{struct__iterator_abea40fdd307cf556903c2f1b296eacef}\label{struct__iterator_abea40fdd307cf556903c2f1b296eacef}} 
-\mbox{\hyperlink{struct__iterator_abea40fdd307cf556903c2f1b296eacef}{$\sim$\+\_\+iterator}} ()=default
+\mbox{\Hypertarget{struct__iterator_ac1e561429e9a41b493ddd527e519ea93}\label{struct__iterator_ac1e561429e9a41b493ddd527e519ea93}} 
+\mbox{\hyperlink{struct__iterator_ac1e561429e9a41b493ddd527e519ea93}{$\sim$\+\_\+iterator}} ()=default
 \begin{DoxyCompactList}\small\item\em Default-\/generated destructor. \end{DoxyCompactList}\item 
-reference \mbox{\hyperlink{struct__iterator_aeba9036adff785f1f038572c0312ea09}{operator$\ast$}} () const noexcept
+reference \mbox{\hyperlink{struct__iterator_a23dd7c8c060eda2457b72a9fb5be83ae}{operator$\ast$}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Dereference operator. \end{DoxyCompactList}\item 
-pointer \mbox{\hyperlink{struct__iterator_aa089e4c67637625508d59a9a88dadcc6}{operator-\/$>$}} () const noexcept
+pointer \mbox{\hyperlink{struct__iterator_a9b09c9efef8f79717baf488727452b91}{operator-\/$>$}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Arrow operator. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{struct__iterator_a329d46c4783d6efb3f45359da6afbf8e}\label{struct__iterator_a329d46c4783d6efb3f45359da6afbf8e}} 
-\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} \& \mbox{\hyperlink{struct__iterator_a329d46c4783d6efb3f45359da6afbf8e}{operator++}} () noexcept
-\begin{DoxyCompactList}\small\item\em Post-\/ increment operator. It\textquotesingle{}s marked noexecpt as we\textquotesingle{}re not acquiring any resource and nothing can go wrong. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{struct__iterator_a7877cf36bddf70c6a63fe6bddc1725aa}\label{struct__iterator_a7877cf36bddf70c6a63fe6bddc1725aa}} 
+\mbox{\Hypertarget{struct__iterator_af1de63473c015049628d9849bfe36434}\label{struct__iterator_af1de63473c015049628d9849bfe36434}} 
+\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} \& \mbox{\hyperlink{struct__iterator_af1de63473c015049628d9849bfe36434}{operator++}} () noexcept
+\begin{DoxyCompactList}\small\item\em Pre-\/increment operator. It\textquotesingle{}s marked noexecpt as we\textquotesingle{}re not acquiring any resource and nothing can go wrong. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct__iterator_a429648fc346f466a370eab87418b162e}\label{struct__iterator_a429648fc346f466a370eab87418b162e}} 
+\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} \mbox{\hyperlink{struct__iterator_a429648fc346f466a370eab87418b162e}{operator++}} (int)
+\begin{DoxyCompactList}\small\item\em Post-\/increment operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool const\+Bool$>$ }\\bool \mbox{\hyperlink{struct__iterator_a770181ddbffe12d094dbf4346281b729}{operator==}} (const \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ T, const\+Bool $>$ \&candidate) const noexcept
+\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool const\+Bool$>$ }\\bool \mbox{\hyperlink{struct__iterator_a8edc14d3a125d7fba81d0916e0471762}{operator!=}} (const \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ T, const\+Bool $>$ \&candidate) const noexcept
+\begin{DoxyCompactList}\small\item\em Inequality operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct__iterator_ae27cf9bc96f428bcd430db6a36d1278b}\label{struct__iterator_ae27cf9bc96f428bcd430db6a36d1278b}} 
 void {\bfseries print\+\_\+node\+\_\+with\+\_\+iterator} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct__iterator_af644f046626427580f810326eb4f64ba}\label{struct__iterator_af644f046626427580f810326eb4f64ba}} 
-nodeT $\ast$ \mbox{\hyperlink{struct__iterator_af644f046626427580f810326eb4f64ba}{current}}
+\mbox{\Hypertarget{struct__iterator_a7423b3d978fdb8b3d4501df6bcf3a9d8}\label{struct__iterator_a7423b3d978fdb8b3d4501df6bcf3a9d8}} 
+\mbox{\hyperlink{structNode}{nodeT}} $\ast$ \mbox{\hyperlink{struct__iterator_a7423b3d978fdb8b3d4501df6bcf3a9d8}{current}}
 \begin{DoxyCompactList}\small\item\em Raw pointer to the current \mbox{\hyperlink{structNode}{Node}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Friends}
-\begin{DoxyCompactItemize}
-\item 
-bool \mbox{\hyperlink{struct__iterator_a599d026a94192ab05408efac62127124}{operator==}} (\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} \&a, \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} \&b)
-\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{struct__iterator_aab30db2d33f82df6cf73532ed0b76207}{operator!=}} (\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} \&a, \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} \&b)
-\begin{DoxyCompactList}\small\item\em Inequality operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{struct__iterator_a164c895fbeb0d505bc37d83366f44d55}\label{struct__iterator_a164c895fbeb0d505bc37d83366f44d55}} 
-\index{\_iterator$<$ nodeT, T $>$@{\_iterator$<$ nodeT, T $>$}!\_iterator@{\_iterator}}
-\index{\_iterator@{\_iterator}!\_iterator$<$ nodeT, T $>$@{\_iterator$<$ nodeT, T $>$}}
+\mbox{\Hypertarget{struct__iterator_ae6be885cdd5e4d405371c6800e857443}\label{struct__iterator_ae6be885cdd5e4d405371c6800e857443}} 
+\index{\_iterator$<$ T, is\_const $>$@{\_iterator$<$ T, is\_const $>$}!\_iterator@{\_iterator}}
+\index{\_iterator@{\_iterator}!\_iterator$<$ T, is\_const $>$@{\_iterator$<$ T, is\_const $>$}}
 \doxysubsubsection{\texorpdfstring{\_iterator()}{\_iterator()}}
-{\footnotesize\ttfamily template$<$typename nodeT , typename T $>$ \\
-\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ nodeT, T $>$\+::\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} (\begin{DoxyParamCaption}\item[{nodeT $\ast$}]{pn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily template$<$typename T , bool is\+\_\+const = true$>$ \\
+\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ T, is\+\_\+const $>$\+::\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structNode}{nodeT}} $\ast$}]{pn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
 
 
@@ -74,37 +77,13 @@ Custom constructor for iterator.
 Construct a new \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} that refers to \mbox{\hyperlink{structNode}{Node}} pn 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{struct__iterator_aeba9036adff785f1f038572c0312ea09}\label{struct__iterator_aeba9036adff785f1f038572c0312ea09}} 
-\index{\_iterator$<$ nodeT, T $>$@{\_iterator$<$ nodeT, T $>$}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!\_iterator$<$ nodeT, T $>$@{\_iterator$<$ nodeT, T $>$}}
-\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
-{\footnotesize\ttfamily template$<$typename nodeT , typename T $>$ \\
-reference \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ nodeT, T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-
-Dereference operator. 
-
-Dereferences an \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} by returning the data stored by the \mbox{\hyperlink{structNode}{Node}} it refers to \mbox{\Hypertarget{struct__iterator_aa089e4c67637625508d59a9a88dadcc6}\label{struct__iterator_aa089e4c67637625508d59a9a88dadcc6}} 
-\index{\_iterator$<$ nodeT, T $>$@{\_iterator$<$ nodeT, T $>$}!operator-\/$>$@{operator-\/$>$}}
-\index{operator-\/$>$@{operator-\/$>$}!\_iterator$<$ nodeT, T $>$@{\_iterator$<$ nodeT, T $>$}}
-\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
-{\footnotesize\ttfamily template$<$typename nodeT , typename T $>$ \\
-pointer \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ nodeT, T $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-
-Arrow operator. 
-
-Access operator\+: it return a pointer to the data stored in the \mbox{\hyperlink{structNode}{Node}} the \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} refers to 
-
-\doxysubsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{struct__iterator_aab30db2d33f82df6cf73532ed0b76207}\label{struct__iterator_aab30db2d33f82df6cf73532ed0b76207}} 
-\index{\_iterator$<$ nodeT, T $>$@{\_iterator$<$ nodeT, T $>$}!operator"!=@{operator"!=}}
-\index{operator"!=@{operator"!=}!\_iterator$<$ nodeT, T $>$@{\_iterator$<$ nodeT, T $>$}}
-\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}}
-{\footnotesize\ttfamily template$<$typename nodeT , typename T $>$ \\
-bool operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ nodeT, T $>$ \&}]{a,  }\item[{\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ nodeT, T $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+\mbox{\Hypertarget{struct__iterator_a8edc14d3a125d7fba81d0916e0471762}\label{struct__iterator_a8edc14d3a125d7fba81d0916e0471762}} 
+\index{\_iterator$<$ T, is\_const $>$@{\_iterator$<$ T, is\_const $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!\_iterator$<$ T, is\_const $>$@{\_iterator$<$ T, is\_const $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename T , bool is\+\_\+const = true$>$ \\
+template$<$bool const\+Bool$>$ \\
+bool \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ T, is\+\_\+const $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ T, const\+Bool $>$ \&}]{candidate }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -112,17 +91,38 @@ Inequality operator.
 
 
 \begin{DoxyParams}{Parameters}
-{\em a} & Reference to the first iterator \\
-\hline
-{\em b} & Reference to the second iterator\\
+{\em candidate} & Reference to the iterator we want to compare.\\
 \hline
 \end{DoxyParams}
-To avoid code duplication, use the logical negation of {\ttfamily ==} operator. \mbox{\Hypertarget{struct__iterator_a599d026a94192ab05408efac62127124}\label{struct__iterator_a599d026a94192ab05408efac62127124}} 
-\index{\_iterator$<$ nodeT, T $>$@{\_iterator$<$ nodeT, T $>$}!operator==@{operator==}}
-\index{operator==@{operator==}!\_iterator$<$ nodeT, T $>$@{\_iterator$<$ nodeT, T $>$}}
-\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
-{\footnotesize\ttfamily template$<$typename nodeT , typename T $>$ \\
-bool operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ nodeT, T $>$ \&}]{a,  }\item[{\mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ nodeT, T $>$ \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+To avoid code duplication, use the logical negation of {\ttfamily ==} operator. \mbox{\Hypertarget{struct__iterator_a23dd7c8c060eda2457b72a9fb5be83ae}\label{struct__iterator_a23dd7c8c060eda2457b72a9fb5be83ae}} 
+\index{\_iterator$<$ T, is\_const $>$@{\_iterator$<$ T, is\_const $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!\_iterator$<$ T, is\_const $>$@{\_iterator$<$ T, is\_const $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T , bool is\+\_\+const = true$>$ \\
+reference \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ T, is\+\_\+const $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Dereference operator. 
+
+Dereferences an \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} by returning the data stored by the \mbox{\hyperlink{structNode}{Node}} it refers to \mbox{\Hypertarget{struct__iterator_a9b09c9efef8f79717baf488727452b91}\label{struct__iterator_a9b09c9efef8f79717baf488727452b91}} 
+\index{\_iterator$<$ T, is\_const $>$@{\_iterator$<$ T, is\_const $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!\_iterator$<$ T, is\_const $>$@{\_iterator$<$ T, is\_const $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename T , bool is\+\_\+const = true$>$ \\
+pointer \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ T, is\+\_\+const $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Arrow operator. 
+
+Access operator\+: it return a pointer to the data stored in the \mbox{\hyperlink{structNode}{Node}} the \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} refers to \mbox{\Hypertarget{struct__iterator_a770181ddbffe12d094dbf4346281b729}\label{struct__iterator_a770181ddbffe12d094dbf4346281b729}} 
+\index{\_iterator$<$ T, is\_const $>$@{\_iterator$<$ T, is\_const $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!\_iterator$<$ T, is\_const $>$@{\_iterator$<$ T, is\_const $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename T , bool is\+\_\+const = true$>$ \\
+template$<$bool const\+Bool$>$ \\
+bool \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ T, is\+\_\+const $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ T, const\+Bool $>$ \&}]{candidate }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -130,9 +130,7 @@ Equality operator.
 
 
 \begin{DoxyParams}{Parameters}
-{\em a} & Reference to first iterator. \\
-\hline
-{\em b} & Reference to the second iterator Two iterators are equal iff they point to the same \mbox{\hyperlink{structNode}{Node}} \\
+{\em candidate} & Reference to the iterator we want to compare. Two iterators are equal iff they point to the same \mbox{\hyperlink{structNode}{Node}} \\
 \hline
 \end{DoxyParams}
 
