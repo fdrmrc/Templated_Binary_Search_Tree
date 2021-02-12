@@ -76,14 +76,14 @@ struct Node{
      */
     
     void print(){
-//        std::cout <<"Node has value: " << data.second <<"\n";
-//        if (left) {
-//            std::cout << "Left child has value: " <<left->data.second <<"\n";
-//        }if(right){
-//            std::cout << "Right child has value: " << right->data.second << "\n";
-//        }if(parent){
-//            std::cout << "Parent is Node with value: " <<parent->data.second <<"\n";
-//        }
+        std::cout <<"Node has value: " << data.second <<"\n";
+        if (left) {
+            std::cout << "Left child has value: " <<left->data.second <<"\n";
+        }if(right){
+            std::cout << "Right child has value: " << right->data.second << "\n";
+        }if(parent){
+            std::cout << "Parent is Node with value: " <<parent->data.second <<"\n";
+        }
         
     }
     

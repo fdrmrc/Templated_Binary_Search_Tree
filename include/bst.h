@@ -16,7 +16,7 @@
  * The implementation of the concept of a Node. A Node is templated on the type of the value, which in this project will be a `std::pair` with a key and a value, and must know its children and its parent. Therefore we have 4 data member. The pointers to the left and right child are `unique_ptr`, while the pointer to the parent is a raw pointer. If it were a `unique_ptr`, then we would end up with nodes that are pointed (uniquely) by more pointers, which is not correct.
  *
  * @subsection subsection2 Iterator.h
- * The class iterator is templated on the type 'T' of the Node, and on a boolean 'is_const', used to determine the const-ness of the iterator. The most important opertator is the '++', which allows to go the next (ordering by key) @ref Node by returning a self-reference.
+ * The class iterator is templated on the type 'T' of the Node, and on a boolean 'is_const', used to determine the const-ness of the iterator by exploiting ``. The most important opertator is the '++', which allows to go the next (ordering by key) @ref Node by returning a self-reference.
  *
  * @subsection subsection3 bst.h
  * This class contains the implementation of the Binary Search Tree. It's templated on the type of the key, on the type of the value, and on the type of the comparison operator, which is set to `std::less` by default. The data members are a `std::unique_ptr` to the head Node, and the comparison operator.
@@ -73,7 +73,37 @@ private:
         return;
     }
     
+    /**
+     * @brief Helper recursive function that finds the height of a @ref Node.
+     * @param ptn Raw pointer to the Node of which we want to find the height.
+     * The height is the number of nodes along the longest path from the node down to the farthest leaf node.
+     */
+    int get_height(Node<pair_type>* ptn){
+        if (!ptn) {
+            return 0; //if is nullptr, height is 0
+        }
+        return 1 + std::max(get_height(ptn->left.get()), get_height(ptn->right.get()));
+    }
     
+    /**
+     * @brief Helper recursive function that checks if the tree is balanced.
+     * @param head_node Raw pointer to a @ref Node, which will be the 'head' Node. Due to this, we need to call it with `head.get()`.
+     * Recall that a tree is balanced if, for each @ref Node, the height of the left and right subtree is at most 1 and each subtree of the tree is balanced.
+     */
+    bool balance_check(Node<pair_type>* head_node){
+        if (!head_node) {
+            return true; //empy tree is balanced by definition
+        }
+        int left_height{get_height(head_node->left.get())};
+        int right_height{get_height(head_node->right.get())};
+        
+        if(std::abs(left_height-right_height) <=1 && balance_check(head_node->left.get()) && balance_check(head_node->right.get())){
+            return true;
+        }
+        
+        return false;
+        
+    }
     
     /**
      * @brief Utility function used for @ref find(). It prevents code duplication since the body of @ref find() is almost the same if we do the lookup in a constant tree or not.
@@ -151,7 +181,7 @@ public:
      * @brief Copy constructor.
      */
     explicit bst(const bst& tree): comp{tree.comp}{
-//        head=std::make_unique<Node<pair_type>>(tree.head,nullptr);
+        //        head=std::make_unique<Node<pair_type>>(tree.head,nullptr);
         head = std::unique_ptr<Node<pair_type>>(new Node<pair_type>(tree.head,nullptr));
     }
     
@@ -481,112 +511,121 @@ public:
         }
         
     }
+    
+    
     /**
-         * @brief Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist.
-         * @param x constant key
-         * @see insert()
+     * @brief Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist.
+     * @param x constant key
+     * @see insert()
+     */
+    
+    value_type& operator[](const key_type& x){
+        /*std::cout <<"Calling l-value subscripting" <<"\n";
+         auto insertion{insert(pair_type{x,value_type{}})}; //pair with an iterator to the node and a bool
+         return insertion.first->second; //take the iterator and access the value
          */
-        
-        value_type& operator[](const key_type& x){
-            /*std::cout <<"Calling l-value subscripting" <<"\n";
-             auto insertion{insert(pair_type{x,value_type{}})}; //pair with an iterator to the node and a bool
-             return insertion.first->second; //take the iterator and access the value
-             */
-            std::cout <<"Calling l-value subscripting" <<"\n";
-            auto isfound = find_helper(x);
-            if (isfound) {
-                return isfound->data.second;
-            } else { //key not found in tree
-                return insert(pair_type{x,value_type{}}).first->second;
-            }
+        std::cout <<"Calling l-value subscripting" <<"\n";
+        auto isfound = find_helper(x);
+        if (isfound) {
+            return isfound->data.second;
+        } else { //key not found in tree
+            return insert(pair_type{x,value_type{}}).first->second;
         }
-        
-        
-        
-        /**
-         * @brief Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. It uses move semantic
-         * @param x r-value key
-         * @see insert()
-         */
-        
-        value_type& operator[](key_type&& x){
-            /*    std::cout <<"Calling move subscripting" <<"\n";
-             auto insertion{insert(pair_type{std::move(x),value_type{x}})};
-             return insertion.first->second;*/
-            std::cout <<"Calling r-value subscripting" <<"\n";
-            auto isfound = find_helper(std::move(x));
-            if (isfound) {
-                return isfound->data.second;
-            } else { //key not found in tree
-                return insert(pair_type{x,value_type{}}).first->second;
-            }
+    }
+    
+    
+    
+    /**
+     * @brief Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. It uses move semantic
+     * @param x r-value key
+     * @see insert()
+     */
+    
+    value_type& operator[](key_type&& x){
+        /*    std::cout <<"Calling move subscripting" <<"\n";
+         auto insertion{insert(pair_type{std::move(x),value_type{x}})};
+         return insertion.first->second;*/
+        std::cout <<"Calling r-value subscripting" <<"\n";
+        auto isfound = find_helper(std::move(x));
+        if (isfound) {
+            return isfound->data.second;
+        } else { //key not found in tree
+            return insert(pair_type{x,value_type{}}).first->second;
         }
-        
-        
-        
-        /**
-         * @brief Balance the tree by using the recursive (helper) function @ref balance_helper()
-         * @see balance_helper()
-         */
-        
-        void balance(){
-            std::vector<pair_type> vec_nodes{};
-            auto stop= end();
-            for (auto it=begin(); it!=stop; ++it) {
-                vec_nodes.push_back(*it); //store the (ordered) nodes in a vector
-            }
-            clear();
-            int middle{static_cast<int>((vec_nodes.size() )/2)};
-            this->insert(vec_nodes[middle]);
-            balance_helper(vec_nodes,0,middle-1);
-            balance_helper(vec_nodes,middle+1,vec_nodes.size()-1);
+    }
+    
+    
+    
+    /**
+     * @brief Balance the tree by using the recursive (helper) function @ref balance_helper()
+     * @see balance_helper()
+     */
+    
+    void balance(){
+        std::vector<pair_type> vec_nodes{};
+        auto stop= end();
+        for (auto it=begin(); it!=stop; ++it) {
+            vec_nodes.push_back(*it); //store the (ordered) nodes in a vector
         }
+        clear();
+        int middle{static_cast<int>((vec_nodes.size() )/2)};
+        this->insert(vec_nodes[middle]);
+        balance_helper(vec_nodes,0,middle-1);
+        balance_helper(vec_nodes,middle+1,vec_nodes.size()-1);
+    }
+    
+    
+    
+    /**
+     * @brief Prints the tree, traversed in order using the comparison operator.
+     */
+    friend std::ostream& operator<<(std::ostream& os, const bst& x){
         
+        auto endofTree = x.cend(); //tree is passed as constant
         
+        for (auto it=x.cbegin(); it!=endofTree; ++it) {
+            os << it->first <<" ";
+        }
+        return os;
+    }
+    
+    
+    /**
+     * @brief Function that prints for each node: parent, left/right child and value. Used for visualize whether or not the tree is balanced.
+     */
+    void unordered_print(){
+        auto endofTree = end(); //tree is passed as constant
+        for (auto it=begin(); it!=endofTree; ++it) {
+            it.print_node_with_iterator();
+            //            std::cout << "\n";
+        }
+    }
+    
+    
+    /**
+     * @brief Returns a boolean which is `True` if the tree is balanced, `False` otherwise.
+     * @see balance_check()
+     */
+    
+    bool is_balanced(){
+        return balance_check(head.get());
+    }
+    
+    
+    
+    /**
+     * @brief Clear the tree by applying the method reset() to the head node.
+     */
+    
+    void clear() noexcept{
         
-        /**
-         * @brief Prints the tree, traversed in order using the comparison operator.
-         */
-        friend std::ostream& operator<<(std::ostream& os, const bst& x){
-            
-            auto endofTree = x.cend(); //tree is passed as constant
+        //        Destroys the object currently managed by the unique_ptr (if any) and takes ownership of p.
+        //        If p is a null pointer (such as a default-initialized pointer), the unique_ptr becomes empty, managing no object after the call
+        this->head.reset();
+    }
+    
+    
+};
 
-            for (auto it=x.cbegin(); it!=endofTree; ++it) {
-                os << it->first <<" ";
-            }
-            return os;
-        }
-        
-        
-        /**
-         * @brief Function that prints for each node: parent, left/right child and value. Used for visualize whether or not the tree is balanced.
-         */
-        void unordered_print(){
-            auto endofTree = end(); //tree is passed as constant
-            for (auto it=begin(); it!=endofTree; ++it) {
-                it.print_node_with_iterator();
-                //            std::cout << "\n";
-            }
-        }
-        
-        
-        
-        
-        
-        
-        /**
-         * @brief Clear the tree by applying the method reset() to the head node.
-         */
-        
-        void clear() noexcept{
-            
-            //        Destroys the object currently managed by the unique_ptr (if any) and takes ownership of p.
-            //        If p is a null pointer (such as a default-initialized pointer), the unique_ptr becomes empty, managing no object after the call
-            this->head.reset();
-        }
-        
-        
-    };
-    
-    
+
 #endif /* bst_h*/

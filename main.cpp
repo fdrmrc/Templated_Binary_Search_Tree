@@ -43,8 +43,8 @@ int main() {
     auto it{_iterator<intpair,false>(&parent_node)};
     it->first = 96; //good that it's allowed
     (*it).second = 2;
-//    auto itpp{it++}; //post - increment
-    auto itpp{++it}; //pre - increment
+    auto itpp{it++}; //post - increment
+//    auto itpp{++it}; //pre - increment
     std::cout << "Expect next node's value: " << nine_pair.second <<". \t"<<"Obtained: " << itpp->second <<"\n";
     
     auto it2{_iterator<intpair,false>(parent_node.right->left.get())}; //Node with key and value equal to 10
@@ -138,10 +138,7 @@ int main() {
 
  
 
-    my_tree.clear();
-    rand_tree.clear();
-    test_bst_copy_semantics.clear();
-    test_bst_move_semantics.clear();
+
     
 
     std::cout<< "BALANCE TESTS: " << "\n";
@@ -152,7 +149,20 @@ int main() {
     std::cout << tobebalanced << "\n";
 
     tobebalanced.balance();
-    tobebalanced.unordered_print();
+    bool is_bal{tobebalanced.is_balanced()};
+    std::cout<< "Is it balanced? " << is_bal <<"\n";
+//    tobebalanced.unordered_print();
+    
+    std::cout <<"Let's balance the random tree"<< "\n";
+    test_bst_move_semantics.balance();
+    std::cout<< "Is it balanced? " << test_bst_move_semantics.is_balanced() <<"\n";
+
+    
+    
+    my_tree.clear();
+    rand_tree.clear();
+    test_bst_copy_semantics.clear();
+    test_bst_move_semantics.clear();
 
     
     std::cout << "ERASURE TESTS: "<<"\n";
