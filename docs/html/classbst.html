@@ -148,6 +148,9 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a8dbaf0cafa3b10cb069980423153e3a2">unordered_print</a> ()</td></tr>
 <tr class="memdesc:a8dbaf0cafa3b10cb069980423153e3a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that prints for each node: parent, left/right child and value. Used for visualize whether or not the tree is balanced. <br /></td></tr>
 <tr class="separator:a8dbaf0cafa3b10cb069980423153e3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6356dae3e7172a9deb26dc87df4a2daf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#a6356dae3e7172a9deb26dc87df4a2daf">is_balanced</a> ()</td></tr>
+<tr class="memdesc:a6356dae3e7172a9deb26dc87df4a2daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a boolean which is <code>True</code> if the tree is balanced, <code>False</code> otherwise.  <a href="classbst.html#a6356dae3e7172a9deb26dc87df4a2daf">More...</a><br /></td></tr>
+<tr class="separator:a6356dae3e7172a9deb26dc87df4a2daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad74e65e6a994a0c46084f8cb898c426"><td class="memItemLeft" align="right" valign="top"><a id="aad74e65e6a994a0c46084f8cb898c426"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbst.html#aad74e65e6a994a0c46084f8cb898c426">clear</a> () noexcept</td></tr>
 <tr class="memdesc:aad74e65e6a994a0c46084f8cb898c426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the tree by applying the method reset() to the head node. <br /></td></tr>
@@ -406,6 +409,36 @@ template&lt;typename key_type , typename value_type , typename OP  = std::less&l
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a6356dae3e7172a9deb26dc87df4a2daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6356dae3e7172a9deb26dc87df4a2daf">&#9670;&nbsp;</a></span>is_balanced()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_type , typename value_type , typename OP  = std::less&lt;key_type&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classbst.html">bst</a>&lt; key_type, value_type, OP &gt;::is_balanced </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a boolean which is <code>True</code> if the tree is balanced, <code>False</code> otherwise. </p>
+<dl class="section see"><dt>See also</dt><dd>balance_check() </dd></dl>
 
 </div>
 </div>

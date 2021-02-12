@@ -57,6 +57,8 @@ void \mbox{\hyperlink{classbst_a616594a73f55c43f4eb8b9c661b84695}{balance}} ()
 \mbox{\Hypertarget{classbst_a8dbaf0cafa3b10cb069980423153e3a2}\label{classbst_a8dbaf0cafa3b10cb069980423153e3a2}} 
 void \mbox{\hyperlink{classbst_a8dbaf0cafa3b10cb069980423153e3a2}{unordered\+\_\+print}} ()
 \begin{DoxyCompactList}\small\item\em Function that prints for each node\+: parent, left/right child and value. Used for visualize whether or not the tree is balanced. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classbst_a6356dae3e7172a9deb26dc87df4a2daf}{is\+\_\+balanced}} ()
+\begin{DoxyCompactList}\small\item\em Returns a boolean which is {\ttfamily True} if the tree is balanced, {\ttfamily False} otherwise. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classbst_aad74e65e6a994a0c46084f8cb898c426}\label{classbst_aad74e65e6a994a0c46084f8cb898c426}} 
 void \mbox{\hyperlink{classbst_aad74e65e6a994a0c46084f8cb898c426}{clear}} () noexcept
 \begin{DoxyCompactList}\small\item\em Clear the tree by applying the method reset() to the head node. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -180,6 +182,20 @@ Insert a new \mbox{\hyperlink{structNode}{Node}} in the tree with pair x.
 {\em x} & r-\/value reference to a pair with a node and a value Returns a std\+::pair with an \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} and a bool which is true if the node has been inserted, false otherwise. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classbst_a6356dae3e7172a9deb26dc87df4a2daf}\label{classbst_a6356dae3e7172a9deb26dc87df4a2daf}} 
+\index{bst$<$ key\_type, value\_type, OP $>$@{bst$<$ key\_type, value\_type, OP $>$}!is\_balanced@{is\_balanced}}
+\index{is\_balanced@{is\_balanced}!bst$<$ key\_type, value\_type, OP $>$@{bst$<$ key\_type, value\_type, OP $>$}}
+\doxysubsubsection{\texorpdfstring{is\_balanced()}{is\_balanced()}}
+{\footnotesize\ttfamily template$<$typename key\+\_\+type , typename value\+\_\+type , typename OP  = std\+::less$<$key\+\_\+type$>$$>$ \\
+bool \mbox{\hyperlink{classbst}{bst}}$<$ key\+\_\+type, value\+\_\+type, OP $>$\+::is\+\_\+balanced (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a boolean which is {\ttfamily True} if the tree is balanced, {\ttfamily False} otherwise. 
+
+\begin{DoxySeeAlso}{See also}
+balance\+\_\+check() 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{classbst_a9cad294400509550f2390471e7063cbf}\label{classbst_a9cad294400509550f2390471e7063cbf}} 
 \index{bst$<$ key\_type, value\_type, OP $>$@{bst$<$ key\_type, value\_type, OP $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!bst$<$ key\_type, value\_type, OP $>$@{bst$<$ key\_type, value\_type, OP $>$}}
