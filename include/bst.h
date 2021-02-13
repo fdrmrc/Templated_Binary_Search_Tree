@@ -72,7 +72,8 @@ private:
         }
         return;
     }
-    
+     
+     
     /**
      * @brief Helper recursive function that finds the height of a @ref Node.
      * @param ptn Raw pointer to the Node of which we want to find the height.
@@ -84,7 +85,7 @@ private:
         }
         return 1 + std::max(get_height(ptn->left.get()), get_height(ptn->right.get()));
     }
-    
+
     /**
      * @brief Helper recursive function that checks if the tree is balanced.
      * @param head_node Raw pointer to a @ref Node, which will be the 'head' Node. Due to this, we need to call it with `head.get()`.
@@ -96,15 +97,15 @@ private:
         }
         int left_height{get_height(head_node->left.get())};
         int right_height{get_height(head_node->right.get())};
-        
+
         if(std::abs(left_height-right_height) <=1 && balance_check(head_node->left.get()) && balance_check(head_node->right.get())){
             return true;
         }
-        
+
         return false;
-        
+
     }
-    
+ 
     /**
      * @brief Utility function used for @ref find(). It prevents code duplication since the body of @ref find() is almost the same if we do the lookup in a constant tree or not.
      */
@@ -144,6 +145,39 @@ private:
             balance_helper(v, a, middle-1);
             balance_helper(v, middle+1, b);
         }
+    }
+    
+    
+    
+    /**
+     * @brief Helper function used in @ref insert() that exploit forwarding reference to take both l-values and r-values references. Code duplication is hence avoided. In this way the user can just call the @ref insert() function and doesn't have to care about the type of the argument.
+     * @param x Forwarding reference with the 'pair_type' to be inserted.
+     * @see insert()
+     */
+    template <typename O>
+    std::pair<iterator, bool> insert_helper(O&& x){
+        auto ptr{head.get()};
+        while (ptr) {
+            if (comp(x.first, ptr->data.first)) {
+                if (ptr->left) {
+                    ptr = ptr->left.get();
+                }else{
+                    ptr->left.reset(new Node<pair_type> {std::forward<O>(x),ptr});
+                    return std::make_pair<iterator,bool>(iterator{ptr->left.get()}, true);
+                }
+            }else if(comp(ptr->data.first,x.first)){
+                if (ptr->right) {
+                    ptr = ptr->right.get();
+                } else {
+                    ptr->right.reset(new Node<pair_type> {std::forward<O>(x),ptr});
+                    return std::make_pair<iterator,bool>(iterator{ptr->right.get()}, true);
+                }
+            }else{
+                return std::make_pair<iterator,bool>(iterator{ptr}, false);
+            }
+        }
+        head.reset( new Node<pair_type> {std::forward<O>(x),nullptr});
+        return std::make_pair<iterator,bool>(iterator{head.get()}, true);
     }
     
 public:
@@ -307,33 +341,8 @@ public:
      * Returns a std::pair with an @ref _iterator and a bool which is true if the node has been inserted, false otherwise.
      */
     std::pair<iterator, bool> insert(const pair_type& x){
-        //std::cout << "Call to l-value insert " <<"\n";
-        auto ptr{head.get()};
-        while (ptr) {
-            if (comp(x.first, ptr->data.first)) {
-                if (ptr->left) {
-                    ptr = ptr->left.get();
-                }else{
-                    ptr->left.reset(new Node<pair_type> {x,ptr});
-                    return std::make_pair<iterator,bool>(iterator{ptr->left.get()}, true);
-                }
-            }else if(comp(ptr->data.first,x.first)){
-                if (ptr->right) {
-                    ptr = ptr->right.get();
-                } else {
-                    ptr->right.reset(new Node<pair_type> {x,ptr});
-                    return std::make_pair<iterator,bool>(iterator{ptr->right.get()}, true);
-                }
-            }else{ //node has not been inserted
-                return std::make_pair<iterator,bool>(iterator{ptr}, false);
-            }
-        }
-        head.reset( new Node<pair_type> {x,nullptr});
-        return std::make_pair<iterator,bool>(iterator{head.get()}, true);
-        //if you reached this point with no return call, then the tree must be empty
+        return insert_helper(x);
     }
-    
-    
     
     
     /**
@@ -343,30 +352,7 @@ public:
      */
     
     std::pair<iterator, bool> insert(pair_type&& x){
-        //        std::cout << "Call to r-value insert " <<"\n";
-        auto ptr{head.get()};
-        while (ptr) {
-            if (comp(x.first, ptr->data.first)) {
-                if (ptr->left) {
-                    ptr = ptr->left.get();
-                }else{
-                    ptr->left.reset(new Node<pair_type> {std::move(x),ptr});
-                    return std::make_pair<iterator,bool>(iterator{ptr->left.get()}, true);
-                }
-            }else if(comp(ptr->data.first,x.first)){
-                if (ptr->right) {
-                    ptr = ptr->right.get();
-                } else {
-                    ptr->right.reset(new Node<pair_type> {std::move(x),ptr});
-                    return std::make_pair<iterator,bool>(iterator{ptr->right.get()}, true);
-                }
-            }else{
-                return std::make_pair<iterator,bool>(iterator{ptr}, false);
-            }
-        }
-        head.reset( new Node<pair_type> {std::move(x),nullptr});
-        return std::make_pair<iterator,bool>(iterator{head.get()}, true);
-        //if you reached this point with no return call, then the tree must be empty
+        return insert_helper(std::move(x));
     }
     
     
@@ -600,19 +586,17 @@ public:
             //            std::cout << "\n";
         }
     }
-    
-    
+
+
     /**
      * @brief Returns a boolean which is `True` if the tree is balanced, `False` otherwise.
      * @see balance_check()
      */
-    
+
     bool is_balanced(){
         return balance_check(head.get());
     }
-    
-    
-    
+
     /**
      * @brief Clear the tree by applying the method reset() to the head node.
      */

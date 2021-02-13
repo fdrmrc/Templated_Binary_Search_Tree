@@ -101,51 +101,53 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="structNode.html#a25ff05b0532ab4433d8598ef8b34ccdd">right</a>{<span class="keyword">nullptr</span>},</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b">parent</a>{_parent} {}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="structNode.html#a0ac1d44cfe588be564acf25485029bd8">Node</a>(<span class="keyword">const</span> std::unique_ptr&lt;<a class="code" href="structNode.html">Node&lt;T&gt;</a>&gt;&amp; ptn, <a class="code" href="structNode.html">Node&lt;T&gt;</a>* _parent): <a class="code" href="structNode.html#ac450c71a8677a38d306361f9ced518d3">data</a>{ptn-&gt;data}{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b">parent</a> = _parent;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span>(ptn-&gt;right){</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="structNode.html#a25ff05b0532ab4433d8598ef8b34ccdd">right</a> = std::make_unique&lt;Node&lt;T&gt;&gt;(ptn-&gt;right, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span>(ptn-&gt;left){</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="structNode.html#aca1e170580c9f603a827eb22dc629b53">left</a> = std::make_unique&lt;Node&lt;T&gt;&gt;(ptn-&gt;left, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="structNode.html#a3441f76a3b48539a760ff0124ed75fd6">   67</a></span>&#160;    <a class="code" href="structNode.html#a3441f76a3b48539a760ff0124ed75fd6">Node</a>(<span class="keyword">const</span> T&amp;&amp; _data, <a class="code" href="structNode.html">Node&lt;T&gt;</a>* _parent) noexcept:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="structNode.html#ac450c71a8677a38d306361f9ced518d3">data</a>{std::move(_data)},</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="structNode.html#aca1e170580c9f603a827eb22dc629b53">left</a>{<span class="keyword">nullptr</span>},</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="structNode.html#a25ff05b0532ab4433d8598ef8b34ccdd">right</a>{<span class="keyword">nullptr</span>},</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b">parent</a>{_parent} {}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structNode.html#a74a504dbcc2881a371f19b486639d9e5">   78</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structNode.html#a74a504dbcc2881a371f19b486639d9e5">print</a>(){</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::cout &lt;&lt;<span class="stringliteral">&quot;Node has value: &quot;</span> &lt;&lt; <a class="code" href="structNode.html#ac450c71a8677a38d306361f9ced518d3">data</a>.second &lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structNode.html#aca1e170580c9f603a827eb22dc629b53">left</a>) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Left child has value: &quot;</span> &lt;&lt;<a class="code" href="structNode.html#aca1e170580c9f603a827eb22dc629b53">left</a>-&gt;data.second &lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }<span class="keywordflow">if</span>(<a class="code" href="structNode.html#a25ff05b0532ab4433d8598ef8b34ccdd">right</a>){</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Right child has value: &quot;</span> &lt;&lt; <a class="code" href="structNode.html#a25ff05b0532ab4433d8598ef8b34ccdd">right</a>-&gt;data.second &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }<span class="keywordflow">if</span>(<a class="code" href="structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b">parent</a>){</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Parent is Node with value: &quot;</span> &lt;&lt;<a class="code" href="structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b">parent</a>-&gt;data.second &lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="structNode.html#a0ac1d44cfe588be564acf25485029bd8">Node</a>(<span class="keyword">const</span> std::unique_ptr&lt;<a class="code" href="structNode.html">Node&lt;T&gt;</a>&gt;&amp; ptn, <a class="code" href="structNode.html">Node&lt;T&gt;</a>* _parent): <a class="code" href="structNode.html#ac450c71a8677a38d306361f9ced518d3">data</a>{ptn-&gt;data}{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b">parent</a> = _parent;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span>(ptn-&gt;right){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="structNode.html#a25ff05b0532ab4433d8598ef8b34ccdd">right</a> = std::make_unique&lt;Node&lt;T&gt;&gt;(ptn-&gt;right, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span>(ptn-&gt;left){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="structNode.html#aca1e170580c9f603a827eb22dc629b53">left</a> = std::make_unique&lt;Node&lt;T&gt;&gt;(ptn-&gt;left, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structNode.html#a3441f76a3b48539a760ff0124ed75fd6">   69</a></span>&#160;    <a class="code" href="structNode.html#a3441f76a3b48539a760ff0124ed75fd6">Node</a>(<span class="keyword">const</span> T&amp;&amp; _data, <a class="code" href="structNode.html">Node&lt;T&gt;</a>* _parent) noexcept:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="structNode.html#ac450c71a8677a38d306361f9ced518d3">data</a>{std::move(_data)},</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="structNode.html#aca1e170580c9f603a827eb22dc629b53">left</a>{<span class="keyword">nullptr</span>},</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="structNode.html#a25ff05b0532ab4433d8598ef8b34ccdd">right</a>{<span class="keyword">nullptr</span>},</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b">parent</a>{_parent} {}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structNode.html#a74a504dbcc2881a371f19b486639d9e5">   80</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structNode.html#a74a504dbcc2881a371f19b486639d9e5">print</a>(){</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        std::cout &lt;&lt;<span class="stringliteral">&quot;Node has value: &quot;</span> &lt;&lt; <a class="code" href="structNode.html#ac450c71a8677a38d306361f9ced518d3">data</a>.second &lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structNode.html#aca1e170580c9f603a827eb22dc629b53">left</a>) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Left child has value: &quot;</span> &lt;&lt;<a class="code" href="structNode.html#aca1e170580c9f603a827eb22dc629b53">left</a>-&gt;data.second &lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }<span class="keywordflow">if</span>(<a class="code" href="structNode.html#a25ff05b0532ab4433d8598ef8b34ccdd">right</a>){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Right child has value: &quot;</span> &lt;&lt; <a class="code" href="structNode.html#a25ff05b0532ab4433d8598ef8b34ccdd">right</a>-&gt;data.second &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }<span class="keywordflow">if</span>(<a class="code" href="structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b">parent</a>){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;Parent is Node with value: &quot;</span> &lt;&lt;<a class="code" href="structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b">parent</a>-&gt;data.second &lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Node_h */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Node_h */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructNode_html_a0ac1d44cfe588be564acf25485029bd8"><div class="ttname"><a href="structNode.html#a0ac1d44cfe588be564acf25485029bd8">Node::Node</a></div><div class="ttdeci">Node()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> Node.h:30</div></div>
 <div class="ttc" id="astructNode_html"><div class="ttname"><a href="structNode.html">Node</a></div><div class="ttdef"><b>Definition:</b> Node.h:9</div></div>
-<div class="ttc" id="astructNode_html_a74a504dbcc2881a371f19b486639d9e5"><div class="ttname"><a href="structNode.html#a74a504dbcc2881a371f19b486639d9e5">Node::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Simple void function that prints a Node. Used just for testing.</div><div class="ttdef"><b>Definition:</b> Node.h:78</div></div>
+<div class="ttc" id="astructNode_html_a74a504dbcc2881a371f19b486639d9e5"><div class="ttname"><a href="structNode.html#a74a504dbcc2881a371f19b486639d9e5">Node::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Simple void function that prints a Node. Used just for testing.</div><div class="ttdef"><b>Definition:</b> Node.h:80</div></div>
 <div class="ttc" id="astructNode_html_ab8d204bde1218534f2172735ec6616f3"><div class="ttname"><a href="structNode.html#ab8d204bde1218534f2172735ec6616f3">Node::Node</a></div><div class="ttdeci">Node(const T &amp;_data)</div><div class="ttdoc">Custom constructor.</div><div class="ttdef"><b>Definition:</b> Node.h:25</div></div>
 <div class="ttc" id="astructNode_html_ac450c71a8677a38d306361f9ced518d3"><div class="ttname"><a href="structNode.html#ac450c71a8677a38d306361f9ced518d3">Node::data</a></div><div class="ttdeci">T data</div><div class="ttdoc">Data to be stored in the Node.</div><div class="ttdef"><b>Definition:</b> Node.h:11</div></div>
 <div class="ttc" id="astructNode_html_a25ff05b0532ab4433d8598ef8b34ccdd"><div class="ttname"><a href="structNode.html#a25ff05b0532ab4433d8598ef8b34ccdd">Node::right</a></div><div class="ttdeci">std::unique_ptr&lt; Node&lt; T &gt; &gt; right</div><div class="ttdoc">Unique pointer to the right child.</div><div class="ttdef"><b>Definition:</b> Node.h:16</div></div>
 <div class="ttc" id="astructNode_html_a6eb3b661ef0b58d46dfe228c6ea2e20b"><div class="ttname"><a href="structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b">Node::parent</a></div><div class="ttdeci">Node&lt; T &gt; * parent</div><div class="ttdoc">Raw pointer to the parent Node.</div><div class="ttdef"><b>Definition:</b> Node.h:19</div></div>
 <div class="ttc" id="astructNode_html_aca1e170580c9f603a827eb22dc629b53"><div class="ttname"><a href="structNode.html#aca1e170580c9f603a827eb22dc629b53">Node::left</a></div><div class="ttdeci">std::unique_ptr&lt; Node&lt; T &gt; &gt; left</div><div class="ttdoc">Unique pointer to the left child.</div><div class="ttdef"><b>Definition:</b> Node.h:13</div></div>
-<div class="ttc" id="astructNode_html_a3441f76a3b48539a760ff0124ed75fd6"><div class="ttname"><a href="structNode.html#a3441f76a3b48539a760ff0124ed75fd6">Node::Node</a></div><div class="ttdeci">Node(const T &amp;&amp;_data, Node&lt; T &gt; *_parent) noexcept</div><div class="ttdoc">Move constructor.</div><div class="ttdef"><b>Definition:</b> Node.h:67</div></div>
+<div class="ttc" id="astructNode_html_a3441f76a3b48539a760ff0124ed75fd6"><div class="ttname"><a href="structNode.html#a3441f76a3b48539a760ff0124ed75fd6">Node::Node</a></div><div class="ttdeci">Node(const T &amp;&amp;_data, Node&lt; T &gt; *_parent) noexcept</div><div class="ttdoc">Move constructor.</div><div class="ttdef"><b>Definition:</b> Node.h:69</div></div>
 <div class="ttc" id="astructNode_html_a22feac10b51bc50ea652885213bfd561"><div class="ttname"><a href="structNode.html#a22feac10b51bc50ea652885213bfd561">Node::Node</a></div><div class="ttdeci">Node(const T &amp;_data, Node&lt; T &gt; *_parent) noexcept</div><div class="ttdoc">Default destructor.</div><div class="ttdef"><b>Definition:</b> Node.h:47</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
