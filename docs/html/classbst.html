@@ -225,7 +225,7 @@ template&lt;class... Types&gt; </div>
 <p>Inserts a new element into the container constructed in-place with the given args if there is no element with the key in the container. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">args</td><td>arguments to be <em>unpacked</em> It's like if we apply ‘std::forward&lt;Types&gt;(args)‘ to each element of the pair. The r-value version of <a class="el" href="classbst.html#a7fe97dd49189262e0df3419b013de6c0">insert()</a> is called </td></tr>
+    <tr><td class="paramname">args</td><td>arguments to be <em>unpacked</em> It's like if we apply ‘std::forward&lt;Types&gt;(args)‘ to each element of the pair. </td></tr>
   </table>
   </dd>
 </dl>
@@ -369,7 +369,7 @@ template&lt;typename key_type , typename value_type , typename OP  = std::less&l
 <p>Insert a new <a class="el" href="structNode.html">Node</a> in the tree with pair x. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>Reference to a pair with a key and a value Returns a std::pair with an <a class="el" href="struct__iterator.html">_iterator</a> and a bool which is true if the node has been inserted, false otherwise. </td></tr>
+    <tr><td class="paramname">x</td><td>Const l-value reference to a pair with a key and a value Returns a std::pair with an <a class="el" href="struct__iterator.html">_iterator</a> and a bool which is true if the node has been inserted, false otherwise. </td></tr>
   </table>
   </dd>
 </dl>

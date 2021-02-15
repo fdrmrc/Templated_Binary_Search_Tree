@@ -101,11 +101,13 @@ int main() {
     my_tree[5] = 5;
     my_tree[lvalueint] =lvalueint;
     
+    my_tree.operator[](lvalueint) =lvalueint;
+    
+    
     std::cout << my_tree << "\n";
     
     
     std::cout << "** EMPLACE TESTS ** "<<"\n";
-    
     auto e1{my_tree.emplace(90,90)};
     std::cout <<my_tree<<"\n";
     
@@ -147,7 +149,8 @@ int main() {
         tobebalanced.insert(intpair{i,i});
     }
     std::cout << tobebalanced << "\n";
-
+    
+    
     tobebalanced.balance();
     bool is_bal{tobebalanced.is_balanced()};
     std::cout<< "Is it balanced? " << is_bal <<"\n";
@@ -164,16 +167,15 @@ int main() {
     test_bst_copy_semantics.clear();
     test_bst_move_semantics.clear();
 
-    
     std::cout << "ERASURE TESTS: "<<"\n";
     bst<int,int> erasure_test{tobebalanced}; //copy constructor call
     erasure_test.erase(4); //Here the key corresponds to the key of the head
-    
-    std::cout << erasure_test<<"\n";
-    
-    
-    
-    
+
+    std::cout <<"Removed Node with key=4: " << erasure_test<<"\n";
+
+
+
+
     bst<int,int> erasure_test2{};
     auto er1{erasure_test2.insert(intpair(5,5))};
     auto er2{erasure_test2.insert(intpair(2,2))};
@@ -183,11 +185,24 @@ int main() {
     auto er6{erasure_test2.insert(intpair(21,21))};
     auto er7{erasure_test2.insert(intpair(19,19))};
     auto er8{erasure_test2.insert(intpair(25,25))};
-    
-    std::cout << "New test before erasing: "<<  erasure_test2 << "\n";
+
+    std::cout << "Another test before erasing: "<<  erasure_test2 << "\n";
     erasure_test2.erase(12);
-    
+
     std::cout << "After erasing: "<<  erasure_test2 << "\n";
+
+    
+    bst<int,int> erasure_test3{};
+    auto ert1{erasure_test3.insert(intpair(8,8))};
+    auto ert2{erasure_test3.insert(intpair(6,6))};
+    auto ert3{erasure_test3.insert(intpair(10,10))};
+    auto ert4{erasure_test3.insert(intpair(9,9))};
+    auto ert5{erasure_test3.insert(intpair(11,11))};
+    auto ert6{erasure_test3.insert(intpair(3,3))};
+    auto ert7{erasure_test3.insert(intpair(7,7))};
+//    auto ert6{erasure_test3.insert(intpair(12,12))};
+    
+    erasure_test3.erase(6);
     
     rand_tree.clear();
     std::cout << rand_tree <<"\n";

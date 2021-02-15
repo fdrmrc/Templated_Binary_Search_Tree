@@ -180,6 +180,17 @@ private:
         return std::make_pair<iterator,bool>(iterator{head.get()}, true);
     }
     
+    template <typename O> //forwarding reference
+    value_type& subscript_helper(O&& x){
+        auto isfound = find_helper(std::forward<O>(x));
+        if (isfound) {
+            return isfound->data.second;
+        } else { //key not found in tree
+            return insert(pair_type{std::forward<O>(x),value_type{}}).first->second;
+        }
+    }
+    
+    
 public:
     /**
      * @brief Default constructor for the tree.
@@ -337,10 +348,11 @@ public:
     /**
      *
      * @brief Insert a new @ref Node in the tree with pair x
-     * @param x Reference to a pair with a key and a value
+     * @param x Const l-value reference to a pair with a key and a value
      * Returns a std::pair with an @ref _iterator and a bool which is true if the node has been inserted, false otherwise.
      */
     std::pair<iterator, bool> insert(const pair_type& x){
+//        std::cout <<"l-value insert"<<"\n";
         return insert_helper(x);
     }
     
@@ -352,6 +364,7 @@ public:
      */
     
     std::pair<iterator, bool> insert(pair_type&& x){
+//        std::cout <<"r-value insert"<<"\n";
         return insert_helper(std::move(x));
     }
     
@@ -359,7 +372,7 @@ public:
     /**
      * @brief Inserts a new element into the container constructed in-place with the given args if there is no element with the key in the container.
      * @param args arguments to be *unpacked*
-     * It's like if we apply ‘std::forward<Types>(args)‘ to each element of the pair. The r-value version of @ref insert() is called
+     * It's like if we apply ‘std::forward<Types>(args)‘ to each element of the pair.
      */
     template< class... Types > //packing all the arguments
     std::pair<iterator,bool> emplace(Types&&... args){ //forwarding reference
@@ -469,9 +482,19 @@ public:
                 auto dumb{std::unique_ptr<node_type>(new node_type(in_order_succ->data,ptparent))};
                 dumb->left.reset(tmp->left.release());
                 dumb->left->parent = dumb.get();
-                if(in_order_succ==tmp->right.get()){
-                    dumb->right.reset(tmp->right.release());
-                    dumb->right->parent = dumb.get();
+                if(in_order_succ==tmp->right.get()){ //successor is the right child of current node
+                    if (!in_order_succ->right) { //if the successor has no right child
+                        dumb->right.reset(); //set right child of dumb to nullptr
+                    } else {//if the successor HAS right child
+                        dumb->right.reset(in_order_succ->right.release());
+                        dumb->right->parent = dumb.get();
+                    }
+                    
+                    if (ptparent->left.get()==tmp) {
+                        ptparent->left.reset(dumb.release());
+                    } else {
+                        ptparent->right.reset(dumb.release());
+                    }
                 }else{
                     dumb->right.reset(tmp->right.release());
                     dumb->right->parent = dumb.get();
@@ -510,13 +533,14 @@ public:
          auto insertion{insert(pair_type{x,value_type{}})}; //pair with an iterator to the node and a bool
          return insertion.first->second; //take the iterator and access the value
          */
-        std::cout <<"Calling l-value subscripting" <<"\n";
+        /*std::cout <<"Calling l-value subscripting" <<"\n";
         auto isfound = find_helper(x);
         if (isfound) {
             return isfound->data.second;
         } else { //key not found in tree
             return insert(pair_type{x,value_type{}}).first->second;
-        }
+        }*/
+        return  subscript_helper(x);
     }
     
     
@@ -529,15 +553,16 @@ public:
     
     value_type& operator[](key_type&& x){
         /*    std::cout <<"Calling move subscripting" <<"\n";
-         auto insertion{insert(pair_type{std::move(x),value_type{x}})};
+         auto insertion{insert(pair_type{std::move(x),value_type{}})};
          return insertion.first->second;*/
-        std::cout <<"Calling r-value subscripting" <<"\n";
+        /*std::cout <<"Calling r-value subscripting" <<"\n";
         auto isfound = find_helper(std::move(x));
         if (isfound) {
             return isfound->data.second;
         } else { //key not found in tree
-            return insert(pair_type{x,value_type{}}).first->second;
-        }
+            return insert(pair_type{std::move(x),value_type{}}).first->second;
+        }*/
+        return  subscript_helper(std::move(x));
     }
     
     
