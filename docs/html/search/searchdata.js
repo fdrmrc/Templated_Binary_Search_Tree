@@ -1,7 +1,7 @@
 var indexSectionsWithContent =
 {
-  0: "_bcdefilnoprtu~",
-  1: "_bn",
+  0: "_bcdefiklnoprtu~",
+  1: "_bkn",
   2: "_bcefinopu~",
   3: "cdlpr",
   4: "o",

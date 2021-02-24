@@ -30,15 +30,10 @@ struct Node{
     Node(): data{},left{nullptr}, right{nullptr},parent{nullptr}{}
     
     /**
-     * @brief Default destructor
+     * @brief Default-generated destructor
      */
     
-//    ~Node(){
-////        std::cout << "def destr"<<std::endl;
-//        if(parent){
-//            delete[] parent;
-//        }
-//    };
+    ~Node()=default;
     
     /**
      @brief Copy constructor
@@ -50,6 +45,13 @@ struct Node{
         right{nullptr},
         parent{_parent} {}
 
+    
+    /**
+     * @brief Helper recursive function that, starting from a @ref Node and its parent, copy all the tree recursively.
+     * @param ptn Reference to a `unique_ptr` to a @ref Node
+     * @param _parent Raw pointer to the parent @ref Node
+     * This function exploit the `std::make_unique()` function, to construct an object of type @ref Node and wraps it into a `unique_ptr`.
+     */
     Node(const std::unique_ptr<Node<T>>& ptn, Node<T>* _parent): data{ptn->data}{
         parent = _parent;
         if(ptn->right){

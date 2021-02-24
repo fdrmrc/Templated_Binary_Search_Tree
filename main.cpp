@@ -202,7 +202,12 @@ int main() {
     auto ert7{erasure_test3.insert(intpair(7,7))};
 //    auto ert6{erasure_test3.insert(intpair(12,12))};
     
-    erasure_test3.erase(6);
+    
+    try {
+        erasure_test3.erase(60);
+    } catch (const key_not_found& s) {
+        std::cerr<< s.what() << "\n";
+    }
     
     rand_tree.clear();
     std::cout << rand_tree <<"\n";

@@ -91,10 +91,10 @@ struct _iterator {
     
     
     /**
-     * Post-increment
+     * @brief Post-increment operator.
      */
     _iterator operator++(int) {
-      auto tmp{*this};
+        auto tmp{*this};
       ++(*this);
       return tmp;
     }

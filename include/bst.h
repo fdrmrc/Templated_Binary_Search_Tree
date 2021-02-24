@@ -23,10 +23,19 @@
  *
  *
  */
+struct key_not_found{
+    std::string s;
+    key_not_found(std::string _s): s{_s}{};
+    const char* what() const{
+        return s.c_str();
+
+    }
+};
+
 
 template <typename key_type, typename value_type,typename OP = std::less<key_type> >
 class bst{
-    
+
     /**
      * @brief a pair with a constant `key` and a value.
      */
@@ -55,13 +64,13 @@ private:
     
     
     
-    
-    
+    /*
     /**
      * @brief Helper recursive function used in the copy constructor to perform a deep copy.
      * @param ptn reference to a `std::unique_ptr`
      *
      */
+    /*
     void copy_helper(std::unique_ptr<Node<pair_type>>& ptn) {
         this->insert(ptn.get()->data);
         if (ptn.get()->left) {
@@ -72,7 +81,7 @@ private:
         }
         return;
     }
-     
+    */
      
     /**
      * @brief Helper recursive function that finds the height of a @ref Node.
@@ -89,7 +98,7 @@ private:
     /**
      * @brief Helper recursive function that checks if the tree is balanced.
      * @param head_node Raw pointer to a @ref Node, which will be the 'head' Node. Due to this, we need to call it with `head.get()`.
-     * Recall that a tree is balanced if, for each @ref Node, the height of the left and right subtree is at most 1 and each subtree of the tree is balanced.
+     * Recall that a tree is balanced if, <b>for each </b> @ref Node, the height of the left and right subtree is at most 1 and each subtree of the tree is balanced.
      */
     bool balance_check(Node<pair_type>* head_node){
         if (!head_node) {
@@ -180,6 +189,14 @@ private:
         return std::make_pair<iterator,bool>(iterator{head.get()}, true);
     }
     
+    
+    
+    
+    /**
+     * @brief Helper private function that uses forwarding references for the subscript operator.
+     * @param x Forwarding reference, to be forwarded using `std::forward<O>(x)`
+     * @see operator[]
+     */
     template <typename O> //forwarding reference
     value_type& subscript_helper(O&& x){
         auto isfound = find_helper(std::forward<O>(x));
@@ -192,6 +209,7 @@ private:
     
     
 public:
+
     /**
      * @brief Default constructor for the tree.
      */
@@ -227,7 +245,7 @@ public:
      */
     explicit bst(const bst& tree): comp{tree.comp}{
         //        head=std::make_unique<Node<pair_type>>(tree.head,nullptr);
-        head = std::unique_ptr<Node<pair_type>>(new Node<pair_type>(tree.head,nullptr));
+        head = std::unique_ptr<Node<pair_type>>(new Node<pair_type>(tree.head,nullptr)); //call to recursive function in Node.h
     }
     
     /**
@@ -409,6 +427,9 @@ public:
     
     void erase(const key_type& x){
         auto it{find(x)}; //iterator to the node
+        if (!(it.current)) {
+            throw key_not_found("Couldn't find such a key in the tree");
+        }
         node_type* tmp{it.current};
         if (tmp==head.get()) { //you have to delete the head
             if (!tmp->right && !tmp->left) { //no child
@@ -588,7 +609,7 @@ public:
     
     
     /**
-     * @brief Prints the tree, traversed in order using the comparison operator.
+     * @brief Prints the tree (given as `const reference` reference) traversed in order using the ++ operator.
      */
     friend std::ostream& operator<<(std::ostream& os, const bst& x){
         

@@ -9,11 +9,14 @@
 \mbox{\Hypertarget{structNode_a0ac1d44cfe588be564acf25485029bd8}\label{structNode_a0ac1d44cfe588be564acf25485029bd8}} 
 \mbox{\hyperlink{structNode_a0ac1d44cfe588be564acf25485029bd8}{Node}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structNode_ae3d16de57a65df77a42b8e1515f70383}\label{structNode_ae3d16de57a65df77a42b8e1515f70383}} 
+\mbox{\hyperlink{structNode_ae3d16de57a65df77a42b8e1515f70383}{$\sim$\+Node}} ()=default
+\begin{DoxyCompactList}\small\item\em Default-\/generated destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structNode_a22feac10b51bc50ea652885213bfd561}\label{structNode_a22feac10b51bc50ea652885213bfd561}} 
 \mbox{\hyperlink{structNode_a22feac10b51bc50ea652885213bfd561}{Node}} (const T \&\+\_\+data, \mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$\+\_\+parent) noexcept
-\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structNode_ad5705b61045ccff25c6a877d1670cf5f}\label{structNode_ad5705b61045ccff25c6a877d1670cf5f}} 
-{\bfseries Node} (const std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structNode}{Node}}$<$ T $>$$>$ \&ptn, \mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$\+\_\+parent)
-\item 
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structNode_ad5705b61045ccff25c6a877d1670cf5f}{Node}} (const std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structNode}{Node}}$<$ T $>$$>$ \&ptn, \mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$\+\_\+parent)
+\begin{DoxyCompactList}\small\item\em Helper recursive function that, starting from a \mbox{\hyperlink{structNode}{Node}} and its parent, copy all the tree recursively. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{structNode_a3441f76a3b48539a760ff0124ed75fd6}\label{structNode_a3441f76a3b48539a760ff0124ed75fd6}} 
 \mbox{\hyperlink{structNode_a3441f76a3b48539a760ff0124ed75fd6}{Node}} (const T \&\&\+\_\+data, \mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$\+\_\+parent) noexcept
 \begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
@@ -38,18 +41,25 @@ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $>$ \mbox
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{structNode_a22feac10b51bc50ea652885213bfd561}\label{structNode_a22feac10b51bc50ea652885213bfd561}} 
+\mbox{\Hypertarget{structNode_ad5705b61045ccff25c6a877d1670cf5f}\label{structNode_ad5705b61045ccff25c6a877d1670cf5f}} 
 \index{Node$<$ T $>$@{Node$<$ T $>$}!Node@{Node}}
 \index{Node@{Node}!Node$<$ T $>$@{Node$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{Node()}{Node()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{structNode}{Node}}$<$ T $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{const T \&}]{\+\_\+data,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$}]{\+\_\+parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+\mbox{\hyperlink{structNode}{Node}}$<$ T $>$\+::\mbox{\hyperlink{structNode}{Node}} (\begin{DoxyParamCaption}\item[{const std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structNode}{Node}}$<$ T $>$$>$ \&}]{ptn,  }\item[{\mbox{\hyperlink{structNode}{Node}}$<$ T $>$ $\ast$}]{\+\_\+parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Default destructor. 
+Helper recursive function that, starting from a \mbox{\hyperlink{structNode}{Node}} and its parent, copy all the tree recursively. 
 
-Copy constructor 
+
+\begin{DoxyParams}{Parameters}
+{\em ptn} & Reference to a {\ttfamily unique\+\_\+ptr} to a \mbox{\hyperlink{structNode}{Node}} \\
+\hline
+{\em \+\_\+parent} & Raw pointer to the parent \mbox{\hyperlink{structNode}{Node}} This function exploit the {\ttfamily std\+::make\+\_\+unique()} function, to construct an object of type \mbox{\hyperlink{structNode}{Node}} and wraps it into a {\ttfamily unique\+\_\+ptr}. \\
+\hline
+\end{DoxyParams}
+
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
