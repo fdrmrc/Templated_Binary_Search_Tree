@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unordered_5fprint_30',['unordered_print',['../classbst.html#a8dbaf0cafa3b10cb069980423153e3a2',1,'bst']]]
+  ['subscript_5fhelper_38',['subscript_helper',['../classbst.html#aee57295795e6487c6e0c7d92527b83ca',1,'bst']]]
 ];
