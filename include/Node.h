@@ -52,8 +52,8 @@ struct Node{
      * @param _parent Raw pointer to the parent @ref Node
      * This function exploit the `std::make_unique()` function, to construct an object of type @ref Node and wraps it into a `unique_ptr`.
      */
-    Node(const std::unique_ptr<Node<T>>& ptn, Node<T>* _parent): data{ptn->data}{
-        parent = _parent;
+    Node(const std::unique_ptr<Node<T>> &ptn, Node<T> *_parent) : data{ptn->data}, parent{_parent}
+    {
         if(ptn->right){
             right = std::make_unique<Node<T>>(ptn->right, this);
         }
@@ -61,18 +61,17 @@ struct Node{
             left = std::make_unique<Node<T>>(ptn->left, this);
         }
     }
-    
+
     /**
      @brief Move constructor
      */
-    
-    Node(const T&& _data, Node<T>* _parent) noexcept:
-        data{std::move(_data)},
-        left{nullptr},
-        right{nullptr},
-        parent{_parent} {}
-    
-    
+
+    // Node(const T&& _data, Node<T>* _parent) noexcept:
+    //     data{std::move(_data)},
+    //     left{nullptr},
+    //     right{nullptr},
+    //     parent{_parent} {}
+
     /**
      @brief Simple void function that prints a @ref Node. Used just for testing.
      */
