@@ -18,7 +18,7 @@ First, clone the repo to your local machine.
 \item open a terminal
 \item move to the project folder
 \item type {\ttfamily make} to build the executable {\ttfamily exe}
-\item {\ttfamily ./exe.x}
+\item {\ttfamily ./exe.x} from command line
 \end{DoxyItemize}
 
 \doxysubsection*{From command line\+:}
@@ -42,6 +42,21 @@ The current version doesn\textquotesingle{}t leak memory, as can be verified.
 
 You can find a \href{https://www.doxygen.nl/index.html}{\texttt{ Doxygen documentation}} at\+: \href{https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html}{\texttt{ https\+://fdrmrc.\+github.\+io/\+Templated\+\_\+\+Binary\+\_\+\+Search\+\_\+\+Tree/html/index.\+html}}
 
-\doxysubsection*{Benchmarking}
+\doxysection*{Unit testing}
+
+To check the goodness of our functions, we used the testing framework \href{https://github.com/google/googletest}{\texttt{ Google Test}}. In particular, we provide tests for the each one of the implemented classes. If you have Google Test installed on your machine, and for instance you want to compile and run the tests for the \mbox{\hyperlink{structNode}{Node}} class, just type from command line\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily g++ Node\+Testing.\+cpp -\/lgtest -\/lgtest\+\_\+main -\/pthread -\/o Node\+Testing -\/std=c++14}
+\end{DoxyItemize}
+
+and the output will be something like the following\+:
+
+\`{}\mbox{[}==========\mbox{]} Running 5 tests from 1 test suite. \mbox{[}-\/-\/-\/-\/-\/-\/-\/---\mbox{]} Global test environment set-\/up. \mbox{[}-\/-\/-\/-\/-\/-\/-\/---\mbox{]} 5 tests from node\+Testing \mbox{[} RUN \mbox{]} node\+Testing.\+Node\+\_\+\+Default\+\_\+\+Constructor \mbox{[} OK \mbox{]} node\+Testing.\+Node\+\_\+\+Default\+\_\+\+Constructor (0 ms) \mbox{[} RUN \mbox{]} node\+Testing.\+Node\+\_\+\+Custom\+\_\+\+Constructor\+\_\+integers \mbox{[} OK \mbox{]} node\+Testing.\+Node\+\_\+\+Custom\+\_\+\+Constructor\+\_\+integers (0 ms) \mbox{[} RUN \mbox{]} node\+Testing.\+Node\+\_\+\+Custom\+\_\+\+Constructor\+\_\+strings \mbox{[} OK \mbox{]} node\+Testing.\+Node\+\_\+\+Custom\+\_\+\+Constructor\+\_\+strings (0 ms) \mbox{[} RUN \mbox{]} node\+Testing.\+Node\+\_\+\+Constructor\+\_\+\+With\+\_\+\+Parent \mbox{[} OK \mbox{]} node\+Testing.\+Node\+\_\+\+Constructor\+\_\+\+With\+\_\+\+Parent (0 ms) \mbox{[} RUN \mbox{]} node\+Testing.\+Multiple\+\_\+\+Nodes \mbox{[} OK \mbox{]} node\+Testing.\+Multiple\+\_\+\+Nodes (0 ms) \mbox{[}-\/-\/-\/-\/-\/-\/-\/---\mbox{]} 5 tests from node\+Testing (0 ms total)
+
+\mbox{[}-\/-\/-\/-\/-\/-\/-\/---\mbox{]} Global test environment tear-\/down \mbox{[}==========\mbox{]} 5 tests from 1 test suite ran. (0 ms total) \mbox{[} PASSED \mbox{]} 5 tests.\`{}
+
+\doxysection*{Benchmarking}
 
 The natural competitor is \href{https://en.cppreference.com/w/cpp/container/map}{\texttt{ std\+::map}}. The current implementation of {\ttfamily find()} for a balanced tree is faster than the one of {\ttfamily std\+::map}. \mbox{[}still in progress\mbox{]} 

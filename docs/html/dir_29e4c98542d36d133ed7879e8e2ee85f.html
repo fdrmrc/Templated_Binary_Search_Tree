@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Templated Binary Search Tree: Main Page</title>
+<title>Templated Binary Search Tree: UnitTesting Directory Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,7 +45,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,25 +59,16 @@ $(function() {
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_29e4c98542d36d133ed7879e8e2ee85f.html">UnitTesting</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
   <div class="headertitle">
-<div class="title">Templated Binary Search Tree Documentation</div>  </div>
+<div class="title">UnitTesting Directory Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>In the following some brief descriptions of the classes involved in the project. </p>
-<h1><a class="anchor" id="section1"></a>
-Description</h1>
-<p>A templated binary search tree implemented in C++ (compliant with the C++14 standard). The project is split into three files, each one of them contains the implementation of concept, and hence in each one of them we have a class declaration and definition.</p>
-<h2><a class="anchor" id="subsection1"></a>
-Node.h</h2>
-<p>The implementation of the concept of a <a class="el" href="structNode.html">Node</a>. A <a class="el" href="structNode.html">Node</a> is templated on the type of the value, which in this project will be a <code>std::pair</code> with a key and a value, and must know its children and its parent. Therefore we have 4 data member. The pointers to the left and right child are <code>unique_ptr</code>, while the pointer to the parent is a raw pointer. If it were a <code>unique_ptr</code>, then we would end up with nodes that are pointed (uniquely) by more pointers, which is not correct.</p>
-<h2><a class="anchor" id="subsection2"></a>
-Iterator.h</h2>
-<p>The class iterator is templated on the type 'T' of the <a class="el" href="structNode.html">Node</a>, and on a boolean 'is_const', used to determine the const-ness of the iterator by exploiting <code>std::conditional</code>, a C++11 which determines at compile time the types of a member. The most important operator is the '++' (pre-increment), which allows to go the next (ordering by key) <a class="el" href="structNode.html">Node</a> by returning a self-reference.</p>
-<h2><a class="anchor" id="subsection3"></a>
-bst.h</h2>
-<p>This class contains the implementation of the Binary Search Tree. It's templated on the type of the key, on the type of the value, and on the type of the comparison operator, which is set to <code>std::less</code> by default. The data members are a <code>std::unique_ptr</code> to the head <a class="el" href="structNode.html">Node</a>, and the comparison operator. </p>
-</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
