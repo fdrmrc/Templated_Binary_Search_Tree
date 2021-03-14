@@ -56,11 +56,12 @@ and the output will be something like the following:
 
 [----------] Global test environment tear-down
 [==========] 5 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 5 tests.```
+[  PASSED  ] 5 tests
+```
 
 
 
-
+You can test in a similar fashion also the other tests in the unit_tests folder.
 
 ## Benchmarking
 
