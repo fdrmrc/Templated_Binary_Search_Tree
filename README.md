@@ -39,7 +39,7 @@ To check the goodness of our functions, we used the testing framework [Google Te
 
 and the output will be something like the following:
 
-`[==========] Running 5 tests from 1 test suite.
+```[==========] Running 5 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 5 tests from nodeTesting
 [ RUN      ] nodeTesting.Node_Default_Constructor
@@ -56,7 +56,7 @@ and the output will be something like the following:
 
 [----------] Global test environment tear-down
 [==========] 5 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 5 tests.`
+[  PASSED  ] 5 tests.```
 
 
 
