@@ -1,6 +1,6 @@
 # Template Binary Search Tree [![Build Status](https://travis-ci.com/fdrmrc/Templated_Binary_Search_Tree.svg?branch=main)](https://travis-ci.com/github/fdrmrc/Templated_Binary_Search_Tree)
 
-A C++ implementation of a Templated Binary Search Tree using smart pointers
+A C++ implementation of a Templated Binary Search Tree using smart pointers, documented with Doxygen and testsed with the GoogleTest framework.
 
 ## Authors:
 
@@ -65,5 +65,5 @@ You can test in a similar fashion also the other tests in the unit_tests folder.
 
 ## Benchmarking
 
-The natural competitor is [std::map](https://en.cppreference.com/w/cpp/container/map). The current implementation of `find()` for a balanced tree is faster than the one of `std::map`. [still in progress]
+The natural competitor is [std::map](https://en.cppreference.com/w/cpp/container/map). The current implementation of `find()` for a balanced tree is faster than the one of `std::map`. The results of the tests can be found in the `Benchmark` folder.
  

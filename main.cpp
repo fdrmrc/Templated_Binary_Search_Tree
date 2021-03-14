@@ -27,7 +27,7 @@ int main()
 
     parent_node.right->right = std::unique_ptr<Node<intpair>>{new Node<intpair>{frteen_pair, parent_node.right.get()}};
     parent_node.right->left = std::unique_ptr<Node<intpair>>{new Node<intpair>{ten_pair, parent_node.right.get()}};
-    parent_node.right->left->left = std::unique_ptr<Node<intpair>>{new Node<intpair>{nine_pair, parent_node.right->left.get()}};
+    parent_node.right->left->left.reset(new Node<intpair>{nine_pair, parent_node.right->left.get()});
 
     parent_node.print();
     parent_node.right->print(); //printing test

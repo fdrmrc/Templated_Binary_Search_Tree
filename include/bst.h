@@ -24,15 +24,10 @@
  *
  */
 
-
-
-
 /**
  * @brief Struct used in the error-handling of the `erase` function. It'll be catched in a try-catch block.
  * 
  * */
-
-
 
 struct key_not_found
 {
@@ -248,7 +243,7 @@ public:
     /**
      * @brief Move constructor. Avoiding the default-generated one for didactit purposes.
      */
-    bst(bst &&t) noexcept : comp{t.comp}, head{std::move(t.head)}
+    bst(bst &&t) noexcept : comp{std::move(t.comp)}, head{std::move(t.head)}
     {
         //        t.clear();
     }
@@ -258,7 +253,7 @@ public:
      */
     bst &operator=(bst &&t) noexcept
     {
-        comp = t.comp;
+        comp = std::move(t.comp);
         head = std::move(t.head);
         //        t.clear();
         return *this;
