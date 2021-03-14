@@ -1,13 +1,11 @@
+sudo: false
 language: cpp
-os: linux
-dist: bionic
 
 addons:
   apt:
     sources:
-      - sourceline: "ppa:ubuntu-toolchain-r/ppa"
-      - sourceline: "ppa:ubuntu-toolchain-r/test"
-
+      - llvm-toolchain-precise-3.8
+      - ubuntu-toolchain-r-test
     packages:
       - g++-9
 
