@@ -423,7 +423,7 @@ public:
         //verbose, but possibly clearer
         //        pair_type to_be_inserted{pair_type{std::forward<Types>(args)...}};
         //        return insert(to_be_inserted); //call to l-value!
-        return insert(pair_type{std::forward<Types>(args)...}); //TODO: inline to get some boost
+        return insert(pair_type{std::forward<Types>(args)...});
     }
 
     /**
@@ -584,7 +584,7 @@ public:
                 }
             }
         }
-        std::cout << "LOCATION OF LOCATOR " << &locator << "\n";
+        // std::cout << "LOCATION OF LOCATOR " << &locator << "\n";
     }
 
     // void erase(const key_type &x)
@@ -869,8 +869,8 @@ public:
 
     value_type &operator[](key_type &&x)
     {
-        std::cout << "Calling move subscripting"
-                  << "\n";
+        // std::cout << "Calling move subscripting"
+        //           << "\n";
         /*auto insertion{insert(pair_type{std::move(x),value_type{}})};
          return insertion.first->second;*/
         /*std::cout <<"Calling r-value subscripting" <<"\n";
@@ -950,7 +950,7 @@ public:
 
         //        Destroys the object currently managed by the unique_ptr (if any) and takes ownership of p.
         //        If p is a null pointer (such as a default-initialized pointer), the unique_ptr becomes empty, managing no object after the call
-        this->head.reset();
+        head.reset();
     }
 };
 

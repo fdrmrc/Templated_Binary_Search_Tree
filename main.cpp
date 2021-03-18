@@ -7,7 +7,7 @@ void test_with_constant_find_function(const bst<int, int> &bst)
 }
 
 int main()
-{
+{ 
 
     std::cout << "**First tests with Nodes** \n";
     Node<double> test_node{2.0}; //all the pointers (both raw and smart) are nullptr
@@ -36,8 +36,8 @@ int main()
     auto it{_iterator<intpair, false>(&parent_node)};
     it->first = 96; //good that it's allowed
     (*it).second = 2;
-    auto itpp{it++}; //post - increment
-                     //    auto itpp{++it}; //pre - increment
+    // auto itpp{it++}; //post - increment
+    auto itpp{++it}; //pre - increment
     std::cout << "Expect next node's value: " << nine_pair.second << ". \t"
               << "Obtained: " << itpp->second << "\n";
 
@@ -49,7 +49,7 @@ int main()
 
     auto test_equality_iterator{_iterator<intpair, false>(&parent_node)};
     auto test_equality_iterator2{_iterator<intpair, true>(&parent_node)};
-    bool is_equal{test_equality_iterator == test_equality_iterator2};
+    bool is_equal{test_equality_iterator2 == test_equality_iterator};
     bool is_notequal{test_equality_iterator != test_equality_iterator2};
     std::cout << "Test for iterator(s) equality: " << is_equal << "\n"
               << "Test for operator inequality: " << is_notequal << "\n";

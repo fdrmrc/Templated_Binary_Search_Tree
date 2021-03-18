@@ -6,14 +6,21 @@
 #include <utility>
 
 template <typename T, bool is_const = true>
-struct _iterator
+class _iterator
 {
     using nodeT = Node<T>; //for the sake of readability. T will be pair_type
-
     /**
      * @brief Raw pointer to the current @ref Node
      */
+private:
     nodeT *current;
+
+public:
+    friend _iterator<T, true>;
+    friend _iterator<T, false>;
+
+    template <typename key_type, typename value_type, typename OP>
+    friend class bst;
 
     using value_type = typename std::conditional<is_const, const T, T>::type;
     using reference = typename std::conditional<is_const, const T &, T &>::type;
