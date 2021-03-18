@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['left_80',['left',['../structNode.html#aca1e170580c9f603a827eb22dc629b53',1,'Node']]]
+  ['head_89',['head',['../classbst.html#a4f5b6bb2d7dfc6fff51dc1a6b801058b',1,'bst']]]
 ];

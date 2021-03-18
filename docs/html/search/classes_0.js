@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5fiterator_43',['_iterator',['../struct__iterator.html',1,'']]]
+  ['_5fiterator_48',['_iterator',['../class__iterator.html',1,'']]]
 ];

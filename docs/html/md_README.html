@@ -65,7 +65,7 @@ $(function() {
 <div class="title">Template Binary Search Tree <a href="https://travis-ci.com/github/fdrmrc/Templated_Binary_Search_Tree"><img src="https://travis-ci.com/fdrmrc/Templated_Binary_Search_Tree.svg?branch=main" alt="Build Status" style="pointer-events: none;" class="inline"/></a> </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>A C++ implementation of a Templated Binary Search Tree using smart pointers</p>
+<div class="textblock"><p>A C++ implementation of a Templated Binary Search Tree using smart pointers, tested with the GoogleTest framework. You can find a <a href="https://www.doxygen.nl/index.html">Doxygen documentation</a> at: <a href="https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html">https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html</a></p>
 <h1>Authors:</h1>
 <ul>
 <li><a href="#" onclick="location.href='mai'+'lto:'+'mar'+'co'+'.fe'+'de'+'r@s'+'is'+'sa.'+'it'; return false;">Marco Feder</a></li>
@@ -91,18 +91,74 @@ $(function() {
 <li><code>valgrind ./exe.x --leaks-check=full</code></li>
 </ul>
 <p>The current version doesn't leak memory, as can be verified.</p>
-<h1>Documentation</h1>
-<p>You can find a <a href="https://www.doxygen.nl/index.html">Doxygen documentation</a> at: <a href="https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html">https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html</a></p>
 <h1>Unit testing</h1>
-<p>To check the goodness of our functions, we used the testing framework <a href="https://github.com/google/googletest">Google Test</a>. In particular, we provide tests for the each one of the implemented classes. If you have Google Test installed on your machine, and for instance you want to compile and run the tests for the <a class="el" href="structNode.html">Node</a> class, just type from command line:</p>
+<p>To check the goodness of our functions, we used the testing framework <a href="https://github.com/google/googletest">Google Test</a>. In particular, we provide tests for the each one of the implemented classes. If you have Google Test installed on your machine, you can just use the <code>Makefile</code> provided in the unit_tests folder, or alternatively:</p>
 <ul>
-<li><code>g++ NodeTesting.cpp -lgtest -lgtest_main -pthread -o NodeTesting -std=c++14</code></li>
+<li><code>g++ test_all.cpp -lgtest -lgtest_main -pthread -o test_all -std=c++14</code></li>
+<li><code>./test_all</code></li>
 </ul>
 <p>and the output will be something like the following:</p>
-<p>`[==========] Running 5 tests from 1 test suite. [-------&mdash;] Global test environment set-up. [-------&mdash;] 5 tests from nodeTesting [ RUN ] nodeTesting.Node_Default_Constructor [ OK ] nodeTesting.Node_Default_Constructor (0 ms) [ RUN ] nodeTesting.Node_Custom_Constructor_integers [ OK ] nodeTesting.Node_Custom_Constructor_integers (0 ms) [ RUN ] nodeTesting.Node_Custom_Constructor_strings [ OK ] nodeTesting.Node_Custom_Constructor_strings (0 ms) [ RUN ] nodeTesting.Node_Constructor_With_Parent [ OK ] nodeTesting.Node_Constructor_With_Parent (0 ms) [ RUN ] nodeTesting.Multiple_Nodes [ OK ] nodeTesting.Multiple_Nodes (0 ms) [-------&mdash;] 5 tests from nodeTesting (0 ms total)</p>
-<p>[-------&mdash;] Global test environment tear-down [==========] 5 tests from 1 test suite ran. (0 ms total) [ PASSED ] 5 tests.`</p>
-<h1>Benchmarking</h1>
-<p>The natural competitor is <a href="https://en.cppreference.com/w/cpp/container/map">std::map</a>. The current implementation of <code>find()</code> for a balanced tree is faster than the one of <code>std::map</code>. [still in progress] </p>
+<div class="fragment"><div class="line"> {[==========]}</div>
+<div class="line">[----------] Global test environment set-up.</div>
+<div class="line">[----------] 5 tests from nodeTesting</div>
+<div class="line">[ RUN      ] nodeTesting.Node_Default_Constructor</div>
+<div class="line">[       OK ] nodeTesting.Node_Default_Constructor (0 ms)</div>
+<div class="line">[ RUN      ] nodeTesting.Node_Custom_Constructor_integers</div>
+<div class="line">[       OK ] nodeTesting.Node_Custom_Constructor_integers (0 ms)</div>
+<div class="line">[ RUN      ] nodeTesting.Node_Custom_Constructor_strings</div>
+<div class="line">[       OK ] nodeTesting.Node_Custom_Constructor_strings (0 ms)</div>
+<div class="line">[ RUN      ] nodeTesting.Node_Constructor_With_Parent</div>
+<div class="line">[       OK ] nodeTesting.Node_Constructor_With_Parent (0 ms)</div>
+<div class="line">[ RUN      ] nodeTesting.Multiple_Nodes</div>
+<div class="line">[       OK ] nodeTesting.Multiple_Nodes (0 ms)</div>
+<div class="line">[----------] 5 tests from nodeTesting (0 ms total)</div>
+<div class="line"> </div>
+<div class="line">[----------] 6 tests from IteratorTests</div>
+<div class="line">[ RUN      ] IteratorTests.custom_constructor</div>
+<div class="line">[       OK ] IteratorTests.custom_constructor (0 ms)</div>
+<div class="line">[ RUN      ] IteratorTests.double_pre_increment</div>
+<div class="line">[       OK ] IteratorTests.double_pre_increment (0 ms)</div>
+<div class="line">[ RUN      ] IteratorTests.non_constness_check</div>
+<div class="line">[       OK ] IteratorTests.non_constness_check (0 ms)</div>
+<div class="line">[ RUN      ] IteratorTests.equality_check</div>
+<div class="line">[       OK ] IteratorTests.equality_check (0 ms)</div>
+<div class="line">[ RUN      ] IteratorTests.inequality_check</div>
+<div class="line">[       OK ] IteratorTests.inequality_check (0 ms)</div>
+<div class="line">[ RUN      ] IteratorTests.post_increment</div>
+<div class="line">[       OK ] IteratorTests.post_increment (0 ms)</div>
+<div class="line">[----------] 6 tests from IteratorTests (0 ms total)</div>
+<div class="line"> </div>
+<div class="line">[----------] 7 tests from TreeTests</div>
+<div class="line">[ RUN      ] TreeTests.insertion</div>
+<div class="line">[       OK ] TreeTests.insertion (0 ms)</div>
+<div class="line">[ RUN      ] TreeTests.copy_constructor</div>
+<div class="line">[       OK ] TreeTests.copy_constructor (0 ms)</div>
+<div class="line">[ RUN      ] TreeTests.copy_assignment</div>
+<div class="line">[       OK ] TreeTests.copy_assignment (0 ms)</div>
+<div class="line">[ RUN      ] TreeTests.move_constructor</div>
+<div class="line">[       OK ] TreeTests.move_constructor (0 ms)</div>
+<div class="line">[ RUN      ] TreeTests.move_assignment</div>
+<div class="line">[       OK ] TreeTests.move_assignment (0 ms)</div>
+<div class="line">[ RUN      ] TreeTests.emplace_test</div>
+<div class="line">[       OK ] TreeTests.emplace_test (0 ms)</div>
+<div class="line">[ RUN      ] TreeTests.balance_tests</div>
+<div class="line">[       OK ] TreeTests.balance_tests (0 ms)</div>
+<div class="line">[----------] 7 tests from TreeTests (0 ms total)</div>
+<div class="line"> </div>
+<div class="line">[----------] 3 tests from Tree_Tests</div>
+<div class="line">[ RUN      ] Tree_Tests.erasure_test_leaf_node</div>
+<div class="line">[       OK ] Tree_Tests.erasure_test_leaf_node (0 ms)</div>
+<div class="line">[ RUN      ] Tree_Tests.erasure_test_one_child</div>
+<div class="line">[       OK ] Tree_Tests.erasure_test_one_child (0 ms)</div>
+<div class="line">[ RUN      ] Tree_Tests.erasure_test_two_children</div>
+<div class="line">[       OK ] Tree_Tests.erasure_test_two_children (0 ms)</div>
+<div class="line">[----------] 3 tests from Tree_Tests (0 ms total)</div>
+<div class="line"> </div>
+<div class="line">[----------] Global test environment tear-down</div>
+<div class="line">[==========] 21 tests from 4 test suites ran. (0 ms total)</div>
+<div class="line">[  PASSED  ] 21 tests.</div>
+</div><!-- fragment --><h1>Benchmarking</h1>
+<p>The natural competitor is <a href="https://en.cppreference.com/w/cpp/container/map">std::map</a>. The current implementation of <code>find()</code> for a balanced tree is faster than the one of <code>std::map</code>. The results and the plots can be found in the <code>Benchmark</code> folder. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

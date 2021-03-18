@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parent_81',['parent',['../structNode.html#a6eb3b661ef0b58d46dfe228c6ea2e20b',1,'Node']]]
+  ['left_90',['left',['../structNode.html#aca1e170580c9f603a827eb22dc629b53',1,'Node']]]
 ];

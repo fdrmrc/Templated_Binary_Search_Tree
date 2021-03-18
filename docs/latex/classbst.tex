@@ -43,7 +43,7 @@ std\+::pair$<$ \mbox{\hyperlink{classbst_a0df928403a870f3c48e7c699e1e79619}{iter
 {\footnotesize template$<$class... Types$>$ }\\std\+::pair$<$ \mbox{\hyperlink{classbst_a0df928403a870f3c48e7c699e1e79619}{iterator}}, bool $>$ \mbox{\hyperlink{classbst_afbf26361437aafea78a33e352b7960fb}{emplace}} (Types \&\&...args)
 \begin{DoxyCompactList}\small\item\em Inserts a new element into the container constructed in-\/place with the given args if there is no element with the key in the container. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classbst_a0df928403a870f3c48e7c699e1e79619}{iterator}} \mbox{\hyperlink{classbst_a6f641935e5e7681a57caedc2760d6ec8}{find}} (const key\+\_\+type \&x)
-\begin{DoxyCompactList}\small\item\em Find a given key. If it\textquotesingle{}s present, returns a \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} to the node with that key, otherwise \mbox{\hyperlink{classbst_aa6ce6fbe3c3fe23fbbe7fb1b15587a61}{end()}}. It uses the helper function \mbox{\hyperlink{classbst_a44fdf3d32068f7b278e4f53f0cd5b353}{find\+\_\+helper}}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Find a given key. If it\textquotesingle{}s present, returns a \mbox{\hyperlink{class__iterator}{\+\_\+iterator}} to the node with that key, otherwise \mbox{\hyperlink{classbst_aa6ce6fbe3c3fe23fbbe7fb1b15587a61}{end()}}. It uses the helper function \mbox{\hyperlink{classbst_a44fdf3d32068f7b278e4f53f0cd5b353}{find\+\_\+helper}} to avoid code duplication. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classbst_ab300378dff8533dba00d7bf8d59e1c9a}{constant\+\_\+iterator}} \mbox{\hyperlink{classbst_a6c4eba0a49e7ddc81a5c8e8dc97847e1}{find}} (const key\+\_\+type \&x) const
 \begin{DoxyCompactList}\small\item\em Find a given key in a constant tree. If it\textquotesingle{}s present, returns a \mbox{\hyperlink{classbst_a0df928403a870f3c48e7c699e1e79619}{iterator}} to the node with that key, otherwise \mbox{\hyperlink{classbst_aa6ce6fbe3c3fe23fbbe7fb1b15587a61}{end()}}. It uses the helper function \mbox{\hyperlink{classbst_a44fdf3d32068f7b278e4f53f0cd5b353}{find\+\_\+helper}} to avoid code duplication. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classbst_a2c6e04b1567158f477d0489700c5bf50}{erase}} (const key\+\_\+type \&x)
@@ -51,7 +51,7 @@ void \mbox{\hyperlink{classbst_a2c6e04b1567158f477d0489700c5bf50}{erase}} (const
 value\+\_\+type \& \mbox{\hyperlink{classbst_a9cad294400509550f2390471e7063cbf}{operator\mbox{[}$\,$\mbox{]}}} (const key\+\_\+type \&x)
 \begin{DoxyCompactList}\small\item\em Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. \end{DoxyCompactList}\item 
 value\+\_\+type \& \mbox{\hyperlink{classbst_a5d15cc71b1cbb1f758f574d6455d3afb}{operator\mbox{[}$\,$\mbox{]}}} (key\+\_\+type \&\&x)
-\begin{DoxyCompactList}\small\item\em Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. It uses move semantic. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. It\textquotesingle{}s the r-\/valued version of {\ttfamily \mbox{[}\mbox{]}} operator. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classbst_a616594a73f55c43f4eb8b9c661b84695}{balance}} ()
 \begin{DoxyCompactList}\small\item\em Balance the tree by using the recursive (helper) function \mbox{\hyperlink{classbst_a7a37bef4d295b422fdfbf0625beb06f2}{balance\+\_\+helper()}} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classbst_a8dbaf0cafa3b10cb069980423153e3a2}\label{classbst_a8dbaf0cafa3b10cb069980423153e3a2}} 
@@ -72,10 +72,10 @@ using \mbox{\hyperlink{classbst_a7e84dd23062c93920d7f69fbf7684efd}{pair\+\_\+typ
 using \mbox{\hyperlink{classbst_a6432d42952ca8e28799da54c6ecd87cd}{node\+\_\+type}} = \mbox{\hyperlink{structNode}{Node}}$<$ \mbox{\hyperlink{classbst_a7e84dd23062c93920d7f69fbf7684efd}{pair\+\_\+type}} $>$
 \begin{DoxyCompactList}\small\item\em Templated \mbox{\hyperlink{structNode}{Node}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classbst_a0df928403a870f3c48e7c699e1e79619}\label{classbst_a0df928403a870f3c48e7c699e1e79619}} 
-using \mbox{\hyperlink{classbst_a0df928403a870f3c48e7c699e1e79619}{iterator}} = \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ \mbox{\hyperlink{classbst_a7e84dd23062c93920d7f69fbf7684efd}{pair\+\_\+type}}, false $>$
+using \mbox{\hyperlink{classbst_a0df928403a870f3c48e7c699e1e79619}{iterator}} = \mbox{\hyperlink{class__iterator}{\+\_\+iterator}}$<$ \mbox{\hyperlink{classbst_a7e84dd23062c93920d7f69fbf7684efd}{pair\+\_\+type}}, false $>$
 \begin{DoxyCompactList}\small\item\em iterator templated on \mbox{\hyperlink{classbst_a6432d42952ca8e28799da54c6ecd87cd}{node\+\_\+type}} and on \mbox{\hyperlink{classbst_a7e84dd23062c93920d7f69fbf7684efd}{pair\+\_\+type}} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classbst_ab300378dff8533dba00d7bf8d59e1c9a}\label{classbst_ab300378dff8533dba00d7bf8d59e1c9a}} 
-using \mbox{\hyperlink{classbst_ab300378dff8533dba00d7bf8d59e1c9a}{constant\+\_\+iterator}} = \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}}$<$ \mbox{\hyperlink{classbst_a7e84dd23062c93920d7f69fbf7684efd}{pair\+\_\+type}}, true $>$
+using \mbox{\hyperlink{classbst_ab300378dff8533dba00d7bf8d59e1c9a}{constant\+\_\+iterator}} = \mbox{\hyperlink{class__iterator}{\+\_\+iterator}}$<$ \mbox{\hyperlink{classbst_a7e84dd23062c93920d7f69fbf7684efd}{pair\+\_\+type}}, true $>$
 \begin{DoxyCompactList}\small\item\em iterator that points to a constant content (i.\+e. the \mbox{\hyperlink{classbst_a7e84dd23062c93920d7f69fbf7684efd}{pair\+\_\+type}}). It can be increased/decreased, but not used to modify the tree. Notice that it\textquotesingle{}s the pair that is constant! \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -97,11 +97,11 @@ void \mbox{\hyperlink{classbst_a7a37bef4d295b422fdfbf0625beb06f2}{balance\+\_\+h
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classbst_a08653ad02134ae01a168a0447a7330a0}\label{classbst_a08653ad02134ae01a168a0447a7330a0}} 
-OP {\bfseries comp}
-\item 
+OP \mbox{\hyperlink{classbst_a08653ad02134ae01a168a0447a7330a0}{comp}}
+\begin{DoxyCompactList}\small\item\em Comparison operator. By default, it\textquotesingle{}s set to {\ttfamily std\+::less$<$key\+\_\+type$>$}. It is used to compare the keys of our tree. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classbst_a4f5b6bb2d7dfc6fff51dc1a6b801058b}\label{classbst_a4f5b6bb2d7dfc6fff51dc1a6b801058b}} 
-std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbst_a6432d42952ca8e28799da54c6ecd87cd}{node\+\_\+type}} $>$ {\bfseries head}
-\end{DoxyCompactItemize}
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classbst_a6432d42952ca8e28799da54c6ecd87cd}{node\+\_\+type}} $>$ \mbox{\hyperlink{classbst_a4f5b6bb2d7dfc6fff51dc1a6b801058b}{head}}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the head \mbox{\hyperlink{structNode}{Node}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -138,7 +138,7 @@ Helper recursive function that checks if the tree is balanced.
 
 
 \begin{DoxyParams}{Parameters}
-{\em head\+\_\+node} & Raw pointer to a \mbox{\hyperlink{structNode}{Node}}, which will be the  \textquotesingle{}head\textquotesingle{} \mbox{\hyperlink{structNode}{Node}}. Due to this, we need to call it with {\ttfamily head.\+get()}. Recall that a tree is balanced if, {\bfseries{for each }} \mbox{\hyperlink{structNode}{Node}}, the height of the left and right subtree is at most 1 and each subtree of the tree is balanced. \\
+{\em head\+\_\+node} & Raw pointer to a \mbox{\hyperlink{structNode}{Node}}, which will be the \mbox{\hyperlink{classbst_a4f5b6bb2d7dfc6fff51dc1a6b801058b}{head}} \mbox{\hyperlink{structNode}{Node}}. Since it\textquotesingle{}s a unique pointer, we need to call it with {\ttfamily head.\+get()}. Recall that a tree is balanced if, {\bfseries{for each }} \mbox{\hyperlink{structNode}{Node}}, the height of the left and right subtree is at most 1 and each subtree of the tree is balanced. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classbst_a7a37bef4d295b422fdfbf0625beb06f2}\label{classbst_a7a37bef4d295b422fdfbf0625beb06f2}} 
@@ -203,7 +203,7 @@ Erase a \mbox{\hyperlink{structNode}{Node}} in the tree.
 
 
 
-Find a given key. If it\textquotesingle{}s present, returns a \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} to the node with that key, otherwise \mbox{\hyperlink{classbst_aa6ce6fbe3c3fe23fbbe7fb1b15587a61}{end()}}. It uses the helper function \mbox{\hyperlink{classbst_a44fdf3d32068f7b278e4f53f0cd5b353}{find\+\_\+helper}}. 
+Find a given key. If it\textquotesingle{}s present, returns a \mbox{\hyperlink{class__iterator}{\+\_\+iterator}} to the node with that key, otherwise \mbox{\hyperlink{classbst_aa6ce6fbe3c3fe23fbbe7fb1b15587a61}{end()}}. It uses the helper function \mbox{\hyperlink{classbst_a44fdf3d32068f7b278e4f53f0cd5b353}{find\+\_\+helper}} to avoid code duplication. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -260,7 +260,7 @@ Insert a new \mbox{\hyperlink{structNode}{Node}} in the tree with pair x.
 
 
 \begin{DoxyParams}{Parameters}
-{\em x} & Const l-\/value reference to a pair with a key and a value Returns a std\+::pair with an \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} and a bool which is true if the node has been inserted, false otherwise. \\
+{\em x} & Const l-\/value reference to a pair with a key and a value Returns a std\+::pair with an \mbox{\hyperlink{class__iterator}{\+\_\+iterator}} and a bool which is true if the node has been inserted, false otherwise. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classbst_af25f5abedae51c9dbe9ff03442df6fe0}\label{classbst_af25f5abedae51c9dbe9ff03442df6fe0}} 
@@ -276,7 +276,7 @@ Insert a new \mbox{\hyperlink{structNode}{Node}} in the tree with pair x.
 
 
 \begin{DoxyParams}{Parameters}
-{\em x} & r-\/value reference to a pair with a node and a value Returns a std\+::pair with an \mbox{\hyperlink{struct__iterator}{\+\_\+iterator}} and a bool which is true if the node has been inserted, false otherwise. \\
+{\em x} & r-\/value reference to a pair with a node and a value Returns a std\+::pair with an \mbox{\hyperlink{class__iterator}{\+\_\+iterator}} and a bool which is true if the node has been inserted, false otherwise. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classbst_a2f70154e9b5d2f9b8a5c0f872b6620cf}\label{classbst_a2f70154e9b5d2f9b8a5c0f872b6620cf}} 
@@ -326,7 +326,7 @@ Returns a reference to the value that is mapped to a key equivalent to x, perfor
 
 
 \begin{DoxyParams}{Parameters}
-{\em x} & constant key \\
+{\em x} & constant l-\/value ref. to a key \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
@@ -341,11 +341,11 @@ value\+\_\+type\& \mbox{\hyperlink{classbst}{bst}}$<$ key\+\_\+type, value\+\_\+
 
 
 
-Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. It uses move semantic. 
+Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. It\textquotesingle{}s the r-\/valued version of {\ttfamily \mbox{[}\mbox{]}} operator. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em x} & r-\/value key \\
+{\em x} & r-\/value ref. to a key \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
@@ -369,7 +369,7 @@ Helper private function that uses forwarding references for the subscript operat
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-operator\mbox{[}\mbox{]} 
+\mbox{\hyperlink{classbst_a9cad294400509550f2390471e7063cbf}{operator\mbox{[}\mbox{]}}} 
 \end{DoxySeeAlso}
 
 

@@ -31,8 +31,19 @@
 
 struct key_not_found
 {
+    /**
+     * @brief The string with the message  
+     */
     std::string s;
+    /**
+     * @brief Custom constructor
+     * @param _s String to be printed  
+     */
     key_not_found(std::string _s) : s{_s} {};
+
+    /**
+     * @brief Classical method to show the error message in the try-catch block
+     */
     const char *what() const
     {
         return s.c_str();
@@ -62,7 +73,14 @@ class bst
     using constant_iterator = _iterator<pair_type, true>;
 
 private:
+    /**
+    * @brief Comparison operator. By default, it's set to `std::less<key_type>`. It is used to compare the keys of our tree
+    */
     OP comp;                         //std::less<key_type> comp;
+
+    /**
+     * @brief Unique pointer to the head @ref Node. 
+     */
     std::unique_ptr<node_type> head; //unique pointer to the root/head Node
     //I set the head to be a unique pointer so I can use release,get,reset member fcts
 
@@ -100,7 +118,7 @@ private:
 
     /**
      * @brief Helper recursive function that checks if the tree is balanced.
-     * @param head_node Raw pointer to a @ref Node, which will be the 'head' Node. Due to this, we need to call it with `head.get()`.
+     * @param head_node Raw pointer to a @ref Node, which will be the @ref head Node. Since it's a unique pointer, we need to call it with `head.get()`.
      * Recall that a tree is balanced if, <b>for each </b> @ref Node, the height of the left and right subtree is at most 1 and each subtree of the tree is balanced.
      */
     bool balance_check(Node<pair_type> *head_node)
@@ -217,7 +235,7 @@ private:
     /**
      * @brief Helper private function that uses forwarding references for the subscript operator.
      * @param x Forwarding reference, to be forwarded using `std::forward<O>(x)`
-     * @see operator[]
+     * @see @ref operator[]
      */
     template <typename O> //forwarding reference
     value_type &subscript_helper(O &&x)
@@ -427,7 +445,7 @@ public:
     }
 
     /**
-     * @brief Find a given key. If it's present, returns a @ref _iterator to the node with that key, otherwise @ref end(). It uses the helper function @ref find_helper
+     * @brief Find a given key. If it's present, returns a @ref _iterator to the node with that key, otherwise @ref end(). It uses the helper function @ref find_helper to avoid code duplication
      * @param x The key to be searched in the tree.
      */
     iterator find(const key_type &x)
@@ -840,7 +858,7 @@ public:
 
     /**
      * @brief Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist.
-     * @param x constant key
+     * @param x constant l-value ref. to a key
      * @see insert()
      */
 
@@ -862,8 +880,8 @@ public:
     }
 
     /**
-     * @brief Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. It uses move semantic
-     * @param x r-value key
+     * @brief Returns a reference to the value that is mapped to a key equivalent to x, performing an insertion if such key does not already exist. It's the r-valued version of `[]` operator
+     * @param x r-value ref. to a key
      * @see insert()
      */
 

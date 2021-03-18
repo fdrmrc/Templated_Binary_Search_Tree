@@ -1,4 +1,4 @@
-A C++ implementation of a Templated Binary Search Tree using smart pointers
+A C++ implementation of a Templated Binary Search Tree using smart pointers, tested with the Google\+Test framework. You can find a \href{https://www.doxygen.nl/index.html}{\texttt{ Doxygen documentation}} at\+: \href{https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html}{\texttt{ https\+://fdrmrc.\+github.\+io/\+Templated\+\_\+\+Binary\+\_\+\+Search\+\_\+\+Tree/html/index.\+html}}
 
 \doxysection*{Authors\+:}
 
@@ -38,25 +38,83 @@ First, clone the repo to your local machine.
 
 The current version doesn\textquotesingle{}t leak memory, as can be verified.
 
-\doxysection*{Documentation}
-
-You can find a \href{https://www.doxygen.nl/index.html}{\texttt{ Doxygen documentation}} at\+: \href{https://fdrmrc.github.io/Templated_Binary_Search_Tree/html/index.html}{\texttt{ https\+://fdrmrc.\+github.\+io/\+Templated\+\_\+\+Binary\+\_\+\+Search\+\_\+\+Tree/html/index.\+html}}
-
 \doxysection*{Unit testing}
 
-To check the goodness of our functions, we used the testing framework \href{https://github.com/google/googletest}{\texttt{ Google Test}}. In particular, we provide tests for the each one of the implemented classes. If you have Google Test installed on your machine, and for instance you want to compile and run the tests for the \mbox{\hyperlink{structNode}{Node}} class, just type from command line\+:
+To check the goodness of our functions, we used the testing framework \href{https://github.com/google/googletest}{\texttt{ Google Test}}. In particular, we provide tests for the each one of the implemented classes. If you have Google Test installed on your machine, you can just use the {\ttfamily Makefile} provided in the unit\+\_\+tests folder, or alternatively\+:
 
 
 \begin{DoxyItemize}
-\item {\ttfamily g++ Node\+Testing.\+cpp -\/lgtest -\/lgtest\+\_\+main -\/pthread -\/o Node\+Testing -\/std=c++14}
+\item {\ttfamily g++ test\+\_\+all.\+cpp -\/lgtest -\/lgtest\+\_\+main -\/pthread -\/o test\+\_\+all -\/std=c++14}
+\item {\ttfamily ./test\+\_\+all}
 \end{DoxyItemize}
 
 and the output will be something like the following\+:
 
-\`{}\mbox{[}==========\mbox{]} Running 5 tests from 1 test suite. \mbox{[}-\/-\/-\/-\/-\/-\/-\/---\mbox{]} Global test environment set-\/up. \mbox{[}-\/-\/-\/-\/-\/-\/-\/---\mbox{]} 5 tests from node\+Testing \mbox{[} RUN \mbox{]} node\+Testing.\+Node\+\_\+\+Default\+\_\+\+Constructor \mbox{[} OK \mbox{]} node\+Testing.\+Node\+\_\+\+Default\+\_\+\+Constructor (0 ms) \mbox{[} RUN \mbox{]} node\+Testing.\+Node\+\_\+\+Custom\+\_\+\+Constructor\+\_\+integers \mbox{[} OK \mbox{]} node\+Testing.\+Node\+\_\+\+Custom\+\_\+\+Constructor\+\_\+integers (0 ms) \mbox{[} RUN \mbox{]} node\+Testing.\+Node\+\_\+\+Custom\+\_\+\+Constructor\+\_\+strings \mbox{[} OK \mbox{]} node\+Testing.\+Node\+\_\+\+Custom\+\_\+\+Constructor\+\_\+strings (0 ms) \mbox{[} RUN \mbox{]} node\+Testing.\+Node\+\_\+\+Constructor\+\_\+\+With\+\_\+\+Parent \mbox{[} OK \mbox{]} node\+Testing.\+Node\+\_\+\+Constructor\+\_\+\+With\+\_\+\+Parent (0 ms) \mbox{[} RUN \mbox{]} node\+Testing.\+Multiple\+\_\+\+Nodes \mbox{[} OK \mbox{]} node\+Testing.\+Multiple\+\_\+\+Nodes (0 ms) \mbox{[}-\/-\/-\/-\/-\/-\/-\/---\mbox{]} 5 tests from node\+Testing (0 ms total)
 
-\mbox{[}-\/-\/-\/-\/-\/-\/-\/---\mbox{]} Global test environment tear-\/down \mbox{[}==========\mbox{]} 5 tests from 1 test suite ran. (0 ms total) \mbox{[} PASSED \mbox{]} 5 tests.\`{}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{[==========]\}}
+\DoxyCodeLine{[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/] Global test environment set-\/up.}
+\DoxyCodeLine{[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/] 5 tests from nodeTesting}
+\DoxyCodeLine{[ RUN      ] nodeTesting.Node\_Default\_Constructor}
+\DoxyCodeLine{[       OK ] nodeTesting.Node\_Default\_Constructor (0 ms)}
+\DoxyCodeLine{[ RUN      ] nodeTesting.Node\_Custom\_Constructor\_integers}
+\DoxyCodeLine{[       OK ] nodeTesting.Node\_Custom\_Constructor\_integers (0 ms)}
+\DoxyCodeLine{[ RUN      ] nodeTesting.Node\_Custom\_Constructor\_strings}
+\DoxyCodeLine{[       OK ] nodeTesting.Node\_Custom\_Constructor\_strings (0 ms)}
+\DoxyCodeLine{[ RUN      ] nodeTesting.Node\_Constructor\_With\_Parent}
+\DoxyCodeLine{[       OK ] nodeTesting.Node\_Constructor\_With\_Parent (0 ms)}
+\DoxyCodeLine{[ RUN      ] nodeTesting.Multiple\_Nodes}
+\DoxyCodeLine{[       OK ] nodeTesting.Multiple\_Nodes (0 ms)}
+\DoxyCodeLine{[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/] 5 tests from nodeTesting (0 ms total)}
+\DoxyCodeLine{}
+\DoxyCodeLine{[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/] 6 tests from IteratorTests}
+\DoxyCodeLine{[ RUN      ] IteratorTests.custom\_constructor}
+\DoxyCodeLine{[       OK ] IteratorTests.custom\_constructor (0 ms)}
+\DoxyCodeLine{[ RUN      ] IteratorTests.double\_pre\_increment}
+\DoxyCodeLine{[       OK ] IteratorTests.double\_pre\_increment (0 ms)}
+\DoxyCodeLine{[ RUN      ] IteratorTests.non\_constness\_check}
+\DoxyCodeLine{[       OK ] IteratorTests.non\_constness\_check (0 ms)}
+\DoxyCodeLine{[ RUN      ] IteratorTests.equality\_check}
+\DoxyCodeLine{[       OK ] IteratorTests.equality\_check (0 ms)}
+\DoxyCodeLine{[ RUN      ] IteratorTests.inequality\_check}
+\DoxyCodeLine{[       OK ] IteratorTests.inequality\_check (0 ms)}
+\DoxyCodeLine{[ RUN      ] IteratorTests.post\_increment}
+\DoxyCodeLine{[       OK ] IteratorTests.post\_increment (0 ms)}
+\DoxyCodeLine{[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/] 6 tests from IteratorTests (0 ms total)}
+\DoxyCodeLine{}
+\DoxyCodeLine{[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/] 7 tests from TreeTests}
+\DoxyCodeLine{[ RUN      ] TreeTests.insertion}
+\DoxyCodeLine{[       OK ] TreeTests.insertion (0 ms)}
+\DoxyCodeLine{[ RUN      ] TreeTests.copy\_constructor}
+\DoxyCodeLine{[       OK ] TreeTests.copy\_constructor (0 ms)}
+\DoxyCodeLine{[ RUN      ] TreeTests.copy\_assignment}
+\DoxyCodeLine{[       OK ] TreeTests.copy\_assignment (0 ms)}
+\DoxyCodeLine{[ RUN      ] TreeTests.move\_constructor}
+\DoxyCodeLine{[       OK ] TreeTests.move\_constructor (0 ms)}
+\DoxyCodeLine{[ RUN      ] TreeTests.move\_assignment}
+\DoxyCodeLine{[       OK ] TreeTests.move\_assignment (0 ms)}
+\DoxyCodeLine{[ RUN      ] TreeTests.emplace\_test}
+\DoxyCodeLine{[       OK ] TreeTests.emplace\_test (0 ms)}
+\DoxyCodeLine{[ RUN      ] TreeTests.balance\_tests}
+\DoxyCodeLine{[       OK ] TreeTests.balance\_tests (0 ms)}
+\DoxyCodeLine{[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/] 7 tests from TreeTests (0 ms total)}
+\DoxyCodeLine{}
+\DoxyCodeLine{[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/] 3 tests from Tree\_Tests}
+\DoxyCodeLine{[ RUN      ] Tree\_Tests.erasure\_test\_leaf\_node}
+\DoxyCodeLine{[       OK ] Tree\_Tests.erasure\_test\_leaf\_node (0 ms)}
+\DoxyCodeLine{[ RUN      ] Tree\_Tests.erasure\_test\_one\_child}
+\DoxyCodeLine{[       OK ] Tree\_Tests.erasure\_test\_one\_child (0 ms)}
+\DoxyCodeLine{[ RUN      ] Tree\_Tests.erasure\_test\_two\_children}
+\DoxyCodeLine{[       OK ] Tree\_Tests.erasure\_test\_two\_children (0 ms)}
+\DoxyCodeLine{[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/] 3 tests from Tree\_Tests (0 ms total)}
+\DoxyCodeLine{}
+\DoxyCodeLine{[-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/] Global test environment tear-\/down}
+\DoxyCodeLine{[==========] 21 tests from 4 test suites ran. (0 ms total)}
+\DoxyCodeLine{[  PASSED  ] 21 tests.}
+
+\end{DoxyCode}
+
 
 \doxysection*{Benchmarking}
 
-The natural competitor is \href{https://en.cppreference.com/w/cpp/container/map}{\texttt{ std\+::map}}. The current implementation of {\ttfamily find()} for a balanced tree is faster than the one of {\ttfamily std\+::map}. \mbox{[}still in progress\mbox{]} 
+The natural competitor is \href{https://en.cppreference.com/w/cpp/container/map}{\texttt{ std\+::map}}. The current implementation of {\ttfamily find()} for a balanced tree is faster than the one of {\ttfamily std\+::map}. The results and the plots can be found in the {\ttfamily Benchmark} folder. 

@@ -113,7 +113,7 @@ public:
     /**
      * @brief Equality operator
      *
-     * @param candidate Reference to the iterator we want to compare.
+     * @param candidate Const reference to the iterator we want to compare.
      * Two iterators are equal iff they point to the same @ref Node
      *
      */
@@ -129,13 +129,16 @@ public:
     }
     /**
      *@brief Inequality operator
-     *@param candidate Reference to the iterator we want to compare.
+     *@param candidate Const reference to the iterator we want to compare.
      *
      * To avoid code duplication, use the logical negation of `==` operator.
      */
     template <bool constBool>
     bool operator!=(const _iterator<T, constBool> &candidate) const noexcept { return !(current == candidate.current); }
 
+    /**
+    * @brief Print a @ref Node by using the knowledge of the raw pointer `current`
+    */
     void print_node_with_iterator()
     {
         current->print();

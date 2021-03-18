@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node_65',['Node',['../structNode.html#ab8d204bde1218534f2172735ec6616f3',1,'Node::Node(const T &amp;_data)'],['../structNode.html#a0ac1d44cfe588be564acf25485029bd8',1,'Node::Node()'],['../structNode.html#a22feac10b51bc50ea652885213bfd561',1,'Node::Node(const T &amp;_data, Node&lt; T &gt; *_parent) noexcept'],['../structNode.html#ad5705b61045ccff25c6a877d1670cf5f',1,'Node::Node(const std::unique_ptr&lt; Node&lt; T &gt;&gt; &amp;ptn, Node&lt; T &gt; *_parent)']]]
+  ['key_5fnot_5ffound_70',['key_not_found',['../structkey__not__found.html#aa7d648143e66fa6f152c779e5bb94eec',1,'key_not_found']]]
 ];
